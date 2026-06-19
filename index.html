@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azul Cargo — Acompanhamento de Envios</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f5f6fa; --surface: #fff; --surface2: #f0f1f5;
+    --border: #e2e4ea; --text: #1a1c23; --text2: #6b7080; --text3: #9da3b4;
+    --blue: #185FA5; --blue-bg: #e8f0fb;
+    --green: #1a7a44; --green-bg: #d4f2e0;
+    --yellow: #c47900; --yellow-bg: #fff3cd;
+    --red: #a32d2d; --red-bg: #fee2e2;
+    --radius: 10px; --radius-sm: 6px;
+  }
+  body { font-family: 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+  .layout { max-width:1200px; margin:0 auto; padding:24px 20px; }
+  .header { display:flex; align-items:center; justify-content:space-between; margin-bottom:24px; flex-wrap:wrap; gap:12px; }
+  .header-left { display:flex; align-items:center; gap:12px; }
+  .logo { width:40px; height:40px; background:#1B52A4; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; }
+  .logo svg { width:24px; height:24px; fill:white; }
+  .header-title { font-size:20px; font-weight:600; }
+  .header-sub { font-size:12px; color:var(--text2); margin-top:2px; }
+  .header-actions { display:flex; gap:10px; align-items:center; }
+  .btn-refresh {
+    display:flex; align-items:center; gap:6px; padding:9px 18px;
+    background:#1B52A4; color:white; border:none; border-radius:var(--radius-sm);
+    font-size:13px; font-weight:600; cursor:pointer; transition:background .15s;
+  }
+  .btn-refresh:hover:not(:disabled) { background:#144090; }
+  .btn-refresh:disabled { opacity:.6; cursor:not-allowed; }
+  .btn-refresh svg { width:16px; height:16px; fill:white; }
+  .spinner { display:none; width:16px; height:16px; border:2px solid rgba(255,255,255,.4); border-top-color:white; border-radius:50%; animation:spin .7s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .status-bar { font-size:12px; color:var(--text2); padding:8px 14px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); min-width:220px; text-align:center; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:20px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
+  .card-label { font-size:11px; font-weight:500; color:var(--text2); text-transform:uppercase; letter-spacing:.5px; margin-bottom:8px; }
+  .card-value { font-size:28px; font-weight:600; line-height:1; }
+  .card-value.gray   { color:var(--text); }
+  .card-value.green  { color:var(--green); }
+  .card-value.yellow { color:var(--yellow); }
+  .card-value.blue   { color:var(--blue); }
+  .card-value.frete  { font-size:20px; color:var(--text2); }
+  .charts { display:grid; grid-template-columns:1fr 2fr; gap:16px; margin-bottom:20px; }
+  @media(max-width:700px){.charts{grid-template-columns:1fr;}}
+  .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
+  .chart-title { font-size:13px; font-weight:600; color:var(--text2); margin-bottom:12px; }
+  .legend { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; font-size:12px; color:var(--text2); }
+  .legend span { display:flex; align-items:center; gap:5px; }
+  .legend-dot { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
+  .table-section { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+  .table-toolbar { display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .table-toolbar select,.table-toolbar input { padding:7px 10px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg); color:var(--text); font-size:13px; outline:none; }
+  .table-toolbar input { width:220px; }
+  .result-count { font-size:12px; color:var(--text3); margin-left:auto; }
+  table { width:100%; border-collapse:collapse; font-size:13px; table-layout:fixed; }
+  thead th { padding:10px 14px; text-align:left; font-size:11px; font-weight:600; color:var(--text2); text-transform:uppercase; letter-spacing:.4px; background:var(--surface2); border-bottom:1px solid var(--border); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  tbody td { padding:9px 14px; border-bottom:1px solid var(--border); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  tbody tr:last-child td { border-bottom:none; }
+  tbody tr:hover td { background:var(--surface2); }
+  .awb-cell { font-family:'Courier New',monospace; font-size:12px; color:var(--text2); }
+  .badge { display:inline-block; padding:3px 9px; border-radius:20px; font-size:11px; font-weight:600; white-space:nowrap; }
+  .badge.entregue  { background:var(--green-bg);  color:var(--green); }
+  .badge.saiu      { background:var(--yellow-bg); color:var(--yellow); }
+  .badge.andamento { background:var(--blue-bg);   color:var(--blue); }
+  .badge.atrasado  { background:var(--red-bg);    color:var(--red); }
+  .pagination { display:flex; align-items:center; justify-content:center; gap:8px; padding:12px; border-top:1px solid var(--border); font-size:13px; color:var(--text2); }
+  .pagination button { padding:5px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface); color:var(--text); font-size:12px; cursor:pointer; }
+  .pagination button:disabled { opacity:.4; cursor:not-allowed; }
+  .overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:100; align-items:center; justify-content:center; flex-direction:column; gap:16px; }
+  .overlay.active { display:flex; }
+  .overlay-box { background:white; border-radius:var(--radius); padding:32px 40px; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,.2); }
+  .overlay-spinner { width:40px; height:40px; border:3px solid #e2e4ea; border-top-color:#1B52A4; border-radius:50%; animation:spin .7s linear infinite; margin:0 auto 16px; }
+  .overlay-title { font-size:16px; font-weight:600; margin-bottom:6px; }
+  .overlay-sub { font-size:13px; color:var(--text2); }
+  .toast { position:fixed; bottom:24px; right:24px; padding:12px 20px; border-radius:var(--radius); font-size:13px; font-weight:500; color:white; display:none; z-index:200; }
+  .toast.success { background:#1a7a44; }
+  .toast.error   { background:#a32d2d; }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <div class="header">
+    <div class="header-left">
+      <div class="logo">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5L21 12h-4V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm13.5-1c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1z"/></svg>
+      </div>
+      <div>
+        <div class="header-title">Azul Cargo — Envios</div>
+        <div class="header-sub" id="lastUpdate">Carregando...</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <div class="status-bar" id="statusBar">Conectando ao servidor...</div>
+      <button class="btn-refresh" id="btnAtualizar" onclick="atualizar()">
+        <svg id="btnIcon" viewBox="0 0 24 24"><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+        <div class="spinner" id="btnSpinner"></div>
+        <span id="btnText">Atualizar agora</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="cards" id="cards"></div>
+
+  <div class="charts">
+    <div class="chart-card">
+      <div class="chart-title">Status dos envios</div>
+      <div class="legend" id="legendStatus"></div>
+      <div style="position:relative;height:200px"><canvas id="chartStatus"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">Envios por mês</div>
+      <div style="position:relative;height:230px"><canvas id="chartMes"></canvas></div>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <div class="table-toolbar">
+      <select id="fStatus" onchange="applyFilters()">
+        <option value="">Todos os status</option>
+        <option value="Entregue">Entregue</option>
+        <option value="Saiu para Entrega">Saiu para entrega</option>
+        <option value="Em andamento">Em andamento</option>
+        <option value="Atrasado">Atrasado</option>
+      </select>
+      <input id="fBusca" placeholder="Buscar AWB, destinatário, cidade…" oninput="applyFilters()">
+      <span class="result-count" id="resultCount"></span>
+    </div>
+    <table>
+      <thead><tr>
+        <th style="width:120px">AWB</th>
+        <th style="width:180px">Destinatário</th>
+        <th style="width:130px">Destino</th>
+        <th style="width:100px">Emissão</th>
+        <th style="width:100px">Prev. entrega</th>
+        <th style="width:65px">Frete</th>
+        <th style="width:90px">Status</th>
+        <th style="width:90px">Atualizado</th>
+      </tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+    <div class="pagination">
+      <button id="btnPrev" onclick="changePage(-1)">← Anterior</button>
+      <span id="pagInfo"></span>
+      <button id="btnNext" onclick="changePage(1)">Próxima →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay de carregamento -->
+<div class="overlay" id="overlay">
+  <div class="overlay-box">
+    <div class="overlay-spinner"></div>
+    <div class="overlay-title">Atualizando dados...</div>
+    <div class="overlay-sub" id="overlayMsg">Buscando novos CTEs no Gmail e rastreando envios na Azul Logística.<br>Isso pode levar até 2 minutos.</div>
+  </div>
+</div>
+
+<!-- Toast de notificação -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── CONFIGURAÇÃO ─────────────────────────────────────────────────────────────
+// Substitua pela URL do seu servidor no Railway após publicar
+const API_URL = 'https://SEU-PROJETO.up.railway.app';
+
+// ── ESTADO ───────────────────────────────────────────────────────────────────
+const PER_PAGE = 20;
+let DATA = [];
+let filtered = [];
+let page = 0;
+let chartStatus = null;
+let chartMes = null;
+
+// ── UTILITÁRIOS ──────────────────────────────────────────────────────────────
+function badge(s) {
+  if (s === 'Entregue')          return `<span class="badge entregue">Entregue</span>`;
+  if (s === 'Saiu para Entrega') return `<span class="badge saiu">Saiu p/ entrega</span>`;
+  if (s === 'Atrasado')          return `<span class="badge atrasado">Atrasado</span>`;
+  return `<span class="badge andamento">Em andamento</span>`;
+}
+
+function showToast(msg, tipo = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${tipo}`;
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 4000);
+}
+
+function setBtnLoading(loading) {
+  const btn = document.getElementById('btnAtualizar');
+  const icon = document.getElementById('btnIcon');
+  const spinner = document.getElementById('btnSpinner');
+  const txt = document.getElementById('btnText');
+  btn.disabled = loading;
+  icon.style.display = loading ? 'none' : 'block';
+  spinner.style.display = loading ? 'block' : 'none';
+  txt.textContent = loading ? 'Atualizando...' : 'Atualizar agora';
+}
+
+// ── RENDER ───────────────────────────────────────────────────────────────────
+function renderCards() {
+  const total    = DATA.length;
+  const entregue = DATA.filter(r => r.status === 'Entregue').length;
+  const saiu     = DATA.filter(r => r.status === 'Saiu para Entrega').length;
+  const andamento= DATA.filter(r => r.status === 'Em andamento').length;
+  const frete    = DATA.reduce((a, r) => a + (r.frete || 0), 0);
+  document.getElementById('cards').innerHTML = `
+    <div class="card"><div class="card-label">Total de envios</div><div class="card-value gray">${total}</div></div>
+    <div class="card"><div class="card-label">Entregues</div><div class="card-value green">${entregue}</div></div>
+    <div class="card"><div class="card-label">Saiu p/ entrega</div><div class="card-value yellow">${saiu}</div></div>
+    <div class="card"><div class="card-label">Em andamento</div><div class="card-value blue">${andamento}</div></div>
+    <div class="card"><div class="card-label">Frete total</div><div class="card-value frete">R$ ${frete.toLocaleString('pt-BR',{minimumFractionDigits:2})}</div></div>
+  `;
+}
+
+function renderTable() {
+  const start = page * PER_PAGE;
+  const end   = Math.min(start + PER_PAGE, filtered.length);
+  document.getElementById('tbody').innerHTML = filtered.slice(start, end).map(r => `
+    <tr>
+      <td class="awb-cell">${r.awb}</td>
+      <td>${r.destinatario || '—'}</td>
+      <td>${r.destino || '—'}</td>
+      <td>${r.emissao || '—'}</td>
+      <td>${r.prev_entrega || '—'}</td>
+      <td>${r.frete > 0 ? 'R$ ' + Number(r.frete).toFixed(2) : '—'}</td>
+      <td>${badge(r.status)}</td>
+      <td style="font-size:11px;color:#9da3b4">${r.ultima_atualizacao || '—'}</td>
+    </tr>`).join('');
+  document.getElementById('pagInfo').textContent = filtered.length > 0 ? `${start+1}–${end} de ${filtered.length}` : '0 resultados';
+  document.getElementById('btnPrev').disabled = page === 0;
+  document.getElementById('btnNext').disabled = end >= filtered.length;
+  document.getElementById('resultCount').textContent = `${filtered.length} envio${filtered.length !== 1 ? 's' : ''}`;
+}
+
+function applyFilters() {
+  const st = document.getElementById('fStatus').value;
+  const q  = document.getElementById('fBusca').value.toLowerCase();
+  filtered = DATA.filter(r => {
+    if (st && r.status !== st) return false;
+    if (q && !r.awb.includes(q) && !(r.destinatario||'').toLowerCase().includes(q) && !(r.destino||'').toLowerCase().includes(q)) return false;
+    return true;
+  });
+  page = 0;
+  renderTable();
+}
+
+function changePage(d) { page += d; renderTable(); }
+
+function renderCharts() {
+  const counts = { 'Entregue': 0, 'Saiu para Entrega': 0, 'Em andamento': 0 };
+  DATA.forEach(r => { if (counts[r.status] !== undefined) counts[r.status]++; });
+  const colors = ['#1a7a44', '#c47900', '#185FA5'];
+  const labels = Object.keys(counts);
+  const vals   = Object.values(counts);
+
+  document.getElementById('legendStatus').innerHTML = labels.map((l, i) =>
+    `<span><span class="legend-dot" style="background:${colors[i]}"></span>${l}: ${vals[i]}</span>`).join('');
+
+  if (chartStatus) chartStatus.destroy();
+  chartStatus = new Chart(document.getElementById('chartStatus'), {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data: vals, backgroundColor: colors, borderWidth: 0 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+  });
+
+  const meses = {};
+  DATA.forEach(r => {
+    if (!r.emissao) return;
+    const p = r.emissao.split('/');
+    if (p.length >= 2) { const k = `${p[1]}/${(p[2]||'').substring(0,4)}`; meses[k] = (meses[k]||0)+1; }
+  });
+  const mk = Object.keys(meses).sort();
+
+  if (chartMes) chartMes.destroy();
+  chartMes = new Chart(document.getElementById('chartMes'), {
+    type: 'bar',
+    data: { labels: mk, datasets: [{ label: 'Envios', data: mk.map(k => meses[k]), backgroundColor: '#378ADD', borderRadius: 4, borderWidth: 0 }] },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } },
+      scales: { x: { ticks: { font: { size: 11 }, autoSkip: false, maxRotation: 45 } }, y: { ticks: { font: { size: 11 } } } } }
+  });
+}
+
+function renderAll() {
+  filtered = [...DATA];
+  applyFilters();
+  renderCards();
+  renderCharts();
+}
+
+// ── API CALLS ─────────────────────────────────────────────────────────────────
+async function carregarDados() {
+  try {
+    document.getElementById('statusBar').textContent = 'Carregando dados...';
+    const res  = await fetch(`${API_URL}/api/envios`);
+    const json = await res.json();
+    if (json.success) {
+      DATA = json.envios;
+      renderAll();
+      document.getElementById('lastUpdate').textContent = `${json.total} envios · atualizado ${json.ultima_atualizacao}`;
+      document.getElementById('statusBar').textContent = '✓ Servidor online';
+    }
+  } catch (e) {
+    document.getElementById('statusBar').textContent = '⚠ Servidor offline';
+    document.getElementById('lastUpdate').textContent = 'Não foi possível conectar ao servidor';
+  }
+}
+
+async function atualizar() {
+  setBtnLoading(true);
+  document.getElementById('overlay').classList.add('active');
+  try {
+    const res  = await fetch(`${API_URL}/api/atualizar`, { method: 'POST' });
+    const json = await res.json();
+    if (json.success) {
+      DATA = json.envios;
+      renderAll();
+      document.getElementById('lastUpdate').textContent = `${json.total} envios · ${new Date().toLocaleString('pt-BR')}`;
+      showToast(`✓ ${json.mensagem}`, 'success');
+    } else {
+      showToast(`Erro: ${json.erro}`, 'error');
+    }
+  } catch (e) {
+    showToast('Não foi possível conectar ao servidor', 'error');
+  } finally {
+    setBtnLoading(false);
+    document.getElementById('overlay').classList.remove('active');
+  }
+}
+
+// ── INIT ─────────────────────────────────────────────────────────────────────
+carregarDados();
+</script>
+</body>
+</html>
