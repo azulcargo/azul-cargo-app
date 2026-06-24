@@ -279,6 +279,28 @@ def atualizar():
         print(f"[ERRO] {e}")
         return jsonify({'success': False, 'erro': str(e)}), 500
 
+@app.route('/api/update-data', methods=['POST'])
+def update_data():
+    """
+    Recebe dados atualizados de envios enviados pelo Claude (scheduled task).
+    Aceita JSON com lista de envios e salva em envios.json.
+    """
+    try:
+        payload = request.get_json()
+        if not payload or 'envios' not in payload:
+            return jsonify({'success': False, 'erro': 'Payload inválido'}), 400
+        envios = payload['envios']
+        salvar_envios(envios)
+        print(f"[update-data] {len(envios)} envios recebidos e salvos")
+        return jsonify({
+            'success': True,
+            'total': len(envios),
+            'mensagem': f'{len(envios)} envios salvos em {datetime.now().strftime("%d/%m/%Y %H:%M")}'
+        })
+    except Exception as e:
+        print(f"[update-data] Erro: {e}")
+        return jsonify({'success': False, 'erro': str(e)}), 500
+
 @app.route('/api/status', methods=['GET'])
 def status():
     """Health check"""
