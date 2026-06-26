@@ -139,6 +139,8 @@
         <th style="width:100px">Emissão</th>
         <th style="width:100px">Prev. entrega</th>
         <th style="width:65px">Frete</th>
+        <th style="width:90px">Valor Nota</th>
+        <th style="width:75px">Dias Úteis</th>
         <th style="width:90px">Status</th>
         <th style="width:90px">Atualizado</th>
       </tr></thead>
@@ -167,7 +169,7 @@
 <script>
 // ── CONFIGURAÇÃO ─────────────────────────────────────────────────────────────
 // Substitua pela URL do seu servidor no Railway após publicar
-const API_URL = 'https://SEU-PROJETO.up.railway.app';
+const API_URL = 'https://azul-cargo-app.onrender.com';
 
 // ── ESTADO ───────────────────────────────────────────────────────────────────
 const PER_PAGE = 20;
@@ -178,6 +180,32 @@ let chartStatus = null;
 let chartMes = null;
 
 // ── UTILITÁRIOS ──────────────────────────────────────────────────────────────
+function parseBR(str) {
+  if (!str || str === '—') return null;
+  const [d, m, y] = str.split('/');
+  if (!d || !m || !y) return null;
+  return new Date(+y, +m - 1, +d);
+}
+
+function diasUteis(emissao, dataEntrega) {
+  const inicio = parseBR(emissao);
+  const fim    = parseBR(dataEntrega);
+  if (!inicio) return '—';
+  // Se não entregue ainda, usa hoje como referência mas retorna '—'
+  if (!fim) return '—';
+  let count = 0;
+  const cur = new Date(inicio);
+  // Não conta o dia de emissão, começa no dia seguinte
+  cur.setDate(cur.getDate() + 1);
+  while (cur <= fim) {
+    const dow = cur.getDay();
+    if (dow !== 0 && dow !== 6) count++;
+    cur.setDate(cur.getDate() + 1);
+  }
+  const cor = count <= 3 ? '#1a7a44' : count <= 5 ? '#c47900' : '#a32d2d';
+  return `<span style="font-weight:600;color:${cor}">${count}d</span>`;
+}
+
 function badge(s) {
   if (s === 'Entregue')          return `<span class="badge entregue">Entregue</span>`;
   if (s === 'Saiu para Entrega') return `<span class="badge saiu">Saiu p/ entrega</span>`;
@@ -231,6 +259,8 @@ function renderTable() {
       <td>${r.emissao || '—'}</td>
       <td>${r.prev_entrega || '—'}</td>
       <td>${r.frete > 0 ? 'R$ ' + Number(r.frete).toFixed(2) : '—'}</td>
+      <td>${r.valor_produto > 0 ? 'R$ ' + Number(r.valor_produto).toFixed(2) : '—'}</td>
+      <td style="text-align:center">${r.dias_uteis != null ? r.dias_uteis : '—'}</td>
       <td>${badge(r.status)}</td>
       <td style="font-size:11px;color:#9da3b4">${r.ultima_atualizacao || '—'}</td>
     </tr>`).join('');
@@ -238,6 +268,12 @@ function renderTable() {
   document.getElementById('btnPrev').disabled = page === 0;
   document.getElementById('btnNext').disabled = end >= filtered.length;
   document.getElementById('resultCount').textContent = `${filtered.length} envio${filtered.length !== 1 ? 's' : ''}`;
+}
+
+function dateToSort(str) {
+  if (!str) return '';
+  const [d, m, y] = str.split('/');
+  return `${y||''}${m||''}${d||''}`;
 }
 
 function applyFilters() {
@@ -248,6 +284,8 @@ function applyFilters() {
     if (q && !r.awb.includes(q) && !(r.destinatario||'').toLowerCase().includes(q) && !(r.destino||'').toLowerCase().includes(q)) return false;
     return true;
   });
+  // Ordenar por emissão mais recente primeiro
+  filtered.sort((a, b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
   page = 0;
   renderTable();
 }
@@ -339,4 +377,4 @@ async function atualizar() {
 carregarDados();
 </script>
 </body>
-</html>
+<
