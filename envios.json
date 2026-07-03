@@ -2312,5 +2312,41 @@
     "status": "Em andamento",
     "ultima_atualizacao": "03/07/2026",
     "valor_produto": 1095.0
+  },
+  {
+    "awb": "57791139020",
+    "destinatario": "SUZANA ALVES FERREIRA",
+    "destino": "Itapecerica da Serra/SP",
+    "emissao": "03/07/2026",
+    "frete": 70.01,
+    "valor_produto": 644.89,
+    "status": "Em andamento",
+    "prev_entrega": null,
+    "data_entrega": null,
+    "dias_uteis": null
+  },
+  {
+    "awb": "57791165734",
+    "destinatario": "VITORIA KETTY CASSIMIRO GOMES",
+    "destino": "Maracanau/CE",
+    "emissao": "03/07/2026",
+    "frete": 32.86,
+    "valor_produto": 160.0,
+    "status": "Em andamento",
+    "prev_entrega": null,
+    "data_entrega": null,
+    "dias_uteis": null
+  },
+  {
+    "awb": "57791210792",
+    "destinatario": "DANIELA LASALVIA",
+    "destino": "Sao Paulo/SP",
+    "emissao": "03/07/2026",
+    "frete": 50.87,
+    "valor_produto": 1574.0,
+    "status": "Em andamento",
+    "prev_entrega": null,
+    "data_entrega": null,
+    "dias_uteis": null
   }
 ]
