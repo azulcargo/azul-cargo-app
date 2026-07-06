@@ -9,8 +9,10 @@ import os
 import time
 import re
 import base64
+import secrets
 import urllib.request
 import urllib.error
+from functools import wraps
 from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -23,7 +25,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 # ─── Configurações ────────────────────────────────────────────────────────────
 GMAIL_SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
@@ -35,13 +37,89 @@ CREDENTIALS_FILE = 'credentials.json'
 GITHUB_REPO = 'azulcargo/azul-cargo-app'
 GITHUB_FILE_PATH = 'envios.json'
 
+# ─── Autenticação ─────────────────────────────────────────────────────────────
+# Sessões ativas: {token: {"user": str, "expires": float}}
+SESSIONS = {}
+SESSION_HOURS = 8
+
+def get_users():
+    """
+    Carrega usuários da variável de ambiente AUTH_USERS (JSON).
+    Formato: {"usuario1": "senha1", "usuario2": "senha2"}
+    """
+    raw = os.environ.get('AUTH_USERS', '{}')
+    try:
+        users = json.loads(raw)
+        return {k.lower(): v for k, v in users.items()}
+    except Exception:
+        return {}
+
+def get_api_key():
+    """Chave para chamadas servidor-a-servidor (scripts internos)."""
+    return os.environ.get('API_KEY', '')
+
+def _check_auth():
+    """Verifica se a requisição tem autenticação válida."""
+    # 1. Bearer token de sessão (frontend)
+    auth = request.headers.get('Authorization', '')
+    if auth.startswith('Bearer '):
+        token = auth[7:].strip()
+        if token in SESSIONS:
+            if time.time() <= SESSIONS[token]['expires']:
+                return True
+            # Token expirado
+            del SESSIONS[token]
+
+    # 2. API Key (scripts internos)
+    api_key = get_api_key()
+    if api_key and request.headers.get('X-API-Key', '') == api_key:
+        return True
+
+    return False
+
+def require_auth(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        if not _check_auth():
+            return jsonify({'success': False, 'erro': 'Não autenticado'}), 401
+        return f(*args, **kwargs)
+    return decorated
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json() or {}
+    usuario = data.get('usuario', '').strip().lower()
+    senha   = data.get('senha', '')
+
+    users = get_users()
+    if not users:
+        return jsonify({'success': False, 'erro': 'Nenhum usuário configurado no servidor.'}), 503
+
+    if usuario not in users or users[usuario] != senha:
+        time.sleep(1)  # Dificulta força bruta
+        return jsonify({'success': False, 'erro': 'Usuário ou senha incorretos'}), 401
+
+    token = secrets.token_hex(32)
+    SESSIONS[token] = {
+        'user': usuario,
+        'expires': time.time() + (SESSION_HOURS * 3600)
+    }
+    print(f"[Auth] Login: {usuario}")
+    return jsonify({'success': True, 'token': token, 'usuario': usuario})
+
+@app.route('/api/logout', methods=['POST'])
+def logout():
+    auth = request.headers.get('Authorization', '')
+    if auth.startswith('Bearer '):
+        token = auth[7:].strip()
+        if token in SESSIONS:
+            user = SESSIONS[token].get('user', '?')
+            del SESSIONS[token]
+            print(f"[Auth] Logout: {user}")
+    return jsonify({'success': True})
+
 # ─── Persistência no GitHub ───────────────────────────────────────────────────
 def push_to_github(envios):
-    """
-    Salva envios.json no repositório GitHub via API.
-    Necessário: variável de ambiente GITHUB_TOKEN com um Personal Access Token
-    com permissão de escrita no repositório.
-    """
     token = os.environ.get('GITHUB_TOKEN', '')
     if not token:
         print("[GitHub] GITHUB_TOKEN não configurado — pulando push.")
@@ -55,13 +133,11 @@ def push_to_github(envios):
     }
 
     try:
-        # 1. Obter SHA atual do arquivo (necessário para atualização)
         req = urllib.request.Request(api_url, headers=headers)
         with urllib.request.urlopen(req, timeout=15) as resp:
             file_info = json.loads(resp.read())
         sha = file_info['sha']
 
-        # 2. Fazer PUT com o conteúdo atualizado
         content_b64 = base64.b64encode(
             json.dumps(envios, ensure_ascii=False, indent=2).encode('utf-8')
         ).decode('ascii')
@@ -90,12 +166,10 @@ def carregar_envios():
     return []
 
 def salvar_envios(envios):
-    """Salva no disco local. Use salvar_e_persistir para também gravar no GitHub."""
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         json.dump(envios, f, ensure_ascii=False, indent=2)
 
 def salvar_e_persistir(envios):
-    """Salva no disco local E faz push ao GitHub para persistência entre deploys."""
     salvar_envios(envios)
     push_to_github(envios)
 
@@ -149,8 +223,8 @@ def buscar_ctes_novos(envios_existentes):
                 if filename.endswith('.xml') or filename.endswith('-cte-proc.xml'):
                     awb = extrair_awb_da_chave(filename)
                     if awb and awb not in awbs_atuais:
-                        headers = {h['name']: h['value'] for h in msg['payload'].get('headers', [])}
-                        data_email = headers.get('Date', '')
+                        headers_msg = {h['name']: h['value'] for h in msg['payload'].get('headers', [])}
+                        data_email = headers_msg.get('Date', '')
                         novos_awbs.append({
                             'awb': awb,
                             'filename': filename,
@@ -235,6 +309,7 @@ def rastrear_awbs(awbs):
 
 # ─── Rotas da API ─────────────────────────────────────────────────────────────
 @app.route('/api/envios', methods=['GET'])
+@require_auth
 def get_envios():
     envios = carregar_envios()
     return jsonify({
@@ -245,6 +320,7 @@ def get_envios():
     })
 
 @app.route('/api/atualizar', methods=['POST'])
+@require_auth
 def atualizar():
     try:
         print("\n=== INÍCIO DA ATUALIZAÇÃO ===")
@@ -277,7 +353,6 @@ def atualizar():
                 envio['ultima_atualizacao'] = r['ultima_atualizacao']
                 if r.get('prev_entrega') and not envio.get('prev_entrega'):
                     envio['prev_entrega'] = r['prev_entrega']
-                    # Calcular dias_uteis ao atribuir prev_entrega
                     try:
                         d_em = datetime.strptime(envio.get('emissao', ''), '%d/%m/%Y')
                         d_pr = datetime.strptime(r['prev_entrega'], '%d/%m/%Y')
@@ -304,16 +379,14 @@ def atualizar():
         return jsonify({'success': False, 'erro': str(e)}), 500
 
 @app.route('/api/update-data', methods=['POST'])
+@require_auth
 def update_data():
-    """
-    Recebe dados enviados pelo Claude e salva no disco + GitHub.
-    """
     try:
         payload = request.get_json()
         if not payload or 'envios' not in payload:
             return jsonify({'success': False, 'erro': 'Payload inválido'}), 400
         envios = payload['envios']
-        salvar_e_persistir(envios)   # ← salva no disco E no GitHub
+        salvar_e_persistir(envios)
         print(f"[update-data] {len(envios)} envios salvos")
         return jsonify({
             'success': True,
