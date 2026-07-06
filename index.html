@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Azul Cargo — Acompanhamento de Envios</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -80,6 +81,15 @@
   .toast { position:fixed; bottom:24px; right:24px; padding:12px 20px; border-radius:var(--radius); font-size:13px; font-weight:500; color:white; display:none; z-index:200; }
   .toast.success { background:#1a7a44; }
   .toast.error   { background:#a32d2d; }
+  .filter-label { font-size:12px; color:var(--text2); white-space:nowrap; }
+  .table-toolbar input[type="date"] { width:140px; }
+  .btn-export {
+    display:flex; align-items:center; gap:6px; padding:7px 14px;
+    background:#1a7a44; color:white; border:none; border-radius:var(--radius-sm);
+    font-size:13px; font-weight:600; cursor:pointer; transition:background .15s; white-space:nowrap;
+  }
+  .btn-export:hover { background:#155e35; }
+  .btn-export svg { width:15px; height:15px; fill:white; }
 </style>
 </head>
 <body>
@@ -129,6 +139,14 @@
         <option value="Atrasado">Atrasado</option>
       </select>
       <input id="fBusca" placeholder="Buscar AWB, destinatário, cidade…" oninput="applyFilters()">
+      <span class="filter-label">De:</span>
+      <input type="date" id="fDataDe" onchange="applyFilters()" title="Data de emissão inicial">
+      <span class="filter-label">Até:</span>
+      <input type="date" id="fDataAte" onchange="applyFilters()" title="Data de emissão final">
+      <button class="btn-export" onclick="exportExcel()" title="Exportar dados filtrados para Excel">
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5z"/></svg>
+        Exportar Excel
+      </button>
       <span class="result-count" id="resultCount"></span>
     </div>
     <table>
@@ -276,18 +294,72 @@ function dateToSort(str) {
   return `${y||''}${m||''}${d||''}`;
 }
 
+function brToISO(str) {
+  // Converte DD/MM/YYYY → YYYY-MM-DD para comparação com input[type=date]
+  if (!str || str === '—') return '';
+  const [d, m, y] = str.split('/');
+  if (!d || !m || !y) return '';
+  return `${y}-${m.padStart(2,'0')}-${d.padStart(2,'0')}`;
+}
+
 function applyFilters() {
-  const st = document.getElementById('fStatus').value;
-  const q  = document.getElementById('fBusca').value.toLowerCase();
+  const st     = document.getElementById('fStatus').value;
+  const q      = document.getElementById('fBusca').value.toLowerCase();
+  const dataDe = document.getElementById('fDataDe').value;   // YYYY-MM-DD ou ''
+  const dataAte= document.getElementById('fDataAte').value;  // YYYY-MM-DD ou ''
+
   filtered = DATA.filter(r => {
     if (st && r.status !== st) return false;
     if (q && !r.awb.includes(q) && !(r.destinatario||'').toLowerCase().includes(q) && !(r.destino||'').toLowerCase().includes(q)) return false;
+    const emISO = brToISO(r.emissao);
+    if (dataDe  && emISO && emISO < dataDe)  return false;
+    if (dataAte && emISO && emISO > dataAte) return false;
     return true;
   });
   // Ordenar por emissão mais recente primeiro
   filtered.sort((a, b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
   page = 0;
   renderTable();
+}
+
+function exportExcel() {
+  if (!filtered.length) { showToast('Nenhum dado para exportar', 'error'); return; }
+
+  const rows = filtered.map(r => ({
+    'AWB':             r.awb || '',
+    'Destinatário':    r.destinatario || '',
+    'Destino':         r.destino || '',
+    'Emissão':         r.emissao || '',
+    'Prev. Entrega':   r.prev_entrega || '',
+    'Data Entrega':    r.data_entrega || '',
+    'Frete (R$)':      r.frete > 0 ? Number(r.frete) : '',
+    'Valor Nota (R$)': r.valor_produto > 0 ? Number(r.valor_produto) : '',
+    'Dias Úteis':      r.dias_uteis != null ? r.dias_uteis : '',
+    'Status':          r.status || '',
+    'Atualizado':      r.ultima_atualizacao || '',
+  }));
+
+  const ws = XLSX.utils.json_to_sheet(rows);
+
+  // Larguras das colunas
+  ws['!cols'] = [
+    {wch:14},{wch:28},{wch:22},{wch:12},{wch:14},{wch:14},
+    {wch:12},{wch:14},{wch:10},{wch:18},{wch:18}
+  ];
+
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Envios');
+
+  // Nome do arquivo com datas dos filtros
+  const de  = document.getElementById('fDataDe').value;
+  const ate = document.getElementById('fDataAte').value;
+  const sufixo = de || ate
+    ? `_${(de||'').replace(/-/g,'') || 'inicio'}_a_${(ate||'').replace(/-/g,'') || 'hoje'}`
+    : `_todos_${new Date().toISOString().slice(0,10).replace(/-/g,'')}`;
+  const nome = `AzulCargo${sufixo}.xlsx`;
+
+  XLSX.writeFile(wb, nome);
+  showToast(`✓ Exportado: ${filtered.length} registros`, 'success');
 }
 
 function changePage(d) { page += d; renderTable(); }
@@ -377,4 +449,4 @@ async function atualizar() {
 carregarDados();
 </script>
 </body>
-<
+</html>
