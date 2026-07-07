@@ -69,6 +69,11 @@
   .badge.saiu      { background:var(--yellow-bg); color:var(--yellow); }
   .badge.andamento { background:var(--blue-bg);   color:var(--blue); }
   .badge.atrasado  { background:var(--red-bg);    color:var(--red); }
+  .badge.cancelado  { background:#f0f1f5;        color:#6b7080; }
+  .btn-acao { display:inline-flex; align-items:center; gap:3px; padding:3px 8px; border-radius:5px; font-size:11px; font-weight:600; cursor:pointer; border:1px solid; transition:all .15s; }
+  .btn-acao.entregar { background:var(--green-bg); color:var(--green); border-color:var(--green); }
+  .btn-acao.cancelar { background:#f0f1f5; color:#6b7080; border-color:#d1d5db; }
+  .btn-acao:hover { opacity:.8; }
   .pagination { display:flex; align-items:center; justify-content:center; gap:8px; padding:12px; border-top:1px solid var(--border); font-size:13px; color:var(--text2); }
   .pagination button { padding:5px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface); color:var(--text); font-size:12px; cursor:pointer; }
   .pagination button:disabled { opacity:.4; cursor:not-allowed; }
@@ -200,6 +205,7 @@
         <option value="Entregue">Entregue</option>
         <option value="Saiu para Entrega">Saiu para entrega</option>
         <option value="Em andamento">Em andamento</option>
+        <option value="Cancelado">Cancelado</option>
         <option value="Atrasado">Atrasado</option>
       </select>
       <input id="fBusca" placeholder="Buscar AWB, destinatário, cidade…" oninput="applyFilters()">
@@ -225,6 +231,7 @@
         <th style="width:75px">Dias Úteis</th>
         <th style="width:90px">Status</th>
         <th style="width:90px">Atualizado</th>
+        <th style="width:100px">Ação</th>
       </tr></thead>
       <tbody id="tbody"></tbody>
     </table>
@@ -359,6 +366,7 @@ function badge(s) {
   if (s === 'Entregue')          return `<span class="badge entregue">Entregue</span>`;
   if (s === 'Saiu para Entrega') return `<span class="badge saiu">Saiu p/ entrega</span>`;
   if (s === 'Atrasado')          return `<span class="badge atrasado">Atrasado</span>`;
+  if (s === 'Cancelado')         return `<span class="badge cancelado">Cancelado</span>`;
   return `<span class="badge andamento">Em andamento</span>`;
 }
 
@@ -412,6 +420,10 @@ function renderTable() {
       <td style="text-align:center">${r.dias_uteis != null ? r.dias_uteis : '—'}</td>
       <td>${badge(r.status)}</td>
       <td style="font-size:11px;color:#9da3b4">${r.ultima_atualizacao || '—'}</td>
+      <td style="white-space:normal">
+        ${r.status !== 'Entregue'   ? `<button class="btn-acao entregar" onclick="setStatus('${r.awb}','Entregue')">✓ Entregue</button>` : ''}
+        ${r.status !== 'Cancelado'  ? `<button class="btn-acao cancelar" onclick="setStatus('${r.awb}','Cancelado')">✕ Cancelar</button>` : ''}
+      </td>
     </tr>`).join('');
   document.getElementById('pagInfo').textContent = filtered.length > 0 ? `${start+1}–${end} de ${filtered.length}` : '0 resultados';
   document.getElementById('btnPrev').disabled = page === 0;
@@ -520,6 +532,28 @@ async function atualizar() {
     setBtnLoading(false);
     document.getElementById('overlay').classList.remove('active');
   }
+}
+
+
+async function setStatus(awb, novoStatus) {
+  const idx = DATA.findIndex(r => r.awb === awb);
+  if (idx === -1) return;
+  const hoje = new Date().toLocaleDateString('pt-BR');
+  DATA[idx].status = novoStatus;
+  DATA[idx].ultima_atualizacao = hoje;
+  if (novoStatus === 'Entregue' && !DATA[idx].data_entrega) DATA[idx].data_entrega = hoje;
+  filtered = [...DATA].sort((a,b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
+  renderCards();
+  renderTable();
+  showToast(`${awb} marcado como ${novoStatus}`);
+  try {
+    const res = await fetch(`${API_URL}/api/update-data`, {
+      method: 'POST', headers: authHeaders(),
+      body: JSON.stringify({ envios: DATA })
+    });
+    if (res.status === 401) { doLogout(); return; }
+    if (!(await res.json()).success) showToast('Erro ao salvar.', 'error');
+  } catch(e) { showToast('Erro de conexão.', 'error'); }
 }
 
 function renderCharts() {
