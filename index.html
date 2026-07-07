@@ -426,4 +426,6 @@ function dateToSort(str) {
 }
 
 function brToISO(str) {
-  // Converte DD/MM/YYYY → YYYY-MM-DD para comparação com in
+  if (!str) return '';
+  const [d, m, y] = str.split('/');
+  if 
