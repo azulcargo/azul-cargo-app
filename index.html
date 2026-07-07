@@ -53,7 +53,7 @@
   .legend { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; font-size:12px; color:var(--text2); }
   .legend span { display:flex; align-items:center; gap:5px; }
   .legend-dot { width:10px; height:10px; border-radius:2px; flex-shrink:0; }
-  .table-section { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+  .table-section { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); }
   .table-toolbar { display:flex; align-items:center; gap:10px; padding:12px 16px; border-bottom:1px solid var(--border); flex-wrap:wrap; }
   .table-toolbar select,.table-toolbar input { padding:7px 10px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg); color:var(--text); font-size:13px; outline:none; }
   .table-toolbar input { width:220px; }
@@ -73,7 +73,7 @@
   .btn-acao-wrap { position:relative; display:inline-block; }
   .btn-acao-toggle { padding:3px 10px; border-radius:5px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--surface); color:var(--text2); transition:all .15s; }
   .btn-acao-toggle:hover { background:var(--surface2); }
-  .btn-acao-menu { display:none; position:absolute; right:0; top:calc(100% + 4px); background:white; border:1px solid var(--border); border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,.12); z-index:50; min-width:130px; overflow:hidden; }
+  .btn-acao-menu { display:none; position:fixed; background:white; border:1px solid var(--border); border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,.12); z-index:999; min-width:140px; overflow:hidden; }
   .btn-acao-menu.open { display:block; }
   .btn-acao-item { display:flex; align-items:center; gap:7px; padding:9px 14px; font-size:12px; font-weight:600; cursor:pointer; transition:background .1s; border:none; background:none; width:100%; text-align:left; }
   .btn-acao-item:hover { background:var(--surface2); }
@@ -235,8 +235,7 @@
         <th style="width:90px">Valor Nota</th>
         <th style="width:75px">Dias Úteis</th>
         <th style="width:90px">Status</th>
-        <th style="width:90px">Atualizado</th>
-        <th style="width:100px">Ação</th>
+        <th style="width:110px">Ação</th>
       </tr></thead>
       <tbody id="tbody"></tbody>
     </table>
@@ -424,7 +423,6 @@ function renderTable() {
       <td>${r.valor_produto > 0 ? 'R$ ' + Number(r.valor_produto).toFixed(2) : '—'}</td>
       <td style="text-align:center">${r.dias_uteis != null ? r.dias_uteis : '—'}</td>
       <td>${badge(r.status)}</td>
-      <td style="font-size:11px;color:#9da3b4">${r.ultima_atualizacao || '—'}</td>
       <td>
         <div class="btn-acao-wrap">
           <button class="btn-acao-toggle" onclick="toggleMenu(this)">⋯ Alterar</button>
@@ -550,7 +548,12 @@ function toggleMenu(btn) {
   const menu = btn.nextElementSibling;
   const isOpen = menu.classList.contains('open');
   closeMenus();
-  if (!isOpen) menu.classList.add('open');
+  if (!isOpen) {
+    const rect = btn.getBoundingClientRect();
+    menu.style.top  = (rect.bottom + 4) + 'px';
+    menu.style.left = (rect.left - 80) + 'px';
+    menu.classList.add('open');
+  }
 }
 function closeMenus() {
   document.querySelectorAll('.btn-acao-menu.open').forEach(m => m.classList.remove('open'));
