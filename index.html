@@ -449,6 +449,7 @@ function applyFilters() {
     if (ate && emISO && emISO > ate) return false;
     return true;
   });
+  filtered.sort((a,b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
   page = 0;
   renderTable();
 }
@@ -483,7 +484,7 @@ async function carregarDados() {
     if (res.status === 401) { doLogout(); return; }
     const json = await res.json();
     DATA     = Array.isArray(json) ? json : (json.envios || []);
-    filtered = [...DATA];
+    filtered = [...DATA].sort((a,b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
     renderCards();
     renderCharts();
     renderTable();
@@ -503,7 +504,7 @@ async function atualizar() {
     const json = await res.json();
     if (json.success) {
       DATA     = json.envios || DATA;
-      filtered = [...DATA];
+      filtered = [...DATA].sort((a,b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
       renderCards();
       renderCharts();
       renderTable();
