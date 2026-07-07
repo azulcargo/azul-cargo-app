@@ -112,7 +112,7 @@
     "emissao": "15/05/2026",
     "frete": 30.33,
     "prev_entrega": "20/05/2026",
-    "status": "Em andamento",
+    "status": "Cancelado",
     "ultima_atualizacao": "07/07/2026",
     "valor_produto": 414
   },
@@ -2467,7 +2467,7 @@
     "prev_entrega": "09/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "07/07/2026",
-    "valor_produto": 1066.0
+    "valor_produto": 1066
   },
   {
     "awb": "57726282620",
@@ -2480,7 +2480,7 @@
     "prev_entrega": "09/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "07/07/2026",
-    "valor_produto": 52.0
+    "valor_produto": 52
   },
   {
     "awb": "57726301402",
@@ -2493,7 +2493,7 @@
     "prev_entrega": "10/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "07/07/2026",
-    "valor_produto": 235.0
+    "valor_produto": 235
   },
   {
     "awb": "57726365544",
@@ -2519,7 +2519,7 @@
     "prev_entrega": "10/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "07/07/2026",
-    "valor_produto": 240.0
+    "valor_produto": 240
   },
   {
     "awb": "57726471664",
