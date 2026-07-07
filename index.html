@@ -70,10 +70,15 @@
   .badge.andamento { background:var(--blue-bg);   color:var(--blue); }
   .badge.atrasado  { background:var(--red-bg);    color:var(--red); }
   .badge.cancelado  { background:#f0f1f5;        color:#6b7080; }
-  .btn-acao { display:inline-flex; align-items:center; gap:3px; padding:3px 8px; border-radius:5px; font-size:11px; font-weight:600; cursor:pointer; border:1px solid; transition:all .15s; }
-  .btn-acao.entregar { background:var(--green-bg); color:var(--green); border-color:var(--green); }
-  .btn-acao.cancelar { background:#f0f1f5; color:#6b7080; border-color:#d1d5db; }
-  .btn-acao:hover { opacity:.8; }
+  .btn-acao-wrap { position:relative; display:inline-block; }
+  .btn-acao-toggle { padding:3px 10px; border-radius:5px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid var(--border); background:var(--surface); color:var(--text2); transition:all .15s; }
+  .btn-acao-toggle:hover { background:var(--surface2); }
+  .btn-acao-menu { display:none; position:absolute; right:0; top:calc(100% + 4px); background:white; border:1px solid var(--border); border-radius:8px; box-shadow:0 4px 16px rgba(0,0,0,.12); z-index:50; min-width:130px; overflow:hidden; }
+  .btn-acao-menu.open { display:block; }
+  .btn-acao-item { display:flex; align-items:center; gap:7px; padding:9px 14px; font-size:12px; font-weight:600; cursor:pointer; transition:background .1s; border:none; background:none; width:100%; text-align:left; }
+  .btn-acao-item:hover { background:var(--surface2); }
+  .btn-acao-item.entregar { color:var(--green); }
+  .btn-acao-item.cancelar { color:#6b7080; }
   .pagination { display:flex; align-items:center; justify-content:center; gap:8px; padding:12px; border-top:1px solid var(--border); font-size:13px; color:var(--text2); }
   .pagination button { padding:5px 12px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface); color:var(--text); font-size:12px; cursor:pointer; }
   .pagination button:disabled { opacity:.4; cursor:not-allowed; }
@@ -420,9 +425,15 @@ function renderTable() {
       <td style="text-align:center">${r.dias_uteis != null ? r.dias_uteis : '—'}</td>
       <td>${badge(r.status)}</td>
       <td style="font-size:11px;color:#9da3b4">${r.ultima_atualizacao || '—'}</td>
-      <td style="white-space:normal">
-        ${r.status !== 'Entregue'   ? `<button class="btn-acao entregar" onclick="setStatus('${r.awb}','Entregue')">✓ Entregue</button>` : ''}
-        ${r.status !== 'Cancelado'  ? `<button class="btn-acao cancelar" onclick="setStatus('${r.awb}','Cancelado')">✕ Cancelar</button>` : ''}
+      <td>
+        <div class="btn-acao-wrap">
+          <button class="btn-acao-toggle" onclick="toggleMenu(this)">⋯ Alterar</button>
+          <div class="btn-acao-menu">
+            ${r.status !== 'Entregue'  ? `<button class="btn-acao-item entregar" onclick="setStatus('${r.awb}','Entregue');closeMenus()">✓ Entregue</button>` : ''}
+            ${r.status !== 'Cancelado' ? `<button class="btn-acao-item cancelar" onclick="setStatus('${r.awb}','Cancelado');closeMenus()">✕ Cancelado</button>` : ''}
+            ${r.status !== 'Em andamento' ? `<button class="btn-acao-item" style="color:var(--blue)" onclick="setStatus('${r.awb}','Em andamento');closeMenus()">↺ Em andamento</button>` : ''}
+          </div>
+        </div>
       </td>
     </tr>`).join('');
   document.getElementById('pagInfo').textContent = filtered.length > 0 ? `${start+1}–${end} de ${filtered.length}` : '0 resultados';
@@ -534,6 +545,19 @@ async function atualizar() {
   }
 }
 
+
+function toggleMenu(btn) {
+  const menu = btn.nextElementSibling;
+  const isOpen = menu.classList.contains('open');
+  closeMenus();
+  if (!isOpen) menu.classList.add('open');
+}
+function closeMenus() {
+  document.querySelectorAll('.btn-acao-menu.open').forEach(m => m.classList.remove('open'));
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.btn-acao-wrap')) closeMenus();
+});
 
 async function setStatus(awb, novoStatus) {
   const idx = DATA.findIndex(r => r.awb === awb);
