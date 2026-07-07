@@ -2455,5 +2455,83 @@
     "status": "Entregue",
     "ultima_atualizacao": "07/07/2026",
     "valor_produto": 90
+  },
+  {
+    "awb": "57726250593",
+    "data_entrega": "",
+    "destinatario": "ANA VLADIA GADELHA MOTA",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 3,
+    "emissao": "06/07/2026",
+    "frete": 37.23,
+    "prev_entrega": "09/07/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "07/07/2026",
+    "valor_produto": 1066.0
+  },
+  {
+    "awb": "57726282620",
+    "data_entrega": "",
+    "destinatario": "LUIZ EDUARDO TELES DE OLIVEIRA",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 3,
+    "emissao": "06/07/2026",
+    "frete": 42.61,
+    "prev_entrega": "09/07/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "07/07/2026",
+    "valor_produto": 52.0
+  },
+  {
+    "awb": "57726301402",
+    "data_entrega": "",
+    "destinatario": "AYRTON GOES DE MAGALHAES",
+    "destino": "Santana/AP",
+    "dias_uteis": 4,
+    "emissao": "06/07/2026",
+    "frete": 66.67,
+    "prev_entrega": "10/07/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "07/07/2026",
+    "valor_produto": 235.0
+  },
+  {
+    "awb": "57726365544",
+    "data_entrega": "",
+    "destinatario": "LUIS CARLOS CIOFFI BALTRAMAVICIUS",
+    "destino": "Sao Paulo/SP",
+    "dias_uteis": 3,
+    "emissao": "06/07/2026",
+    "frete": 40.93,
+    "prev_entrega": "09/07/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "07/07/2026",
+    "valor_produto": 322.51
+  },
+  {
+    "awb": "57726458003",
+    "data_entrega": "",
+    "destinatario": "BRUNA LUIZA PRAXEDES RODRIGUES",
+    "destino": "Goiania/GO",
+    "dias_uteis": 4,
+    "emissao": "06/07/2026",
+    "frete": 32.31,
+    "prev_entrega": "10/07/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "07/07/2026",
+    "valor_produto": 240.0
+  },
+  {
+    "awb": "57726471664",
+    "data_entrega": "",
+    "destinatario": "VANDERLANGE DE SOUSA GOMES",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 3,
+    "emissao": "06/07/2026",
+    "frete": 33.81,
+    "prev_entrega": "09/07/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "07/07/2026",
+    "valor_produto": 941.5
   }
 ]
