@@ -428,4 +428,148 @@ function dateToSort(str) {
 function brToISO(str) {
   if (!str) return '';
   const [d, m, y] = str.split('/');
-  if 
+  if (!d || !m || !y) return '';
+  return `${y}-${m.padStart(2,'0')}-${d.padStart(2,'0')}`;
+}
+
+function applyFilters() {
+  const status = document.getElementById('fStatus').value;
+  const busca  = document.getElementById('fBusca').value.toLowerCase();
+  const de     = document.getElementById('fDataDe').value;
+  const ate    = document.getElementById('fDataAte').value;
+  filtered = DATA.filter(r => {
+    if (status && r.status !== status) return false;
+    if (busca && !(
+      (r.awb||'').includes(busca) ||
+      (r.destinatario||'').toLowerCase().includes(busca) ||
+      (r.destino||'').toLowerCase().includes(busca)
+    )) return false;
+    const emISO = brToISO(r.emissao);
+    if (de  && emISO && emISO < de)  return false;
+    if (ate && emISO && emISO > ate) return false;
+    return true;
+  });
+  page = 0;
+  renderTable();
+}
+
+function exportExcel() {
+  if (!filtered.length) { showToast('Sem dados para exportar.', 'error'); return; }
+  const rows = filtered.map(r => ({
+    'AWB':                r.awb,
+    'Destinatário':       r.destinatario,
+    'Destino':            r.destino,
+    'Emissão':            r.emissao,
+    'Prev. Entrega':      r.prev_entrega,
+    'Data Entrega':       r.data_entrega,
+    'Frete (R$)':         r.frete,
+    'Valor Produto (R$)': r.valor_produto,
+    'Dias Úteis':         r.dias_uteis,
+    'Status':             r.status,
+    'Última Atualiz.':    r.ultima_atualizacao,
+  }));
+  const ws = XLSX.utils.json_to_sheet(rows);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Envios');
+  const hoje = new Date().toISOString().slice(0,10);
+  XLSX.writeFile(wb, `azul-cargo-${hoje}.xlsx`);
+  showToast('Excel exportado!');
+}
+
+async function carregarDados() {
+  document.getElementById('statusBar').textContent = 'Carregando dados...';
+  try {
+    const res  = await fetch(`${API_URL}/api/envios`, { headers: authHeaders() });
+    if (res.status === 401) { doLogout(); return; }
+    const json = await res.json();
+    DATA     = Array.isArray(json) ? json : (json.envios || []);
+    filtered = [...DATA];
+    renderCards();
+    renderCharts();
+    renderTable();
+    document.getElementById('statusBar').textContent =
+      `${DATA.length} envios · ${new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}`;
+  } catch(e) {
+    document.getElementById('statusBar').textContent = 'Erro ao carregar dados.';
+  }
+}
+
+async function atualizar() {
+  setBtnLoading(true);
+  document.getElementById('overlay').classList.add('active');
+  try {
+    const res  = await fetch(`${API_URL}/api/atualizar`, { method: 'POST', headers: authHeaders() });
+    if (res.status === 401) { doLogout(); return; }
+    const json = await res.json();
+    if (json.success) {
+      DATA     = json.envios || DATA;
+      filtered = [...DATA];
+      renderCards();
+      renderCharts();
+      renderTable();
+      showToast(json.mensagem || 'Atualizado com sucesso!');
+      document.getElementById('statusBar').textContent =
+        `${DATA.length} envios · ${new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}`;
+    } else {
+      showToast(json.erro || 'Erro ao atualizar.', 'error');
+    }
+  } catch(e) {
+    showToast('Erro de conexão.', 'error');
+  } finally {
+    setBtnLoading(false);
+    document.getElementById('overlay').classList.remove('active');
+  }
+}
+
+function renderCharts() {
+  const entregue = DATA.filter(r => r.status === 'Entregue').length;
+  const saiu     = DATA.filter(r => r.status === 'Saiu para Entrega').length;
+  const andamento= DATA.filter(r => !['Entregue','Saiu para Entrega'].includes(r.status)).length;
+  const ctxS = document.getElementById('chartStatus');
+  if (ctxS) {
+    if (chartStatus) chartStatus.destroy();
+    chartStatus = new Chart(ctxS, {
+      type: 'doughnut',
+      data: {
+        labels: ['Entregue','Saiu p/ Entrega','Em andamento'],
+        datasets: [{ data: [entregue, saiu, andamento],
+          backgroundColor: ['#1a7a44','#c47900','#185FA5'], borderWidth: 0 }]
+      },
+      options: { plugins: { legend: { display: false } }, cutout: '70%' }
+    });
+  }
+  const porMes = {};
+  DATA.forEach(r => {
+    if (!r.emissao) return;
+    const [, m, y] = r.emissao.split('/');
+    if (!m || !y) return;
+    const k = `${y}-${m}`;
+    porMes[k] = (porMes[k] || 0) + 1;
+  });
+  const meses  = Object.keys(porMes).sort().slice(-6);
+  const labels = meses.map(k => {
+    const [y, m] = k.split('-');
+    return ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'][+m-1] + '/' + y.slice(2);
+  });
+  const ctxM = document.getElementById('chartMes');
+  if (ctxM) {
+    if (chartMes) chartMes.destroy();
+    chartMes = new Chart(ctxM, {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{ label: 'Envios', data: meses.map(k => porMes[k]),
+          backgroundColor: '#185FA5', borderRadius: 4 }]
+      },
+      options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
+    });
+  }
+}
+
+document.getElementById('btnPrev').addEventListener('click', () => { if (page > 0) { page--; renderTable(); } });
+document.getElementById('btnNext').addEventListener('click', () => { if ((page+1)*PER_PAGE < filtered.length) { page++; renderTable(); } });
+
+if (getToken()) { showDashboard(); } else { showLogin(); }
+</script>
+</body>
+</html>
