@@ -2471,14 +2471,14 @@
   },
   {
     "awb": "57756153156",
-    "data_entrega": "",
+    "data_entrega": "10/07/2026",
     "destinatario": "DANIELLY DO NASCIMENTO SARAIVA",
     "destino": "Eusebio - CE",
     "dias_uteis": 6,
     "emissao": "08/07/2026",
     "frete": 58.77,
     "prev_entrega": "14/07/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "ultima_atualizacao": "10/07/2026 07:39",
     "valor_produto": 300
   },
@@ -2491,7 +2491,7 @@
     "emissao": "08/07/2026",
     "frete": 90.29,
     "prev_entrega": "15/07/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "ultima_atualizacao": "10/07/2026 07:39",
     "valor_produto": 1600
   },
