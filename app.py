@@ -38,15 +38,10 @@ GITHUB_REPO = 'azulcargo/azul-cargo-app'
 GITHUB_FILE_PATH = 'envios.json'
 
 # ─── Autenticação ─────────────────────────────────────────────────────────────
-# Sessões ativas: {token: {"user": str, "expires": float}}
 SESSIONS = {}
 SESSION_HOURS = 8
 
 def get_users():
-    """
-    Carrega usuários da variável de ambiente AUTH_USERS (JSON).
-    Formato: {"usuario1": "senha1", "usuario2": "senha2"}
-    """
     raw = os.environ.get('AUTH_USERS', '{}')
     try:
         users = json.loads(raw)
@@ -55,26 +50,19 @@ def get_users():
         return {}
 
 def get_api_key():
-    """Chave para chamadas servidor-a-servidor (scripts internos)."""
     return os.environ.get('API_KEY', '')
 
 def _check_auth():
-    """Verifica se a requisição tem autenticação válida."""
-    # 1. Bearer token de sessão (frontend)
     auth = request.headers.get('Authorization', '')
     if auth.startswith('Bearer '):
         token = auth[7:].strip()
         if token in SESSIONS:
             if time.time() <= SESSIONS[token]['expires']:
                 return True
-            # Token expirado
             del SESSIONS[token]
-
-    # 2. API Key (scripts internos)
     api_key = get_api_key()
     if api_key and request.headers.get('X-API-Key', '') == api_key:
         return True
-
     return False
 
 def require_auth(f):
@@ -90,20 +78,14 @@ def login():
     data = request.get_json() or {}
     usuario = data.get('usuario', '').strip().lower()
     senha   = data.get('senha', '')
-
     users = get_users()
     if not users:
         return jsonify({'success': False, 'erro': 'Nenhum usuário configurado no servidor.'}), 503
-
     if usuario not in users or users[usuario] != senha:
-        time.sleep(1)  # Dificulta força bruta
+        time.sleep(1)
         return jsonify({'success': False, 'erro': 'Usuário ou senha incorretos'}), 401
-
     token = secrets.token_hex(32)
-    SESSIONS[token] = {
-        'user': usuario,
-        'expires': time.time() + (SESSION_HOURS * 3600)
-    }
+    SESSIONS[token] = {'user': usuario, 'expires': time.time() + (SESSION_HOURS * 3600)}
     print(f"[Auth] Login: {usuario}")
     return jsonify({'success': True, 'token': token, 'usuario': usuario})
 
@@ -124,36 +106,30 @@ def push_to_github(envios):
     if not token:
         print("[GitHub] GITHUB_TOKEN não configurado — pulando push.")
         return False
-
     api_url = f'https://api.github.com/repos/{GITHUB_REPO}/contents/{GITHUB_FILE_PATH}'
     headers = {
         'Authorization': f'token {token}',
         'Accept': 'application/vnd.github.v3+json',
         'Content-Type': 'application/json',
     }
-
     try:
         req = urllib.request.Request(api_url, headers=headers)
         with urllib.request.urlopen(req, timeout=15) as resp:
             file_info = json.loads(resp.read())
         sha = file_info['sha']
-
         content_b64 = base64.b64encode(
             json.dumps(envios, ensure_ascii=False, indent=2).encode('utf-8')
         ).decode('ascii')
-
         payload = json.dumps({
             'message': f'[skip ci] Auto-update envios.json {datetime.now().strftime("%d/%m/%Y %H:%M")}',
             'content': content_b64,
             'sha': sha,
         }).encode('utf-8')
-
         req = urllib.request.Request(api_url, data=payload, method='PUT', headers=headers)
         with urllib.request.urlopen(req, timeout=15) as resp:
             result = json.loads(resp.read())
             print(f"[GitHub] Push OK — commit {result['commit']['sha'][:7]}")
             return True
-
     except Exception as e:
         print(f"[GitHub] Erro no push: {e}")
         return False
@@ -208,15 +184,11 @@ def buscar_ctes_novos(envios_existentes):
         service = get_gmail_service()
         awbs_atuais = {e['awb'] for e in envios_existentes}
         novos_awbs = []
-
         query = f'from:{CTE_REMETENTE}'
         results = service.users().messages().list(userId='me', q=query, maxResults=100).execute()
         msgs = results.get('messages', [])
-
         for msg_ref in msgs:
-            msg = service.users().messages().get(
-                userId='me', id=msg_ref['id'], format='full'
-            ).execute()
+            msg = service.users().messages().get(userId='me', id=msg_ref['id'], format='full').execute()
             parts = msg.get('payload', {}).get('parts', [])
             for part in parts:
                 filename = part.get('filename', '')
@@ -225,16 +197,10 @@ def buscar_ctes_novos(envios_existentes):
                     if awb and awb not in awbs_atuais:
                         headers_msg = {h['name']: h['value'] for h in msg['payload'].get('headers', [])}
                         data_email = headers_msg.get('Date', '')
-                        novos_awbs.append({
-                            'awb': awb,
-                            'filename': filename,
-                            'data_email': data_email,
-                        })
+                        novos_awbs.append({'awb': awb, 'filename': filename, 'data_email': data_email})
                         awbs_atuais.add(awb)
-
         print(f"[Gmail] {len(novos_awbs)} CTEs novos encontrados")
         return novos_awbs
-
     except Exception as e:
         print(f"[Gmail] Erro: {e}")
         return []
@@ -244,18 +210,15 @@ def rastrear_awbs(awbs):
     resultados = {}
     if not awbs:
         return resultados
-
     driver = get_chrome_driver()
     try:
         for i in range(0, len(awbs), 30):
             lote = awbs[i:i+30]
             driver.get(AZUL_URL)
             wait = WebDriverWait(driver, 15)
-
             inp = wait.until(EC.presence_of_element_located(
                 (By.CSS_SELECTOR, 'input[placeholder*="rastreio"], input[placeholder*="código"]')
             ))
-
             awbs_str = ','.join(lote)
             driver.execute_script(
                 "const s=Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype,'value').set;"
@@ -264,47 +227,37 @@ def rastrear_awbs(awbs):
                 inp, awbs_str
             )
             time.sleep(1)
-
             btn_add = driver.find_element(By.XPATH, "//button[contains(text(),'Adicionar')]")
             btn_add.click()
             time.sleep(2)
-
             btn_cons = driver.find_element(By.XPATH, "//button[contains(text(),'Consultar')]")
             btn_cons.click()
             time.sleep(8)
-
             texto = driver.find_element(By.TAG_NAME, 'body').text
-
             for awb in lote:
                 status = 'Em andamento'
                 idx = texto.find(awb)
                 trecho = texto[idx:idx+500] if idx >= 0 else ''
-
                 if 'Entrega Realizada' in trecho or 'ENTREGA REALIZADA' in trecho:
                     status = 'Entregue'
                 elif 'Saiu para Entrega' in trecho or 'SAIU PARA ENTREGA' in trecho:
                     status = 'Saiu para Entrega'
                 elif 'Em Separação' in trecho:
                     status = 'Em Separação no Destino'
-
                 prev = None
                 m = re.search(r'Entrega até[:\s]*(\d{2}/\d{2}/\d{4})', trecho)
                 if m:
                     prev = m.group(1)
-
                 resultados[awb] = {
                     'status': status,
                     'prev_entrega': prev,
                     'ultima_atualizacao': datetime.now().strftime('%d/%m/%Y'),
                 }
-
             print(f"[Azul] Lote {i//30+1}: {len(lote)} AWBs rastreados")
-
     except Exception as e:
         print(f"[Azul] Erro: {e}")
     finally:
         driver.quit()
-
     return resultados
 
 # ─── Rotas da API ─────────────────────────────────────────────────────────────
@@ -325,7 +278,6 @@ def atualizar():
     try:
         print("\n=== INÍCIO DA ATUALIZAÇÃO ===")
         envios = carregar_envios()
-
         novos = buscar_ctes_novos(envios)
         for n in novos:
             envios.append({
@@ -341,10 +293,8 @@ def atualizar():
                 'ultima_atualizacao': '',
                 'dias_uteis': None,
             })
-
         nao_entregues = [e['awb'] for e in envios if e.get('status') != 'Entregue']
         rastreio = rastrear_awbs(nao_entregues)
-
         for envio in envios:
             awb = envio['awb']
             if awb in rastreio:
@@ -361,10 +311,8 @@ def atualizar():
                         pass
                 if r['status'] == 'Entregue' and not envio.get('data_entrega'):
                     envio['data_entrega'] = datetime.now().strftime('%d/%m/%Y')
-
         salvar_e_persistir(envios)
         print(f"=== ATUALIZAÇÃO CONCLUÍDA: {len(envios)} envios ===\n")
-
         return jsonify({
             'success': True,
             'novos_ctes': len(novos),
@@ -373,7 +321,6 @@ def atualizar():
             'envios': envios,
             'mensagem': f'{len(novos)} CTEs novos · {len(rastreio)} rastreados · {datetime.now().strftime("%d/%m/%Y %H:%M")}'
         })
-
     except Exception as e:
         print(f"[ERRO] {e}")
         return jsonify({'success': False, 'erro': str(e)}), 500
@@ -381,17 +328,38 @@ def atualizar():
 @app.route('/api/update-data', methods=['POST'])
 @require_auth
 def update_data():
+    """
+    Recebe a lista atualizada de envios e faz MERGE com os dados existentes.
+    Registros presentes no servidor mas ausentes no payload são PRESERVADOS,
+    evitando perda de dados quando a tarefa busca uma lista incompleta.
+    """
     try:
         payload = request.get_json()
         if not payload or 'envios' not in payload:
             return jsonify({'success': False, 'erro': 'Payload inválido'}), 400
-        envios = payload['envios']
-        salvar_e_persistir(envios)
-        print(f"[update-data] {len(envios)} envios salvos")
+
+        recebidos = payload['envios']
+        existentes = carregar_envios()
+
+        # Indexar por AWB
+        existentes_por_awb = {e['awb']: e for e in existentes}
+        recebidos_por_awb  = {e['awb']: e for e in recebidos}
+
+        # Merge: preferir versão recebida (status atualizado),
+        # mas manter registros existentes que não vieram no payload
+        merged_por_awb = dict(existentes_por_awb)   # começa com tudo que existe
+        merged_por_awb.update(recebidos_por_awb)     # sobrescreve com dados novos
+
+        merged = list(merged_por_awb.values())
+
+        recuperados = len(merged) - len(recebidos)
+        print(f"[update-data] recebidos={len(recebidos)} existentes={len(existentes)} merged={len(merged)} recuperados={recuperados}")
+
+        salvar_e_persistir(merged)
         return jsonify({
             'success': True,
-            'total': len(envios),
-            'mensagem': f'{len(envios)} envios salvos em {datetime.now().strftime("%d/%m/%Y %H:%M")}'
+            'total': len(merged),
+            'mensagem': f'{len(merged)} envios salvos em {datetime.now().strftime("%d/%m/%Y %H:%M")}'
         })
     except Exception as e:
         print(f"[update-data] Erro: {e}")
