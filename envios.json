@@ -2757,15 +2757,15 @@
   },
   {
     "awb": "57752583694",
-    "data_entrega": "",
+    "data_entrega": "15/07/2026",
     "destinatario": "TAIS ANTONIOLI ALONSO PEREIRA",
     "destino": "Fortaleza/CE",
     "dias_uteis": 2,
     "emissao": "13/07/2026",
     "frete": "28.54",
     "prev_entrega": "15/07/2026",
-    "status": "Saiu para Entrega",
-    "ultima_atualizacao": "14/07/2026 22:38",
+    "status": "Entregue",
+    "ultima_atualizacao": "15/07/2026",
     "valor_produto": "264.00"
   },
   {
@@ -3000,7 +3000,7 @@
     "prev_entrega": "20/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 873.0
+    "valor_produto": 873
   },
   {
     "awb": "57753868150",
@@ -3013,7 +3013,7 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 90.0
+    "valor_produto": 90
   },
   {
     "awb": "57753866993",
@@ -3026,7 +3026,7 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 272.0
+    "valor_produto": 272
   },
   {
     "awb": "57753866061",
@@ -3039,7 +3039,7 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 350.0
+    "valor_produto": 350
   },
   {
     "awb": "57753865840",
@@ -3052,7 +3052,7 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 100.0
+    "valor_produto": 100
   },
   {
     "awb": "57753865092",
@@ -3065,7 +3065,7 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 192.0
+    "valor_produto": 192
   },
   {
     "awb": "57753864156",
@@ -3104,7 +3104,7 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 900.0
+    "valor_produto": 900
   },
   {
     "awb": "57753861345",
@@ -3117,6 +3117,6 @@
     "prev_entrega": "17/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "14/07/2026 22:38",
-    "valor_produto": 1880.0
+    "valor_produto": 1880
   }
 ]
