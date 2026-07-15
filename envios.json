@@ -2692,15 +2692,15 @@
   },
   {
     "awb": "57751767671",
-    "data_entrega": "",
+    "data_entrega": "15/07/2026",
     "destinatario": "MAGALI ALVES PEREIRA",
     "destino": "Sao Paulo - SP",
     "dias_uteis": 5,
     "emissao": "10/07/2026",
     "frete": 43.83,
     "prev_entrega": "15/07/2026",
-    "status": "Saiu para Entrega",
-    "ultima_atualizacao": "14/07/2026 22:38",
+    "status": "Entregue",
+    "ultima_atualizacao": "15/07/2026",
     "valor_produto": 125.6
   },
   {
