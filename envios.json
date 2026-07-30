@@ -833,15 +833,15 @@
   },
   {
     "awb": "57733466926",
-    "data_entrega": "",
+    "data_entrega": "30/07/2026",
     "destinatario": "NEIDE DE ALBUQUERQUE DURAND",
     "destino": "Fortaleza - CE",
     "dias_uteis": 4,
     "emissao": "08/06/2026",
     "frete": 65.39,
     "prev_entrega": "12/06/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "27/07/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "30/07/2026",
     "valor_produto": 2800
   },
   {
