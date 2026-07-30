@@ -1808,15 +1808,15 @@
   },
   {
     "awb": "57754128163",
-    "data_entrega": "",
+    "data_entrega": "30/07/2026",
     "destinatario": "MAYRA KESLY OLIVEIRA PAZ DE FREITAS",
     "destino": "Fortaleza/CE",
     "dias_uteis": 4,
     "emissao": "27/06/2026",
     "frete": 36.46,
     "prev_entrega": "01/07/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "27/07/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "30/07/2026",
     "valor_produto": 192
   },
   {
