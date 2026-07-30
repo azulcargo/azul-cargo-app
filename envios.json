@@ -781,15 +781,15 @@
   },
   {
     "awb": "57756313375",
-    "data_entrega": "",
+    "data_entrega": "30/07/2026",
     "destinatario": "LUIZ EDUARDO TELES DE OLIVEIRA",
     "destino": "Fortaleza - CE",
     "dias_uteis": 5,
     "emissao": "03/06/2026",
     "frete": 28.48,
     "prev_entrega": "08/06/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "27/07/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "30/07/2026",
     "valor_produto": 134
   },
   {
