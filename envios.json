@@ -2835,15 +2835,15 @@
   },
   {
     "awb": "57752509855",
-    "data_entrega": "",
+    "data_entrega": "30/07/2026",
     "destinatario": "ALESSANDRA PERCILIA SANTIAGO XAVIER",
     "destino": "Macapa/AP",
     "dias_uteis": 2,
     "emissao": "13/07/2026",
     "frete": "38.90",
     "prev_entrega": "15/07/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "27/07/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "30/07/2026",
     "valor_produto": "2000.00"
   },
   {
