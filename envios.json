@@ -4252,15 +4252,15 @@
   },
   {
     "awb": "57757555761",
-    "data_entrega": "",
+    "data_entrega": "30/07/2026",
     "destinatario": "MATHEUS SPATTI MUNHOZ",
     "destino": "Rio de Janeiro - RJ",
     "dias_uteis": 6,
     "emissao": "23/07/2026",
     "frete": 48.62,
     "prev_entrega": "29/07/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "",
+    "status": "Entregue",
+    "ultima_atualizacao": "30/07/2026",
     "valor_produto": ""
   },
   {
