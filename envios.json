@@ -820,15 +820,15 @@
   },
   {
     "awb": "57776059336",
-    "data_entrega": "",
+    "data_entrega": "30/07/2026",
     "destinatario": "BARBARA HELENA MOTA DE ALMEIDA",
     "destino": "Caucaia - CE",
     "dias_uteis": 9,
     "emissao": "06/06/2026",
     "frete": 55.07,
     "prev_entrega": "15/06/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "27/07/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "30/07/2026",
     "valor_produto": 120
   },
   {
