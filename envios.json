@@ -4785,14 +4785,14 @@
   },
   {
     "awb": "57708063123",
-    "data_entrega": "",
+    "data_entrega": "05/08/2026",
     "destinatario": "LUCIANA DEMARCHI",
     "destino": "Palhoca/SC",
     "dias_uteis": 7,
     "emissao": "31/07/2026",
     "frete": 48.05,
     "prev_entrega": "07/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "ultima_atualizacao": "05/08/2026",
     "valor_produto": 192
   },
@@ -4824,14 +4824,14 @@
   },
   {
     "awb": "57707966431",
-    "data_entrega": "",
+    "data_entrega": "05/08/2026",
     "destinatario": "TATIANA PEREIRA ARMANI SANTINI",
     "destino": "Vargem Grande do Sul/SP",
     "dias_uteis": 7,
     "emissao": "31/07/2026",
     "frete": 77.66,
     "prev_entrega": "07/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "ultima_atualizacao": "05/08/2026",
     "valor_produto": 900
   },
