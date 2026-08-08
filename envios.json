@@ -3434,7 +3434,7 @@
   {
     "awb": "57755920185",
     "data_entrega": "21/07/2026",
-    "destinatario": "",
+    "destinatario": "ADONISA TEIXEIRA MOURA",
     "destino": "Fortaleza - CE",
     "dias_uteis": 5,
     "emissao": "16/07/2026",
@@ -3824,15 +3824,15 @@
   {
     "awb": "57756606292",
     "data_entrega": "",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "FELIPE HODGE CAPRIOTTI",
+    "destino": "Sao Paulo/SP",
     "dias_uteis": 3,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "169.99",
     "prev_entrega": "23/07/2026",
     "status": "Em andamento",
     "ultima_atualizacao": "08/08/2026 07:36",
-    "valor_produto": ""
+    "valor_produto": "304.00"
   },
   {
     "awb": "57756326804",
@@ -3850,106 +3850,106 @@
   {
     "awb": "57756258344",
     "data_entrega": "22/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "LUZIANNE TEOTONIO CAVALCANTI",
+    "destino": "Fortaleza/CE",
     "dias_uteis": 3,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "32.33",
     "prev_entrega": "23/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "80.00"
   },
   {
     "awb": "57756135903",
     "data_entrega": "22/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "ALINE ALVES DE MORAES",
+    "destino": "Fortaleza/CE",
     "dias_uteis": 3,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "32.62",
     "prev_entrega": "23/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "125.00"
   },
   {
     "awb": "57755901580",
     "data_entrega": "22/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "KILVIA KALINY BATISTA DA SILVA ROMAO",
+    "destino": "Fortaleza/CE",
     "dias_uteis": 3,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "25.31",
     "prev_entrega": "23/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "410.00"
   },
   {
     "awb": "57755676180",
     "data_entrega": "22/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "CARLOS ALBERTO MISKIEVICZ",
+    "destino": "Sao Paulo/SP",
     "dias_uteis": 3,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "35.48",
     "prev_entrega": "23/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "254.51"
   },
   {
     "awb": "57755383580",
     "data_entrega": "23/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "ARIOMAR RODRIGUES DIAS",
+    "destino": "Campo Grande/MS",
     "dias_uteis": 4,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "35.71",
     "prev_entrega": "24/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "290.00"
   },
   {
     "awb": "57755294820",
     "data_entrega": "25/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "ANA KILVIA MAIA DE LIMA",
+    "destino": "Fortaleza/CE",
     "dias_uteis": 2,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "28.79",
     "prev_entrega": "22/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "180.00"
   },
   {
     "awb": "57755246940",
     "data_entrega": "23/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "JAMELLY GABRIELA DA SILVA VIANA",
+    "destino": "Maracanau/CE",
     "dias_uteis": 4,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "27.69",
     "prev_entrega": "24/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "135.00"
   },
   {
     "awb": "57743944084",
     "data_entrega": "24/07/2026",
-    "destinatario": "",
-    "destino": "",
+    "destinatario": "ALISSON NUERNBERG",
+    "destino": "Tubarao/SC",
     "dias_uteis": 8,
     "emissao": "20/07/2026",
-    "frete": "",
+    "frete": "41.54",
     "prev_entrega": "28/07/2026",
     "status": "Entregue",
     "ultima_atualizacao": "27/07/2026",
-    "valor_produto": ""
+    "valor_produto": "600.00"
   },
   {
     "awb": "57759019063",
