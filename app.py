@@ -345,10 +345,21 @@ def update_data():
         existentes_por_awb = {e['awb']: e for e in existentes}
         recebidos_por_awb  = {e['awb']: e for e in recebidos}
 
-        # Merge: preferir versão recebida (status atualizado),
-        # mas manter registros existentes que não vieram no payload
-        merged_por_awb = dict(existentes_por_awb)   # começa com tudo que existe
-        merged_por_awb.update(recebidos_por_awb)     # sobrescreve com dados novos
+        # Merge POR CAMPO: preferir versão recebida, mas nunca apagar um campo
+        # que já tinha valor no servidor e veio vazio/ausente no payload.
+        # Protege colunas preenchidas por outros fluxos (ex.: ent_dehon).
+        merged_por_awb = dict(existentes_por_awb)
+
+        for awb, recebido in recebidos_por_awb.items():
+            antigo = existentes_por_awb.get(awb)
+            if antigo is None:
+                merged_por_awb[awb] = recebido
+                continue
+            combinado = dict(antigo)
+            for chave, valor in recebido.items():
+                if valor not in (None, '', []):
+                    combinado[chave] = valor
+            merged_por_awb[awb] = combinado
 
         merged = list(merged_por_awb.values())
 

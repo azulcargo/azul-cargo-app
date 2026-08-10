@@ -231,6 +231,7 @@
         <th style="width:130px">Destino</th>
         <th style="width:100px">Emissão</th>
         <th style="width:100px">Prev. entrega</th>
+        <th style="width:105px">Ent_Dehon</th>
         <th style="width:65px">Frete</th>
         <th style="width:90px">Valor Nota</th>
         <th style="width:75px">Dias Úteis</th>
@@ -419,6 +420,7 @@ function renderTable() {
       <td>${r.destino || '—'}</td>
       <td>${r.emissao || '—'}</td>
       <td>${r.prev_entrega || '—'}</td>
+      <td>${r.ent_dehon || '—'}</td>
       <td>${r.frete > 0 ? 'R$ ' + Number(r.frete).toFixed(2) : '—'}</td>
       <td>${r.valor_produto > 0 ? 'R$ ' + Number(r.valor_produto).toFixed(2) : '—'}</td>
       <td style="text-align:center">${r.dias_uteis != null ? r.dias_uteis : '—'}</td>
@@ -483,6 +485,7 @@ function exportExcel() {
     'Destino':            r.destino,
     'Emissão':            r.emissao,
     'Prev. Entrega':      r.prev_entrega,
+    'Ent_Dehon':          r.ent_dehon,
     'Data Entrega':       r.data_entrega,
     'Frete (R$)':         r.frete,
     'Valor Produto (R$)': r.valor_produto,
