@@ -122,7 +122,7 @@
     "frete": 30.33,
     "prev_entrega": "20/05/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 414
   },
   {
@@ -682,7 +682,7 @@
     "frete": 42.3,
     "prev_entrega": "05/06/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 1500
   },
   {
@@ -850,7 +850,7 @@
     "frete": 28.48,
     "prev_entrega": "08/06/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 134
   },
   {
@@ -892,7 +892,7 @@
     "frete": 55.07,
     "prev_entrega": "15/06/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 120
   },
   {
@@ -906,7 +906,7 @@
     "frete": 65.39,
     "prev_entrega": "12/06/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 2800
   },
   {
@@ -1956,7 +1956,7 @@
     "frete": 36.46,
     "prev_entrega": "01/07/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 192
   },
   {
@@ -2110,7 +2110,7 @@
     "frete": 35.26,
     "prev_entrega": "02/07/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 525
   },
   {
@@ -3062,7 +3062,7 @@
     "frete": "38.90",
     "prev_entrega": "15/07/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "2000.00"
   },
   {
@@ -3720,7 +3720,7 @@
     "frete": 33.44,
     "prev_entrega": "21/07/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": ""
   },
   {
@@ -4126,7 +4126,7 @@
     "frete": "169.99",
     "prev_entrega": "23/07/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "304.00"
   },
   {
@@ -4588,7 +4588,7 @@
     "frete": 48.62,
     "prev_entrega": "29/07/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": ""
   },
   {
@@ -5232,7 +5232,7 @@
     "frete": 32.96,
     "prev_entrega": "05/08/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 175
   },
   {
@@ -5629,7 +5629,7 @@
   },
   {
     "awb": "57782886322",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "NACTORIO GOMES DE QUEIROZ",
     "destino": "Beberibe/CE",
     "dias_uteis": 9,
@@ -5637,8 +5637,8 @@
     "ent_dehon": "",
     "frete": 74.69,
     "prev_entrega": "12/08/2026",
-    "status": "Saiu para Entrega",
-    "ultima_atualizacao": "10/08/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 176.0
   },
   {
@@ -5722,7 +5722,7 @@
     "frete": 38.4,
     "prev_entrega": "07/08/2026",
     "status": "Saiu para Entrega",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 1000.0
   },
   {
@@ -5806,9 +5806,9 @@
     "ent_dehon": "08/08/2026",
     "frete": "59.79",
     "prev_entrega": "13/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "85988280720",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "420.00"
   },
   {
@@ -5822,9 +5822,9 @@
     "ent_dehon": "",
     "frete": "32.62",
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "8586360302",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "125.00"
   },
   {
@@ -5838,15 +5838,15 @@
     "ent_dehon": "07/08/2026",
     "frete": "45.50",
     "prev_entrega": "13/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "6792457160",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "378.30"
   },
   {
     "awb": "57770413991",
     "cpf": "76544168300",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "EGUIBERTO FORTE DE SOUSA",
     "destino": "Fortaleza/CE",
     "dias_uteis": 5,
@@ -5854,9 +5854,9 @@
     "ent_dehon": "14/08/2026",
     "frete": "32.86",
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "telefone": "8592888084",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "160.00"
   },
   {
@@ -5872,7 +5872,7 @@
     "prev_entrega": "13/08/2026",
     "status": "Em andamento",
     "telefone": "8588280720",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "420.00"
   },
   {
@@ -5888,7 +5888,7 @@
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
     "telefone": "8599855909",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "144.00"
   },
   {
@@ -5904,7 +5904,7 @@
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
     "telefone": "8592314252",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "332.50"
   },
   {
@@ -5920,7 +5920,7 @@
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
     "telefone": "91996251350",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "1700.00"
   },
   {
@@ -5934,9 +5934,9 @@
     "ent_dehon": "11/08/2026",
     "frete": "32.59",
     "prev_entrega": "13/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "8596160030",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "120.00"
   },
   {
@@ -5952,7 +5952,7 @@
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
     "telefone": "85985612098",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "1500.00"
   },
   {
@@ -5968,7 +5968,7 @@
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
     "telefone": "92991447462",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "673.01"
   },
   {
@@ -5984,7 +5984,7 @@
     "prev_entrega": "10/08/2026",
     "status": "Em andamento",
     "telefone": "85997917957",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "1270.00"
   },
   {
@@ -6000,13 +6000,13 @@
     "prev_entrega": "13/08/2026",
     "status": "Em andamento",
     "telefone": "85997313190",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "223.10"
   },
   {
     "awb": "57758616202",
     "cpf": "04734702845",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "PAOLA MONICA MINGARDO",
     "destino": "Sao Paulo/SP",
     "dias_uteis": 5,
@@ -6014,9 +6014,9 @@
     "ent_dehon": "",
     "frete": "43.99",
     "prev_entrega": "11/08/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "telefone": "1199905147",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "150.00"
   },
   {
@@ -6053,7 +6053,7 @@
   {
     "awb": "57758599004",
     "cpf": "18463647871",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "DANIELA SAMPAIO",
     "destino": "Sao Paulo/SP",
     "dias_uteis": 5,
@@ -6061,9 +6061,9 @@
     "ent_dehon": "",
     "frete": "70.67",
     "prev_entrega": "11/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "telefone": "1192717288",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "2100.00"
   },
   {
@@ -6085,7 +6085,7 @@
   {
     "awb": "57755888770",
     "cpf": "35670223187",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "SUSY LAYNE CORTES LOPES",
     "destino": "Campo Grande/MS",
     "dias_uteis": 6,
@@ -6093,15 +6093,15 @@
     "ent_dehon": "19/08/2026",
     "frete": "46.12",
     "prev_entrega": "11/08/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "telefone": "67992217766",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "472.33"
   },
   {
     "awb": "57755887370",
     "cpf": "03000447040",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "SHELEN MALAGGI AGUIRRE",
     "destino": "Sao Paulo/SP",
     "dias_uteis": 5,
@@ -6109,9 +6109,9 @@
     "ent_dehon": "05/08/2026",
     "frete": "44.32",
     "prev_entrega": "10/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "telefone": "11975362561",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "200.00"
   },
   {
@@ -6133,7 +6133,7 @@
   {
     "awb": "57755883225",
     "cpf": "32585640272",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "FRANCISCA EDNA DA SILVA ROCHA",
     "destino": "Caucaia/CE",
     "dias_uteis": 6,
@@ -6141,15 +6141,15 @@
     "ent_dehon": "",
     "frete": "36.76",
     "prev_entrega": "11/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "telefone": "65996098136",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "751.00"
   },
   {
     "awb": "57755881980",
     "cpf": "01468933361",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "YHANNA SHIRLEY DE FREITAS",
     "destino": "Quixeramobim/CE",
     "dias_uteis": 7,
@@ -6157,9 +6157,9 @@
     "ent_dehon": "",
     "frete": "73.89",
     "prev_entrega": "12/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "telefone": "88997466877",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "140.65"
   },
   {
@@ -6205,7 +6205,7 @@
     "prev_entrega": "11/08/2026",
     "status": "Em andamento",
     "telefone": "1198735000",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "323.00"
   },
   {
@@ -6219,7 +6219,7 @@
     "frete": 49.15,
     "prev_entrega": "17/08/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 80.0
   },
   {
@@ -6233,7 +6233,7 @@
     "frete": 31.7,
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 742.0
   },
   {
@@ -6247,12 +6247,12 @@
     "frete": 32.08,
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 800.0
   },
   {
     "awb": "57770609394",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "ANTONIA ALDECILDA MOURA CHAVES",
     "destino": "Fortaleza/CE",
     "dias_uteis": 4,
@@ -6260,8 +6260,8 @@
     "ent_dehon": "",
     "frete": 30.96,
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "status": "Entregue",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 630.5
   },
   {
@@ -6274,8 +6274,8 @@
     "ent_dehon": "",
     "frete": 27.59,
     "prev_entrega": "13/08/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "status": "Saiu para Entrega",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 120.0
   },
   {
@@ -6291,7 +6291,105 @@
     "prev_entrega": "17/08/2026",
     "status": "Em andamento",
     "telefone": "68999711378",
-    "ultima_atualizacao": "10/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 80.0
+  },
+  {
+    "awb": "57773671776",
+    "data_entrega": "",
+    "destinatario": "GILMARA VIEIRA DE OLIVEIRA",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 2,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "31.31",
+    "prev_entrega": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "280.00"
+  },
+  {
+    "awb": "57773635914",
+    "data_entrega": "",
+    "destinatario": "NELI XIMENES AGUIAR",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 2,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "30.64",
+    "prev_entrega": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "760.90"
+  },
+  {
+    "awb": "57773658255",
+    "data_entrega": "",
+    "destinatario": "NELI XIMENES AGUIAR",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 2,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "30.64",
+    "prev_entrega": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "760.90"
+  },
+  {
+    "awb": "57773622684",
+    "data_entrega": "",
+    "destinatario": "MARIA DANIELE DE MOURA JOSEPH",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 2,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "42.14",
+    "prev_entrega": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "460.00"
+  },
+  {
+    "awb": "57773602012",
+    "data_entrega": "",
+    "destinatario": "MIRELLA MAGALHAES PORFIRIO LEAL",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 2,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "35.69",
+    "prev_entrega": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "590.00"
+  },
+  {
+    "awb": "57773571341",
+    "data_entrega": "",
+    "destinatario": "NEIDE DE ALBUQUERQUE DURAND",
+    "destino": "Fortaleza/CE",
+    "dias_uteis": 2,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "38.39",
+    "prev_entrega": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "1000.00"
+  },
+  {
+    "awb": "57773545404",
+    "data_entrega": "",
+    "destinatario": "ANA PAULA SCHAFRANSKI FERREIRA",
+    "destino": "Florianopolis/SC",
+    "dias_uteis": 3,
+    "emissao": "10/08/2026",
+    "ent_dehon": "",
+    "frete": "50.21",
+    "prev_entrega": "13/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026 22:25",
+    "valor_produto": "520.00"
   }
 ]
