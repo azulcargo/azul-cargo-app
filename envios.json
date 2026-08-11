@@ -5902,7 +5902,7 @@
     "ent_dehon": "08/08/2026",
     "frete": "33.99",
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "8592314252",
     "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "332.50"
@@ -5918,7 +5918,7 @@
     "ent_dehon": "",
     "frete": "43.62",
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "91996251350",
     "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "1700.00"
@@ -6232,7 +6232,7 @@
     "ent_dehon": "",
     "frete": 31.7,
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 742.0
   },
