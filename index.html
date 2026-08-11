@@ -230,9 +230,9 @@
         <th style="width:180px">Destinatário</th>
         <th style="width:130px">Destino</th>
         <th style="width:110px">Emissão_Cte</th>
-        <th style="width:105px">Prev.Entrega</th>
-        <th style="width:105px">Ent_Dehon</th>
-        <th style="width:100px">Dias Úteis</th>
+        <th style="width:105px">Ent-Azul</th>
+        <th style="width:105px">Prod_Dehon</th>
+        <th style="width:100px">Ent_Dehon</th>
         <th style="width:65px">Frete</th>
         <th style="width:90px">Valor Nota</th>
         <th style="width:90px">Status</th>
@@ -500,9 +500,9 @@ function exportExcel() {
     'Destinatário':       r.destinatario,
     'Destino':            r.destino,
     'Emissão_Cte':        r.emissao,
-    'Prev.Entrega':       r.prev_entrega,
-    'Ent_Dehon':          r.ent_dehon,
-    'Dias Úteis':         prazoDehon(r.ent_dehon).replace(/<[^>]+>/g, ''),
+    'Ent_Azul':       r.prev_entrega,
+    'Prod_Dehon':          r.ent_dehon,
+    'Ent_Dehon':         prazoDehon(r.ent_dehon).replace(/<[^>]+>/g, ''),
     'Data Entrega':       r.data_entrega,
     'Frete (R$)':         r.frete,
     'Valor Produto (R$)': r.valor_produto,
