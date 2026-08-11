@@ -5814,7 +5814,7 @@
   {
     "awb": "57770417325",
     "cpf": "04579504399",
-    "data_entrega": "",
+    "data_entrega": "10/08/2026",
     "destinatario": "MARIA GESSIANA AZEVEDO BRAGA LOUREIRO",
     "destino": "Fortaleza/CE",
     "dias_uteis": 5,
@@ -5822,7 +5822,7 @@
     "ent_dehon": "",
     "frete": "32.62",
     "prev_entrega": "12/08/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "telefone": "8586360302",
     "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "125.00"
@@ -5966,7 +5966,7 @@
     "ent_dehon": "21/08/2026",
     "frete": "37.35",
     "prev_entrega": "12/08/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "92991447462",
     "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": "673.01"
