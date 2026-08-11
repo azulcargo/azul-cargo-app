@@ -383,6 +383,16 @@ function diasUteis(emissao, dataEntrega) {
   return `<span style="font-weight:600;color:${cor}">${count}d</span>`;
 }
 
+// Atrasado = ainda nao entregue/cancelado e com Prev.Entrega ja vencida.
+// Usada TANTO no card quanto no filtro, para os dois nunca divergirem.
+function estaAtrasado(r) {
+  if (r.status === 'Entregue' || r.status === 'Cancelado') return false;
+  const p = parseBR(r.prev_entrega);
+  if (!p) return false;
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  return p < hoje;
+}
+
 function badge(s) {
   if (s === 'Entregue')          return `<span class="badge entregue">Entregue</span>`;
   if (s === 'Saiu para Entrega') return `<span class="badge saiu">Saiu p/ entrega</span>`;
@@ -416,13 +426,7 @@ function renderCards() {
   const entregue = DATA.filter(r => r.status === 'Entregue').length;
   const saiu     = DATA.filter(r => r.status === 'Saiu para Entrega').length;
   const andamento= DATA.filter(r => r.status === 'Em andamento').length;
-  // Atrasado = ainda nao entregue/cancelado e com previsao de entrega ja vencida
-  const hoje = new Date(); hoje.setHours(0,0,0,0);
-  const atrasado = DATA.filter(r => {
-    if (r.status === 'Entregue' || r.status === 'Cancelado') return false;
-    const p = parseBR(r.prev_entrega);
-    return p && p < hoje;
-  }).length;
+  const atrasado = DATA.filter(estaAtrasado).length;
   document.getElementById('cards').innerHTML = `
     <div class="card"><div class="card-label">Total de envios</div><div class="card-value gray">${total}</div></div>
     <div class="card"><div class="card-label">Entregues</div><div class="card-value green">${entregue}</div></div>
@@ -483,7 +487,8 @@ function applyFilters() {
   const de     = document.getElementById('fDataDe').value;
   const ate    = document.getElementById('fDataAte').value;
   filtered = DATA.filter(r => {
-    if (status && r.status !== status) return false;
+    if (status === 'Atrasado') { if (!estaAtrasado(r)) return false; }
+    else if (status && r.status !== status) return false;
     if (busca && !(
       (r.awb||'').includes(busca) ||
       (r.destinatario||'').toLowerCase().includes(busca) ||
