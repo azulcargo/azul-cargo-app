@@ -45,7 +45,7 @@
   .card-value.green  { color:var(--green); }
   .card-value.yellow { color:var(--yellow); }
   .card-value.blue   { color:var(--blue); }
-  .card-value.frete  { font-size:20px; color:var(--text2); }
+  .card-value.red    { color:var(--red); }
   .charts { display:grid; grid-template-columns:1fr 2fr; gap:16px; margin-bottom:20px; }
   @media(max-width:700px){.charts{grid-template-columns:1fr;}}
   .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
@@ -416,13 +416,19 @@ function renderCards() {
   const entregue = DATA.filter(r => r.status === 'Entregue').length;
   const saiu     = DATA.filter(r => r.status === 'Saiu para Entrega').length;
   const andamento= DATA.filter(r => r.status === 'Em andamento').length;
-  const frete    = DATA.reduce((a, r) => a + (r.frete || 0), 0);
+  // Atrasado = ainda nao entregue/cancelado e com previsao de entrega ja vencida
+  const hoje = new Date(); hoje.setHours(0,0,0,0);
+  const atrasado = DATA.filter(r => {
+    if (r.status === 'Entregue' || r.status === 'Cancelado') return false;
+    const p = parseBR(r.prev_entrega);
+    return p && p < hoje;
+  }).length;
   document.getElementById('cards').innerHTML = `
     <div class="card"><div class="card-label">Total de envios</div><div class="card-value gray">${total}</div></div>
     <div class="card"><div class="card-label">Entregues</div><div class="card-value green">${entregue}</div></div>
     <div class="card"><div class="card-label">Saiu p/ entrega</div><div class="card-value yellow">${saiu}</div></div>
     <div class="card"><div class="card-label">Em andamento</div><div class="card-value blue">${andamento}</div></div>
-    <div class="card"><div class="card-label">Frete total</div><div class="card-value frete">R$ ${frete.toLocaleString('pt-BR',{minimumFractionDigits:2})}</div></div>
+    <div class="card"><div class="card-label">Atrasados</div><div class="card-value red">${atrasado}</div></div>
   `;
 }
 
