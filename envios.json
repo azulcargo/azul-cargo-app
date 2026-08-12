@@ -891,8 +891,8 @@
     "ent_dehon": "",
     "frete": 55.07,
     "prev_entrega": "15/06/2026",
-    "status": "Em andamento",
-    "ultima_atualizacao": "10/08/2026",
+    "status": "Cancelado",
+    "ultima_atualizacao": "12/08/2026",
     "valor_produto": 120
   },
   {
@@ -3719,8 +3719,8 @@
     "ent_dehon": "",
     "frete": 33.44,
     "prev_entrega": "21/07/2026",
-    "status": "Cancelado",
-    "ultima_atualizacao": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026",
     "valor_produto": ""
   },
   {
@@ -4125,8 +4125,8 @@
     "ent_dehon": "",
     "frete": "169.99",
     "prev_entrega": "23/07/2026",
-    "status": "Cancelado",
-    "ultima_atualizacao": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026",
     "valor_produto": "304.00"
   },
   {
@@ -4587,8 +4587,8 @@
     "ent_dehon": "",
     "frete": 48.62,
     "prev_entrega": "29/07/2026",
-    "status": "Cancelado",
-    "ultima_atualizacao": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026",
     "valor_produto": ""
   },
   {
@@ -5231,8 +5231,8 @@
     "ent_dehon": "",
     "frete": 32.96,
     "prev_entrega": "05/08/2026",
-    "status": "Cancelado",
-    "ultima_atualizacao": "12/08/2026",
+    "status": "Em andamento",
+    "ultima_atualizacao": "10/08/2026",
     "valor_produto": 175
   },
   {
