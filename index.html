@@ -393,6 +393,12 @@ function estaAtrasado(r) {
   return p < hoje;
 }
 
+// Status mostrado em toda a tela. Se o envio esta atrasado, "Atrasado"
+// SUBSTITUI o status real da transportadora (tabela, cards, filtro e grafico).
+function statusEfetivo(r) {
+  return estaAtrasado(r) ? 'Atrasado' : r.status;
+}
+
 function badge(s) {
   if (s === 'Entregue')          return `<span class="badge entregue">Entregue</span>`;
   if (s === 'Saiu para Entrega') return `<span class="badge saiu">Saiu p/ entrega</span>`;
@@ -423,10 +429,10 @@ function setBtnLoading(loading) {
 // ── RENDER ───────────────────────────────────────────────────────────────────
 function renderCards() {
   const total    = DATA.length;
-  const entregue = DATA.filter(r => r.status === 'Entregue').length;
-  const saiu     = DATA.filter(r => r.status === 'Saiu para Entrega').length;
-  const andamento= DATA.filter(r => r.status === 'Em andamento').length;
-  const atrasado = DATA.filter(estaAtrasado).length;
+  const entregue = DATA.filter(r => statusEfetivo(r) === 'Entregue').length;
+  const saiu     = DATA.filter(r => statusEfetivo(r) === 'Saiu para Entrega').length;
+  const andamento= DATA.filter(r => statusEfetivo(r) === 'Em andamento').length;
+  const atrasado = DATA.filter(r => statusEfetivo(r) === 'Atrasado').length;
   document.getElementById('cards').innerHTML = `
     <div class="card"><div class="card-label">Total de envios</div><div class="card-value gray">${total}</div></div>
     <div class="card"><div class="card-label">Entregues</div><div class="card-value green">${entregue}</div></div>
@@ -450,7 +456,7 @@ function renderTable() {
       <td style="text-align:center">${prazoDehon(r.ent_dehon)}</td>
       <td>${r.frete > 0 ? 'R$ ' + Number(r.frete).toFixed(2) : '—'}</td>
       <td>${r.valor_produto > 0 ? 'R$ ' + Number(r.valor_produto).toFixed(2) : '—'}</td>
-      <td>${badge(r.status)}</td>
+      <td>${badge(statusEfetivo(r))}</td>
       <td>
         <div class="btn-acao-wrap">
           <button class="btn-acao-toggle" onclick="toggleMenu(this)">⋯ Alterar</button>
@@ -487,8 +493,7 @@ function applyFilters() {
   const de     = document.getElementById('fDataDe').value;
   const ate    = document.getElementById('fDataAte').value;
   filtered = DATA.filter(r => {
-    if (status === 'Atrasado') { if (!estaAtrasado(r)) return false; }
-    else if (status && r.status !== status) return false;
+    if (status && statusEfetivo(r) !== status) return false;
     if (busca && !(
       (r.awb||'').includes(busca) ||
       (r.destinatario||'').toLowerCase().includes(busca) ||
@@ -614,18 +619,19 @@ async function setStatus(awb, novoStatus) {
 }
 
 function renderCharts() {
-  const entregue = DATA.filter(r => r.status === 'Entregue').length;
-  const saiu     = DATA.filter(r => r.status === 'Saiu para Entrega').length;
-  const andamento= DATA.filter(r => !['Entregue','Saiu para Entrega'].includes(r.status)).length;
+  const entregue = DATA.filter(r => statusEfetivo(r) === 'Entregue').length;
+  const saiu     = DATA.filter(r => statusEfetivo(r) === 'Saiu para Entrega').length;
+  const atrasadoC= DATA.filter(r => statusEfetivo(r) === 'Atrasado').length;
+  const andamento= DATA.filter(r => !['Entregue','Saiu para Entrega','Atrasado'].includes(statusEfetivo(r))).length;
   const ctxS = document.getElementById('chartStatus');
   if (ctxS) {
     if (chartStatus) chartStatus.destroy();
     chartStatus = new Chart(ctxS, {
       type: 'doughnut',
       data: {
-        labels: ['Entregue','Saiu p/ Entrega','Em andamento'],
-        datasets: [{ data: [entregue, saiu, andamento],
-          backgroundColor: ['#1a7a44','#c47900','#185FA5'], borderWidth: 0 }]
+        labels: ['Entregue','Saiu p/ Entrega','Em andamento','Atrasado'],
+        datasets: [{ data: [entregue, saiu, andamento, atrasadoC],
+          backgroundColor: ['#1a7a44','#c47900','#185FA5','#a32d2d'], borderWidth: 0 }]
       },
       options: { plugins: { legend: { display: false } }, cutout: '70%' }
     });
