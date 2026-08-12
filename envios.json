@@ -6058,7 +6058,7 @@
     "destino": "Sao Paulo/SP",
     "dias_uteis": 5,
     "emissao": "06/08/2026",
-    "ent_dehon": "",
+    "ent_dehon": "05/08/2026",
     "frete": "70.67",
     "prev_entrega": "11/08/2026",
     "status": "Entregue",
@@ -6200,7 +6200,7 @@
     "destino": "Sao Paulo/SP",
     "dias_uteis": 6,
     "emissao": "05/08/2026",
-    "ent_dehon": "",
+    "ent_dehon": "28/07/2026",
     "frete": "40.13",
     "prev_entrega": "11/08/2026",
     "status": "Entregue",
@@ -6231,7 +6231,7 @@
     "destino": "Fortaleza/CE",
     "dias_uteis": 4,
     "emissao": "08/08/2026",
-    "ent_dehon": "",
+    "ent_dehon": "07/08/2026",
     "frete": 31.7,
     "prev_entrega": "12/08/2026",
     "status": "Entregue",
@@ -6263,7 +6263,7 @@
     "destino": "Fortaleza/CE",
     "dias_uteis": 4,
     "emissao": "08/08/2026",
-    "ent_dehon": "",
+    "ent_dehon": "07/08/2026",
     "frete": 30.96,
     "prev_entrega": "12/08/2026",
     "status": "Entregue",
@@ -6428,7 +6428,7 @@
     "status": "Em andamento",
     "prev_entrega": "13/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "08/08/2026"
   },
   {
     "awb": "57777482300",
@@ -6442,7 +6442,7 @@
     "status": "Em andamento",
     "prev_entrega": "13/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "10/08/2026"
   },
   {
     "awb": "57777482661",
@@ -6456,7 +6456,7 @@
     "status": "Em andamento",
     "prev_entrega": "14/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "10/08/2026"
   },
   {
     "awb": "57777480141",
@@ -6470,7 +6470,7 @@
     "status": "Em andamento",
     "prev_entrega": "13/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "11/08/2026"
   },
   {
     "awb": "57777478601",
@@ -6484,7 +6484,7 @@
     "status": "Em andamento",
     "prev_entrega": "14/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "11/08/2026"
   },
   {
     "awb": "57777477186",
@@ -6498,7 +6498,7 @@
     "status": "Em andamento",
     "prev_entrega": "17/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "10/08/2026"
   },
   {
     "awb": "57777476243",
@@ -6526,7 +6526,7 @@
     "status": "Em andamento",
     "prev_entrega": "17/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "11/08/2026"
   },
   {
     "awb": "57777470945",
@@ -6540,7 +6540,7 @@
     "status": "Em andamento",
     "prev_entrega": "17/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "11/08/2026"
   },
   {
     "awb": "57777467412",
@@ -6554,7 +6554,7 @@
     "status": "Em andamento",
     "prev_entrega": "14/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "10/08/2026"
   },
   {
     "awb": "57777466281",
@@ -6568,7 +6568,7 @@
     "status": "Em andamento",
     "prev_entrega": "17/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "10/08/2026"
   },
   {
     "awb": "57777463116",
