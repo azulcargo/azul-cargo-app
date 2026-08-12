@@ -600,6 +600,7 @@ document.addEventListener('click', e => {
 async function setStatus(awb, novoStatus) {
   const idx = DATA.findIndex(r => r.awb === awb);
   if (idx === -1) return;
+  const antes = { status: DATA[idx].status, data_entrega: DATA[idx].data_entrega, ultima_atualizacao: DATA[idx].ultima_atualizacao };
   const hoje = new Date().toLocaleDateString('pt-BR');
   DATA[idx].status = novoStatus;
   DATA[idx].ultima_atualizacao = hoje;
@@ -607,15 +608,27 @@ async function setStatus(awb, novoStatus) {
   filtered = [...DATA].sort((a,b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
   renderCards();
   renderTable();
-  showToast(`${awb} marcado como ${novoStatus}`);
+  const desfazer = (msg) => {
+    Object.assign(DATA[idx], antes);
+    filtered = [...DATA].sort((a,b) => dateToSort(b.emissao).localeCompare(dateToSort(a.emissao)));
+    renderCards(); renderTable();
+    showToast(msg, 'error');
+  };
   try {
     const res = await fetch(`${API_URL}/api/update-data`, {
       method: 'POST', headers: authHeaders(),
       body: JSON.stringify({ envios: DATA })
     });
-    if (res.status === 401) { doLogout(); return; }
-    if (!(await res.json()).success) showToast('Erro ao salvar.', 'error');
-  } catch(e) { showToast('Erro de conexão.', 'error'); }
+    if (res.status === 401) {
+      desfazer('Sessão expirada. Entre novamente e refaça a alteração.');
+      setTimeout(doLogout, 2500);
+      return;
+    }
+    if (!(await res.json()).success) { desfazer('Não foi possível salvar. Alteração desfeita.'); return; }
+    showToast(`${awb} marcado como ${novoStatus}`);
+  } catch(e) {
+    desfazer('Sem conexão com o servidor. Alteração desfeita.');
+  }
 }
 
 function renderCharts() {

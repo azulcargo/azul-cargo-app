@@ -10,6 +10,8 @@ import time
 import re
 import base64
 import secrets
+import hmac
+import hashlib
 import urllib.request
 import urllib.error
 from functools import wraps
@@ -38,8 +40,38 @@ GITHUB_REPO = 'azulcargo/azul-cargo-app'
 GITHUB_FILE_PATH = 'envios.json'
 
 # ─── Autenticação ─────────────────────────────────────────────────────────────
-SESSIONS = {}
+# Tokens ASSINADOS (stateless). O plano gratuito do Render desliga o servidor
+# por inatividade; um dicionario em memoria perdia todas as sessoes no restart
+# e derrubava o usuario no meio de uma alteracao. Com assinatura HMAC o token
+# continua valido depois de qualquer reinicio.
+SESSIONS = {}          # mantido so para tokens antigos ainda em uso
 SESSION_HOURS = 8
+
+def _segredo():
+    return (get_api_key() or os.environ.get('SECRET_KEY') or 'azul-cargo').encode()
+
+def gerar_token(usuario):
+    exp = int(time.time() + SESSION_HOURS * 3600)
+    corpo = base64.urlsafe_b64encode(f"{usuario}|{exp}".encode()).decode().rstrip('=')
+    assin = hmac.new(_segredo(), corpo.encode(), hashlib.sha256).hexdigest()[:32]
+    return f"{corpo}.{assin}"
+
+def validar_token(token):
+    try:
+        corpo, assin = token.rsplit('.', 1)
+    except ValueError:
+        return None
+    esperado = hmac.new(_segredo(), corpo.encode(), hashlib.sha256).hexdigest()[:32]
+    if not hmac.compare_digest(assin, esperado):
+        return None
+    pad = '=' * (-len(corpo) % 4)
+    try:
+        usuario, exp = base64.urlsafe_b64decode(corpo + pad).decode().rsplit('|', 1)
+    except Exception:
+        return None
+    if time.time() > int(exp):
+        return None
+    return usuario
 
 def get_users():
     raw = os.environ.get('AUTH_USERS', '{}')
@@ -56,6 +88,8 @@ def _check_auth():
     auth = request.headers.get('Authorization', '')
     if auth.startswith('Bearer '):
         token = auth[7:].strip()
+        if validar_token(token):
+            return True
         if token in SESSIONS:
             if time.time() <= SESSIONS[token]['expires']:
                 return True
@@ -84,8 +118,7 @@ def login():
     if usuario not in users or users[usuario] != senha:
         time.sleep(1)
         return jsonify({'success': False, 'erro': 'Usuário ou senha incorretos'}), 401
-    token = secrets.token_hex(32)
-    SESSIONS[token] = {'user': usuario, 'expires': time.time() + (SESSION_HOURS * 3600)}
+    token = gerar_token(usuario)
     print(f"[Auth] Login: {usuario}")
     return jsonify({'success': True, 'token': token, 'usuario': usuario})
 
