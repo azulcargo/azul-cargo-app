@@ -6402,7 +6402,7 @@
   },
   {
     "awb": "57773545404",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "destinatario": "ANA PAULA SCHAFRANSKI FERREIRA",
     "destino": "Florianopolis - SC",
     "dias_uteis": 3,
@@ -6410,7 +6410,7 @@
     "ent_dehon": "10/08/2026",
     "frete": 50.21,
     "prev_entrega": "13/08/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 520,
     "cpf": "03349980937",
@@ -6453,9 +6453,9 @@
     "valor_produto": 100,
     "cpf": "30231342861",
     "telefone": "11996246603",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "ent_dehon": "10/08/2026"
   },
   {
@@ -6495,9 +6495,9 @@
     "valor_produto": 680,
     "cpf": "51866056204",
     "telefone": "93988114908",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "17/08/2026",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "ent_dehon": "10/08/2026"
   },
   {
@@ -6523,9 +6523,9 @@
     "valor_produto": 680,
     "cpf": "33168869821",
     "telefone": "11954418079",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "17/08/2026",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "ent_dehon": "11/08/2026"
   },
   {
@@ -6537,9 +6537,9 @@
     "valor_produto": 155,
     "cpf": "33168869821",
     "telefone": "11954418079",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "17/08/2026",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "ent_dehon": "11/08/2026"
   },
   {
@@ -6551,7 +6551,7 @@
     "valor_produto": 260,
     "cpf": "21968360875",
     "telefone": "11993136193",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "prev_entrega": "14/08/2026",
     "data_entrega": "",
     "ent_dehon": "10/08/2026"
@@ -6579,9 +6579,9 @@
     "valor_produto": 69,
     "cpf": "32161329863",
     "telefone": "11970554773",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "ent_dehon": ""
   },
   {
@@ -6607,9 +6607,9 @@
     "valor_produto": 1391,
     "cpf": "22226381864",
     "telefone": "11985710203",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "13/08/2026",
     "ent_dehon": ""
   },
   {
@@ -6761,7 +6761,8 @@
     "valor_produto": 128,
     "cpf": "60809256134",
     "telefone": "67992456000",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "20/08/2026"
   },
   {
     "awb": "57753051040",
@@ -6772,7 +6773,8 @@
     "valor_produto": 644,
     "cpf": "38227066801",
     "telefone": "1179537504",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "18/08/2026"
   },
   {
     "awb": "57753050233",
@@ -6783,7 +6785,8 @@
     "valor_produto": 486.5,
     "cpf": "13249567710",
     "telefone": "11963967565",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "18/08/2026"
   },
   {
     "awb": "57753048881",
@@ -6794,7 +6797,8 @@
     "valor_produto": 627.39,
     "cpf": "02884555412",
     "telefone": "11986159017",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "19/08/2026"
   },
   {
     "awb": "57753048612",
@@ -6805,7 +6809,8 @@
     "valor_produto": 97,
     "cpf": "24629197320",
     "telefone": "8596275508",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "18/08/2026"
   },
   {
     "awb": "57753046055",
