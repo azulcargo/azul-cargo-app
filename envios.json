@@ -6663,9 +6663,9 @@
     "valor_produto": 357,
     "cpf": "82935530306",
     "telefone": "85987814854",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": "10/08/2026"
   },
   {
@@ -6677,9 +6677,9 @@
     "valor_produto": 370,
     "cpf": "00714416380",
     "telefone": "85996565861",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": "11/08/2026"
   },
   {
@@ -6691,7 +6691,7 @@
     "valor_produto": 1264.39,
     "cpf": "12467602826",
     "telefone": "11968433999",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "prev_entrega": "17/08/2026",
     "data_entrega": "",
     "ent_dehon": "12/08/2026"
@@ -6705,9 +6705,9 @@
     "valor_produto": 511,
     "cpf": "65365097300",
     "telefone": "85999813538",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": "11/08/2026"
   },
   {
@@ -6719,9 +6719,9 @@
     "valor_produto": 1400,
     "cpf": "83143793368",
     "telefone": "85999494143",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": "07/08/2026"
   },
   {
@@ -6733,9 +6733,9 @@
     "valor_produto": 381.5,
     "cpf": "60447553399",
     "telefone": "85998013624",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": "11/08/2026"
   },
   {
@@ -6747,9 +6747,9 @@
     "valor_produto": 2900,
     "cpf": "62467964353",
     "telefone": "85981750730",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": ""
   },
   {
@@ -6890,8 +6890,9 @@
     "valor_produto": 220,
     "cpf": "16796560230",
     "telefone": "9188567841",
-    "status": "Em andamento",
-    "prev_entrega": "19/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "19/08/2026",
+    "data_entrega": "14/08/2026"
   },
   {
     "awb": "57753035113",
