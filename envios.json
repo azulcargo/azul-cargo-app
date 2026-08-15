@@ -6551,9 +6551,9 @@
     "valor_produto": 260,
     "cpf": "21968360875",
     "telefone": "11993136193",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "prev_entrega": "14/08/2026",
-    "data_entrega": "",
+    "data_entrega": "14/08/2026",
     "ent_dehon": "10/08/2026"
   },
   {
