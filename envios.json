@@ -7291,9 +7291,9 @@
     "valor_produto": 1350,
     "cpf": "16531892315",
     "telefone": "85999666144",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "19/08/2026",
-    "data_entrega": "",
+    "data_entrega": "19/08/2026",
     "ent_dehon": ""
   },
   {
@@ -7305,7 +7305,7 @@
     "valor_produto": 204.8,
     "cpf": "03000447040",
     "telefone": "11975362561",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "prev_entrega": "20/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
