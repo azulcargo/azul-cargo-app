@@ -6011,7 +6011,7 @@
     "destino": "Sao Paulo/SP",
     "dias_uteis": 5,
     "emissao": "06/08/2026",
-    "ent_dehon": "",
+    "ent_dehon": "13/08/2026",
     "frete": "43.99",
     "prev_entrega": "11/08/2026",
     "status": "Entregue",
@@ -6154,7 +6154,7 @@
     "destino": "Quixeramobim/CE",
     "dias_uteis": 7,
     "emissao": "05/08/2026",
-    "ent_dehon": "",
+    "ent_dehon": "05/08/2026",
     "frete": "73.89",
     "prev_entrega": "12/08/2026",
     "status": "Entregue",
@@ -7154,7 +7154,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "21/08/2026"
   },
   {
     "awb": "57791056210",
@@ -7168,7 +7168,7 @@
     "status": "Em andamento",
     "prev_entrega": "21/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "18/08/2026"
   },
   {
     "awb": "57791046093",
@@ -7182,7 +7182,7 @@
     "status": "Em andamento",
     "prev_entrega": "24/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57791039620",
@@ -7196,7 +7196,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "12/08/2026"
   },
   {
     "awb": "57791025421",
@@ -7210,7 +7210,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "17/08/2026"
   },
   {
     "awb": "57791003286",
@@ -7224,7 +7224,7 @@
     "status": "Em andamento",
     "prev_entrega": "21/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "15/08/2026"
   },
   {
     "awb": "57789837661",
@@ -7238,7 +7238,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57789451213",
@@ -7266,7 +7266,7 @@
     "status": "Em andamento",
     "prev_entrega": "21/08/2026",
     "data_entrega": "",
-    "ent_dehon": ""
+    "ent_dehon": "17/08/2026"
   },
   {
     "awb": "57789119111",
@@ -7280,7 +7280,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "17/08/2026"
   },
   {
     "awb": "57778646536",
@@ -7294,7 +7294,7 @@
     "status": "Entregue",
     "prev_entrega": "19/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57778557636",
