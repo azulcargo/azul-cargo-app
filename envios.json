@@ -7154,7 +7154,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "19/08/2026",
-    "ent_dehon": "21/08/2026"
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57791056210",
@@ -7308,7 +7308,7 @@
     "status": "Entregue",
     "prev_entrega": "20/08/2026",
     "data_entrega": "20/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57792399812",
@@ -7320,7 +7320,8 @@
     "cpf": "98437054168",
     "telefone": "67991640430",
     "status": "Em andamento",
-    "prev_entrega": "26/08/2026"
+    "prev_entrega": "26/08/2026",
+    "ent_dehon": "19/08/2026"
   },
   {
     "awb": "57792390653",
@@ -7332,7 +7333,8 @@
     "cpf": "00798323345",
     "telefone": "85991097829",
     "status": "Em andamento",
-    "prev_entrega": "24/08/2026"
+    "prev_entrega": "24/08/2026",
+    "ent_dehon": "18/08/2026"
   },
   {
     "awb": "57792389990",
@@ -7344,7 +7346,8 @@
     "cpf": "75995450344",
     "telefone": "85987698025",
     "status": "Em andamento",
-    "prev_entrega": "24/08/2026"
+    "prev_entrega": "24/08/2026",
+    "ent_dehon": "19/08/2026"
   },
   {
     "awb": "57792360144",
@@ -7356,7 +7359,8 @@
     "cpf": "02309305308",
     "telefone": "85988995583",
     "status": "Em andamento",
-    "prev_entrega": "25/08/2026"
+    "prev_entrega": "25/08/2026",
+    "ent_dehon": "19/08/2026"
   },
   {
     "awb": "57792354662",
@@ -7368,7 +7372,8 @@
     "cpf": "17374509766",
     "telefone": "21987443699",
     "status": "Em andamento",
-    "prev_entrega": "26/08/2026"
+    "prev_entrega": "26/08/2026",
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57792350930",
@@ -7380,7 +7385,8 @@
     "cpf": "02367029121",
     "telefone": "999999999",
     "status": "Em andamento",
-    "prev_entrega": "26/08/2026"
+    "prev_entrega": "26/08/2026",
+    "ent_dehon": "19/08/2026"
   },
   {
     "awb": "57792348196",
@@ -7392,7 +7398,8 @@
     "cpf": "67192670359",
     "telefone": "96981101647",
     "status": "Em andamento",
-    "prev_entrega": "24/08/2026"
+    "prev_entrega": "24/08/2026",
+    "ent_dehon": "20/08/2026"
   },
   {
     "awb": "57792346332",
@@ -7404,7 +7411,8 @@
     "cpf": "31396939822",
     "telefone": "11981115215",
     "status": "Em andamento",
-    "prev_entrega": "24/08/2026"
+    "prev_entrega": "24/08/2026",
+    "ent_dehon": "20/08/2026"
   },
   {
     "awb": "57791825171",
