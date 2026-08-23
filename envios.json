@@ -7360,9 +7360,10 @@
     "valor_produto": 380,
     "cpf": "02309305308",
     "telefone": "85988995583",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "25/08/2026",
-    "ent_dehon": "19/08/2026"
+    "ent_dehon": "19/08/2026",
+    "data_entrega": "22/08/2026"
   },
   {
     "awb": "57792354662",
