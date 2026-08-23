@@ -7031,7 +7031,7 @@
     "telefone": "85996316978",
     "frete": 71.78,
     "valor_produto": 328,
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": "14/08/2026",
@@ -7061,7 +7061,7 @@
     "telefone": "85999050520",
     "frete": 70.52,
     "valor_produto": 180,
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": "17/08/2026",
@@ -7165,7 +7165,7 @@
     "valor_produto": 402,
     "cpf": "03438819503",
     "telefone": "11974950460",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "21/08/2026",
     "data_entrega": "21/08/2026",
     "ent_dehon": "18/08/2026"
@@ -7221,7 +7221,7 @@
     "valor_produto": 777,
     "cpf": "87805375372",
     "telefone": "11968900016",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "21/08/2026",
     "data_entrega": "21/08/2026",
     "ent_dehon": "15/08/2026"
@@ -7263,7 +7263,7 @@
     "valor_produto": 240,
     "cpf": "94649570263",
     "telefone": "11945564774",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "prev_entrega": "21/08/2026",
     "data_entrega": "21/08/2026",
     "ent_dehon": "17/08/2026"
@@ -7332,7 +7332,7 @@
     "valor_produto": 160,
     "cpf": "00798323345",
     "telefone": "85991097829",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "24/08/2026",
     "ent_dehon": "18/08/2026",
     "data_entrega": "21/08/2026"
@@ -7346,7 +7346,7 @@
     "valor_produto": 714,
     "cpf": "75995450344",
     "telefone": "85987698025",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "24/08/2026",
     "ent_dehon": "19/08/2026",
     "data_entrega": "21/08/2026"
@@ -7360,7 +7360,7 @@
     "valor_produto": 380,
     "cpf": "02309305308",
     "telefone": "85988995583",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "25/08/2026",
     "ent_dehon": "19/08/2026",
     "data_entrega": "22/08/2026"
@@ -7400,7 +7400,7 @@
     "valor_produto": 413,
     "cpf": "67192670359",
     "telefone": "96981101647",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "24/08/2026",
     "ent_dehon": "20/08/2026",
     "data_entrega": "21/08/2026"
@@ -7454,7 +7454,7 @@
     "valor_produto": 298,
     "cpf": "27050561819",
     "telefone": "1197178188",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "24/08/2026",
     "ent_dehon": "19/08/2026",
     "data_entrega": "21/08/2026"
@@ -7507,7 +7507,7 @@
     "valor_produto": 160,
     "cpf": "60809256134",
     "telefone": "67992456000",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "26/08/2026",
     "data_entrega": "21/08/2026"
   },
@@ -7520,8 +7520,9 @@
     "valor_produto": 1791.0,
     "cpf": "60920618308",
     "telefone": "85986489086",
-    "status": "Em andamento",
-    "prev_entrega": "25/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "25/08/2026",
+    "data_entrega": "22/08/2026"
   },
   {
     "awb": "57720382843",
@@ -7532,8 +7533,9 @@
     "valor_produto": 679.0,
     "cpf": "61686182368",
     "telefone": "85988046386",
-    "status": "Em andamento",
-    "prev_entrega": "25/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "25/08/2026",
+    "data_entrega": "22/08/2026"
   },
   {
     "awb": "57720366006",
@@ -7556,8 +7558,9 @@
     "valor_produto": 179.0,
     "cpf": "78337933372",
     "telefone": "85986539017",
-    "status": "Em andamento",
-    "prev_entrega": "25/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "25/08/2026",
+    "data_entrega": "22/08/2026"
   },
   {
     "awb": "57720343772",
@@ -7568,8 +7571,9 @@
     "valor_produto": 496.0,
     "cpf": "05137413305",
     "telefone": "85996180459",
-    "status": "Em andamento",
-    "prev_entrega": "25/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "25/08/2026",
+    "data_entrega": "22/08/2026"
   },
   {
     "awb": "57720280190",
