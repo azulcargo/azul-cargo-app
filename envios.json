@@ -7179,9 +7179,9 @@
     "valor_produto": 1700,
     "cpf": "15754562810",
     "telefone": "11941617311",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "prev_entrega": "24/08/2026",
-    "data_entrega": "",
+    "data_entrega": "24/08/2026",
     "ent_dehon": "14/08/2026"
   },
   {
@@ -7374,9 +7374,10 @@
     "valor_produto": 574.7,
     "cpf": "17374509766",
     "telefone": "21987443699",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "26/08/2026",
-    "ent_dehon": "14/08/2026"
+    "ent_dehon": "14/08/2026",
+    "data_entrega": "24/08/2026"
   },
   {
     "awb": "57792350930",
@@ -7387,9 +7388,10 @@
     "valor_produto": 294,
     "cpf": "02367029121",
     "telefone": "999999999",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "26/08/2026",
-    "ent_dehon": "19/08/2026"
+    "ent_dehon": "19/08/2026",
+    "data_entrega": "24/08/2026"
   },
   {
     "awb": "57792348196",
@@ -7414,9 +7416,10 @@
     "valor_produto": 330,
     "cpf": "31396939822",
     "telefone": "11981115215",
-    "status": "Em andamento",
+    "status": "Entregue",
     "prev_entrega": "24/08/2026",
-    "ent_dehon": "20/08/2026"
+    "ent_dehon": "20/08/2026",
+    "data_entrega": "24/08/2026"
   },
   {
     "awb": "57791825171",
@@ -7546,8 +7549,9 @@
     "valor_produto": 2100.0,
     "cpf": "39507114220",
     "telefone": "96999711174",
-    "status": "Em andamento",
-    "prev_entrega": "25/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "25/08/2026",
+    "data_entrega": "24/08/2026"
   },
   {
     "awb": "57720346782",
@@ -7584,8 +7588,9 @@
     "valor_produto": 266.51,
     "cpf": "05250208886",
     "telefone": "11960600999",
-    "status": "Em andamento",
-    "prev_entrega": "26/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "26/08/2026",
+    "data_entrega": "24/08/2026"
   },
   {
     "awb": "57720264823",
@@ -7608,8 +7613,9 @@
     "valor_produto": 528.5,
     "cpf": "06285685410",
     "telefone": "11954516851",
-    "status": "Em andamento",
-    "prev_entrega": "26/08/2026"
+    "status": "Entregue",
+    "prev_entrega": "26/08/2026",
+    "data_entrega": "24/08/2026"
   },
   {
     "awb": "57720195851",
@@ -7620,7 +7626,7 @@
     "valor_produto": 200.0,
     "cpf": "07560341322",
     "telefone": "85999246144",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "prev_entrega": "02/09/2026"
   },
   {
@@ -7633,7 +7639,7 @@
     "cpf": "28581351859",
     "telefone": "11976222153",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "02/09/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7647,7 +7653,7 @@
     "cpf": "27543119803",
     "telefone": "1199152277",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "28/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7661,7 +7667,7 @@
     "cpf": "66017149253",
     "telefone": "9281381834",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7675,7 +7681,7 @@
     "cpf": "05940378838",
     "telefone": "11993215933",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7689,7 +7695,7 @@
     "cpf": "18467481862",
     "telefone": "11977807233",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7703,7 +7709,7 @@
     "cpf": "34225749215",
     "telefone": "85981180023",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7717,7 +7723,7 @@
     "cpf": "18467481862",
     "telefone": "11934936129",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7731,7 +7737,7 @@
     "cpf": "01449350313",
     "telefone": "85991384969",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "26/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7745,7 +7751,7 @@
     "cpf": "00441293000",
     "telefone": "51998827534",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "01/09/2026",
     "data_entrega": "",
     "ent_dehon": ""
   },
@@ -7759,7 +7765,7 @@
     "cpf": "23303609837",
     "telefone": "11991878597",
     "status": "Em andamento",
-    "prev_entrega": "",
+    "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": ""
   }
