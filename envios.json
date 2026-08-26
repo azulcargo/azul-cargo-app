@@ -7473,7 +7473,8 @@
     "telefone": "85994387438",
     "status": "Entregue",
     "prev_entrega": "21/08/2026",
-    "data_entrega": "20/08/2026"
+    "data_entrega": "20/08/2026",
+    "ent_dehon": "18/08/2026"
   },
   {
     "awb": "57791804904",
@@ -7800,7 +7801,8 @@
     "cpf": "15327905896",
     "telefone": "13996661995",
     "status": "Em andamento",
-    "prev_entrega": "01/09/2026"
+    "prev_entrega": "01/09/2026",
+    "ent_dehon": "25/08/2026"
   },
   {
     "awb": "57756181731",
@@ -7824,6 +7826,7 @@
     "cpf": "00524608350",
     "telefone": "8592871345",
     "status": "Em andamento",
-    "prev_entrega": "26/08/2026"
+    "prev_entrega": "26/08/2026",
+    "ent_dehon": "21/08/2026"
   }
 ]
