@@ -7777,5 +7777,49 @@
     "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": "21/08/2026"
+  },
+  {
+    "awb": "57756237090",
+    "destinatario": "MARCIA APARECIDA MAYLENA DOS SANTOS",
+    "destino": "Sao Paulo/SP",
+    "emissao": "25/08/2026",
+    "frete": "39.40",
+    "valor_produto": "91.00",
+    "cpf": "72665181991",
+    "telefone": "11991373219",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756216646",
+    "destinatario": "BEATRIZ QUAGLIA PEREIRA",
+    "destino": "Santos/SP",
+    "emissao": "25/08/2026",
+    "frete": "43.42",
+    "valor_produto": "700.00",
+    "cpf": "15327905896",
+    "telefone": "13996661995",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756181731",
+    "destinatario": "MARCIA MARIA TREVIA MORAIS CORREIA",
+    "destino": "Fortaleza/CE",
+    "emissao": "25/08/2026",
+    "frete": "37.95",
+    "valor_produto": "260.00",
+    "cpf": "00525343326",
+    "telefone": "85986997370",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57750388796",
+    "destinatario": "JOELANE MARIA DE CARVALHO TEIXEIRA",
+    "destino": "Fortaleza/CE",
+    "emissao": "25/08/2026",
+    "frete": "46.88",
+    "valor_produto": "152.00",
+    "cpf": "00524608350",
+    "telefone": "8592871345",
+    "status": "Em andamento"
   }
 ]
