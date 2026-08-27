@@ -5872,7 +5872,7 @@
     "prev_entrega": "13/08/2026",
     "status": "Em andamento",
     "telefone": "8588280720",
-    "ultima_atualizacao": "26/08/2026",
+    "ultima_atualizacao": "10/08/2026",
     "valor_produto": "420.00"
   },
   {
@@ -6301,7 +6301,7 @@
     "prev_entrega": "17/08/2026",
     "status": "Em andamento",
     "telefone": "68999711378",
-    "ultima_atualizacao": "26/08/2026",
+    "ultima_atualizacao": "10/08/2026",
     "valor_produto": 80
   },
   {
@@ -6331,7 +6331,7 @@
     "frete": 30.64,
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "26/08/2026",
+    "ultima_atualizacao": "10/08/2026 22:25",
     "valor_produto": 760.9,
     "cpf": "72622024304",
     "telefone": "85987710573"
@@ -7683,7 +7683,7 @@
     "valor_produto": 1850,
     "cpf": "66017149253",
     "telefone": "9281381834",
-    "status": "Saiu para Entrega",
+    "status": "Em andamento",
     "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": "",
@@ -7713,7 +7713,7 @@
     "valor_produto": 234.51,
     "cpf": "18467481862",
     "telefone": "11977807233",
-    "status": "Saiu para Entrega",
+    "status": "Em andamento",
     "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": "22/08/2026",
@@ -7728,7 +7728,7 @@
     "valor_produto": 286,
     "cpf": "34225749215",
     "telefone": "85981180023",
-    "status": "Saiu para Entrega",
+    "status": "Em andamento",
     "prev_entrega": "27/08/2026",
     "data_entrega": "",
     "ent_dehon": "24/08/2026",
@@ -7847,5 +7847,71 @@
     "prev_entrega": "26/08/2026",
     "ent_dehon": "21/08/2026",
     "ultima_atualizacao": "26/08/2026"
+  },
+  {
+    "awb": "57712409272",
+    "destinatario": "ARTHUR FELTRIN",
+    "destino": "Sao Paulo/SP",
+    "emissao": "26/08/2026",
+    "frete": "50.37",
+    "valor_produto": "1272.00",
+    "cpf": "06865389948",
+    "telefone": "11998111108",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57712401443",
+    "destinatario": "ARTHUR FELTRIN",
+    "destino": "Sao Paulo/SP",
+    "emissao": "26/08/2026",
+    "frete": "50.37",
+    "valor_produto": "1272.00",
+    "cpf": "06865389948",
+    "telefone": "11998111108",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57781117912",
+    "destinatario": "ARTHUR FELTRIN",
+    "destino": "Sao Paulo/SP",
+    "emissao": "26/08/2026",
+    "frete": "50.37",
+    "valor_produto": "1272.00",
+    "cpf": "06865389948",
+    "telefone": "11998111108",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57712385634",
+    "destinatario": "FABIO FELISMINO PEREIRA",
+    "destino": "Sao Paulo/SP",
+    "emissao": "26/08/2026",
+    "frete": "40.52",
+    "valor_produto": "260.00",
+    "cpf": "32161329863",
+    "telefone": "11970554773",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57712236254",
+    "destinatario": "BRUNA PINHEIRO MOREIRA",
+    "destino": "Fortaleza/CE",
+    "emissao": "26/08/2026",
+    "frete": "39.53",
+    "valor_produto": "500.00",
+    "cpf": "03893720308",
+    "telefone": "85988522957",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57793307476",
+    "destinatario": "MARCIA JORDANA CUNHA LOPES",
+    "destino": "Acailandia/MA",
+    "emissao": "26/08/2026",
+    "frete": "62.73",
+    "valor_produto": "861.00",
+    "cpf": "04251494393",
+    "telefone": "99991213021",
+    "status": "Em andamento"
   }
 ]
