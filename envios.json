@@ -7909,7 +7909,8 @@
     "cpf": "03893720308",
     "telefone": "85988522957",
     "status": "Em andamento",
-    "prev_entrega": "28/08/2026"
+    "prev_entrega": "28/08/2026",
+    "ent_dehon": "25/08/2026"
   },
   {
     "awb": "57793307476",
@@ -7921,6 +7922,7 @@
     "cpf": "04251494393",
     "telefone": "99991213021",
     "status": "Em andamento",
-    "prev_entrega": "02/09/2026"
+    "prev_entrega": "02/09/2026",
+    "ent_dehon": "24/08/2026"
   }
 ]
