@@ -7924,5 +7924,27 @@
     "status": "Em andamento",
     "prev_entrega": "02/09/2026",
     "ent_dehon": "24/08/2026"
+  },
+  {
+    "awb": "57751400613",
+    "destinatario": "VITOR TAMIELLO",
+    "destino": "Sao Paulo/SP",
+    "emissao": "27/08/2026",
+    "frete": "50.38",
+    "valor_produto": "1274.51",
+    "cpf": "36614563858",
+    "telefone": "11986120358",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57751023420",
+    "destinatario": "MAURICIO CARLOS LUPIFIERI",
+    "destino": "Fortaleza/CE",
+    "emissao": "27/08/2026",
+    "frete": "39.76",
+    "valor_produto": "1872.50",
+    "cpf": "83997172820",
+    "telefone": "81987740007",
+    "status": "Em andamento"
   }
 ]
