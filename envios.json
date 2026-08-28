@@ -7936,7 +7936,8 @@
     "cpf": "36614563858",
     "telefone": "11986120358",
     "status": "Em andamento",
-    "prev_entrega": "01/09/2026"
+    "prev_entrega": "01/09/2026",
+    "ent_dehon": "26/08/2026"
   },
   {
     "awb": "57751023420",
@@ -7948,6 +7949,7 @@
     "cpf": "83997172820",
     "telefone": "81987740007",
     "status": "Em andamento",
-    "prev_entrega": "28/08/2026"
+    "prev_entrega": "28/08/2026",
+    "ent_dehon": "27/08/2026"
   }
 ]
