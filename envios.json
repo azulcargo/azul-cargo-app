@@ -8048,7 +8048,8 @@
     "cpf": "02520920408",
     "telefone": "84999782125",
     "status": "Em andamento",
-    "prev_entrega": "09/09/2026"
+    "prev_entrega": "09/09/2026",
+    "ent_dehon": "29/08/2026"
   },
   {
     "awb": "57753624130",
@@ -8072,7 +8073,8 @@
     "cpf": "88953947391",
     "telefone": "88992095105",
     "status": "Em andamento",
-    "prev_entrega": "09/09/2026"
+    "prev_entrega": "09/09/2026",
+    "ent_dehon": "27/08/2026"
   },
   {
     "awb": "57753622310",
@@ -8084,7 +8086,8 @@
     "cpf": "06077819476",
     "telefone": "11987974712",
     "status": "Em andamento",
-    "prev_entrega": "02/09/2026"
+    "prev_entrega": "02/09/2026",
+    "ent_dehon": "27/08/2026"
   },
   {
     "awb": "57753619941",
@@ -8096,6 +8099,7 @@
     "cpf": "88953947391",
     "telefone": "88992095105",
     "status": "Em andamento",
-    "prev_entrega": "09/09/2026"
+    "prev_entrega": "09/09/2026",
+    "ent_dehon": "27/08/2026"
   }
 ]
