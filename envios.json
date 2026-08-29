@@ -7978,7 +7978,8 @@
     "telefone": "11975362561",
     "status": "Em andamento",
     "ultima_atualizacao": "28/08/2026",
-    "prev_entrega": "02/09/2026"
+    "prev_entrega": "02/09/2026",
+    "ent_dehon": "14/08/2026"
   },
   {
     "awb": "57753412870",
@@ -7991,7 +7992,8 @@
     "telefone": "67999173442",
     "status": "Em andamento",
     "ultima_atualizacao": "28/08/2026",
-    "prev_entrega": "03/09/2026"
+    "prev_entrega": "03/09/2026",
+    "ent_dehon": "28/08/2026"
   },
   {
     "awb": "57753410070",
@@ -8004,7 +8006,8 @@
     "telefone": "21997571075",
     "status": "Em andamento",
     "ultima_atualizacao": "28/08/2026",
-    "prev_entrega": "02/09/2026"
+    "prev_entrega": "02/09/2026",
+    "ent_dehon": "27/08/2026"
   },
   {
     "awb": "57753402344",
@@ -8017,7 +8020,8 @@
     "telefone": "85996043455",
     "status": "Em andamento",
     "ultima_atualizacao": "28/08/2026",
-    "prev_entrega": "01/09/2026"
+    "prev_entrega": "01/09/2026",
+    "ent_dehon": "27/08/2026"
   },
   {
     "awb": "57751403715",
@@ -8030,6 +8034,7 @@
     "telefone": "8597964084",
     "status": "Em andamento",
     "ultima_atualizacao": "28/08/2026",
-    "prev_entrega": "31/08/2026"
+    "prev_entrega": "31/08/2026",
+    "ent_dehon": "26/08/2026"
   }
 ]
