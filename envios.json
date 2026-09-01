@@ -8102,5 +8102,49 @@
     "status": "Em andamento",
     "prev_entrega": "09/09/2026",
     "ent_dehon": "27/08/2026"
+  },
+  {
+    "awb": "57754907510",
+    "destinatario": "RAQUEL FERNANDES PAIVA DOS SANTOS",
+    "destino": "Sao Paulo/SP",
+    "emissao": "31/08/2026",
+    "frete": "48.83",
+    "valor_produto": "232.00",
+    "cpf": "31292317817",
+    "telefone": "11991955221",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57754887932",
+    "destinatario": "JULIANA CORREA",
+    "destino": "Ribeirao Pires/SP",
+    "emissao": "31/08/2026",
+    "frete": "43.03",
+    "valor_produto": "160.00",
+    "cpf": "33250293881",
+    "telefone": "11994406510",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57754880206",
+    "destinatario": "GISELE LEITE TEIXEIRA GREGORIO",
+    "destino": "Fortaleza/CE",
+    "emissao": "31/08/2026",
+    "frete": "52.11",
+    "valor_produto": "195.00",
+    "cpf": "72592907220",
+    "telefone": "85981133554",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57754883603",
+    "destinatario": "MARIA ALEIXO DA SILVA BATISTA",
+    "destino": "Sao Paulo/SP",
+    "emissao": "31/08/2026",
+    "frete": "47.26",
+    "valor_produto": "801.50",
+    "cpf": "78196620853",
+    "telefone": "11966987036",
+    "status": "Em andamento"
   }
 ]
