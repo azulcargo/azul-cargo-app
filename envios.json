@@ -8235,5 +8235,61 @@
     "telefone": "85998225018",
     "status": "Em andamento",
     "prev_entrega": "03/09/2026"
+  },
+  {
+    "awb": "241163",
+    "destinatario": "IZADORA PEROBA COSTA",
+    "destino": "AVENIDA...",
+    "emissao": "02/09/2026",
+    "frete": "100.00",
+    "status": "Em andamento",
+    "prod_dehon": "",
+    "ent_dehon": "",
+    "prev_entrega": "",
+    "data_entrega": "",
+    "valor_produto": "",
+    "origem": "Jura Express"
+  },
+  {
+    "awb": "242703",
+    "destinatario": "ROMULO FONTELES DA ROCHA",
+    "destino": "AVENIDA MOZART PINHEIRO DE LUCENA",
+    "emissao": "02/09/2026",
+    "frete": "21.99",
+    "status": "Em andamento",
+    "prod_dehon": "31/08/2026",
+    "ent_dehon": "01/09/2026",
+    "prev_entrega": "",
+    "data_entrega": "",
+    "valor_produto": "",
+    "origem": "Jura Express"
+  },
+  {
+    "awb": "243044",
+    "destinatario": "LUANA DO NASCIMENTO BRAZUNA",
+    "destino": "RUA RAIMUNDO PAIVA DE ABREU, OUTRA BANDA",
+    "emissao": "02/09/2026",
+    "frete": "35.99",
+    "status": "Em andamento",
+    "prod_dehon": "02/09/2026",
+    "ent_dehon": "02/09/2026",
+    "prev_entrega": "",
+    "data_entrega": "",
+    "valor_produto": "",
+    "origem": "Jura Express"
+  },
+  {
+    "awb": "241777",
+    "destinatario": "MARIELLE PEREIRA REGADAS",
+    "destino": "AVENIDA PONTES VIEIRA, 2340, SAO JOAO DO TAUAPE",
+    "emissao": "02/09/2026",
+    "frete": "7.99",
+    "status": "Em andamento",
+    "prod_dehon": "26/08/2026",
+    "ent_dehon": "26/08/2026",
+    "prev_entrega": "",
+    "data_entrega": "",
+    "valor_produto": "",
+    "origem": "Jura Express"
   }
 ]
