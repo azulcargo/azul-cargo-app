@@ -348,6 +348,22 @@ function parseBR(str) {
   return new Date(+y, +m - 1, +d);
 }
 
+// Dias Úteis = data Ent_Dehon (Pedido Pago) + 5 dias úteis.
+// Sábado CONTA como dia útil; domingo não conta.
+function prazoDehon(entDehon) {
+  const base = parseBR(entDehon);
+  if (!base) return '—';
+  const cur = new Date(base);
+  let restantes = 5;
+  while (restantes > 0) {
+    cur.setDate(cur.getDate() + 1);
+    if (cur.getDay() !== 0) restantes--;   // pula apenas domingo
+  }
+  const dd = String(cur.getDate()).padStart(2, '0');
+  const mm = String(cur.getMonth() + 1).padStart(2, '0');
+  return `<span style="font-weight:600">${dd}/${mm}/${cur.getFullYear()}</span>`;
+}
+
 function diasUteis(emissao, dataEntrega) {
   const inicio = parseBR(emissao);
   const fim    = parseBR(dataEntrega);
@@ -436,8 +452,8 @@ function renderTable() {
       <td>${r.destino || '—'}</td>
       <td>${r.emissao || '—'}</td>
       <td>${r.prev_entrega || '—'}</td>
-      <td>${r.prod_dehon || '—'}</td>
       <td>${r.ent_dehon || '—'}</td>
+      <td style="text-align:center">${prazoDehon(r.ent_dehon)}</td>
       <td>${r.frete > 0 ? 'R$ ' + Number(r.frete).toFixed(2) : '—'}</td>
       <td>${r.valor_produto > 0 ? 'R$ ' + Number(r.valor_produto).toFixed(2) : '—'}</td>
       <td>${badge(statusEfetivo(r))}</td>
@@ -501,8 +517,8 @@ function exportExcel() {
     'Destino':            r.destino,
     'Emissão_Cte':        r.emissao,
     'Ent_Azul':       r.prev_entrega,
-    'Prod_Dehon':         r.prod_dehon,
-    'Ent_Dehon':          r.ent_dehon,
+    'Prod_Dehon':          r.ent_dehon,
+    'Ent_Dehon':         prazoDehon(r.ent_dehon).replace(/<[^>]+>/g, ''),
     'Data Entrega':       r.data_entrega,
     'Frete (R$)':         r.frete,
     'Valor Produto (R$)': r.valor_produto,
