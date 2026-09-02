@@ -8158,5 +8158,71 @@
     "status": "Em andamento",
     "prev_entrega": "03/09/2026",
     "ent_dehon": "31/08/2026"
+  },
+  {
+    "awb": "57756345273",
+    "destinatario": "TERESA CRISTINA LYPORAGE DIAS",
+    "destino": "Brasilia/DF",
+    "emissao": "01/09/2026",
+    "frete": "43.62",
+    "valor_produto": "1092.00",
+    "cpf": "03632189714",
+    "telefone": "32984079656",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756338262",
+    "destinatario": "ANA BEATRIZ SOUZA MURTA",
+    "destino": "Serrinha/BA",
+    "emissao": "01/09/2026",
+    "frete": "80.78",
+    "valor_produto": "658.00",
+    "cpf": "05867443558",
+    "telefone": "75988229007",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756334482",
+    "destinatario": "JIVAGO DEL CLARO RIGO FILHO",
+    "destino": "Sao Paulo/SP",
+    "emissao": "01/09/2026",
+    "frete": "40.28",
+    "valor_produto": "224.00",
+    "cpf": "07543060973",
+    "telefone": "49988260176",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756333126",
+    "destinatario": "LUIS CARLOS CIOFFI BALTRAMAVICIUS",
+    "destino": "Sao Paulo/SP",
+    "emissao": "01/09/2026",
+    "frete": "40.96",
+    "valor_produto": "328.00",
+    "cpf": "08410608863",
+    "telefone": "11947635306",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756331052",
+    "destinatario": "MIRIAN CILENE SOUSA PEDROSO",
+    "destino": "Santarem/PA",
+    "emissao": "01/09/2026",
+    "frete": "22.16",
+    "valor_produto": "239.25",
+    "cpf": "26890925220",
+    "telefone": "91981375242",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57756323735",
+    "destinatario": "INES ARAUJO PONTES CAMPOS",
+    "destino": "Eusebio/CE",
+    "emissao": "01/09/2026",
+    "frete": "50.08",
+    "valor_produto": "270.00",
+    "cpf": "23154926372",
+    "telefone": "85998225018",
+    "status": "Em andamento"
   }
 ]
