@@ -6611,7 +6611,7 @@
     "status": "Entregue",
     "prev_entrega": "14/08/2026",
     "data_entrega": "13/08/2026",
-    "ent_dehon": ""
+    "ent_dehon": "09/06/2026"
   },
   {
     "awb": "57777108150",
@@ -7435,7 +7435,8 @@
     "telefone": "8588715230",
     "status": "Entregue",
     "prev_entrega": "21/08/2026",
-    "data_entrega": "20/08/2026"
+    "data_entrega": "20/08/2026",
+    "ent_dehon": "20/06/2026"
   },
   {
     "awb": "57791809815",
@@ -7573,7 +7574,8 @@
     "telefone": "85986539017",
     "status": "Entregue",
     "prev_entrega": "25/08/2026",
-    "data_entrega": "22/08/2026"
+    "data_entrega": "22/08/2026",
+    "ent_dehon": "25/06/2026"
   },
   {
     "awb": "57720343772",
