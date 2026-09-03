@@ -5872,7 +5872,7 @@
     "prev_entrega": "13/08/2026",
     "status": "Em andamento",
     "telefone": "8588280720",
-    "ultima_atualizacao": "28/08/2026",
+    "ultima_atualizacao": "03/09/2026",
     "valor_produto": "420.00"
   },
   {
@@ -6301,7 +6301,7 @@
     "prev_entrega": "17/08/2026",
     "status": "Em andamento",
     "telefone": "68999711378",
-    "ultima_atualizacao": "28/08/2026",
+    "ultima_atualizacao": "03/09/2026",
     "valor_produto": 80
   },
   {
@@ -6331,7 +6331,7 @@
     "frete": 30.64,
     "prev_entrega": "12/08/2026",
     "status": "Em andamento",
-    "ultima_atualizacao": "28/08/2026",
+    "ultima_atualizacao": "03/09/2026",
     "valor_produto": 760.9,
     "cpf": "72622024304",
     "telefone": "85987710573"
@@ -6485,7 +6485,7 @@
     "prev_entrega": "14/08/2026",
     "data_entrega": "",
     "ent_dehon": "11/08/2026",
-    "ultima_atualizacao": "28/08/2026"
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57777477186",
@@ -7492,7 +7492,7 @@
     "status": "Em andamento",
     "prev_entrega": "24/08/2026",
     "ent_dehon": "17/08/2026",
-    "ultima_atualizacao": "28/08/2026"
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57791803493",
@@ -7882,7 +7882,7 @@
     "telefone": "11998111108",
     "status": "Em andamento",
     "prev_entrega": "31/08/2026",
-    "ultima_atualizacao": "28/08/2026"
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57781117912",
@@ -7895,7 +7895,7 @@
     "telefone": "11998111108",
     "status": "Em andamento",
     "prev_entrega": "31/08/2026",
-    "ultima_atualizacao": "28/08/2026"
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57712385634",
@@ -8084,7 +8084,8 @@
     "telefone": "88992095105",
     "status": "Saiu para Entrega",
     "prev_entrega": "09/09/2026",
-    "ent_dehon": "27/08/2026"
+    "ent_dehon": "27/08/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57753622310",
@@ -8111,7 +8112,8 @@
     "telefone": "88992095105",
     "status": "Em andamento",
     "prev_entrega": "09/09/2026",
-    "ent_dehon": "27/08/2026"
+    "ent_dehon": "27/08/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57754907510",
@@ -8138,7 +8140,8 @@
     "telefone": "11994406510",
     "status": "Saiu para Entrega",
     "prev_entrega": "04/09/2026",
-    "ent_dehon": "31/08/2026"
+    "ent_dehon": "31/08/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57754880206",
@@ -8179,7 +8182,8 @@
     "telefone": "32984079656",
     "status": "Em andamento",
     "prev_entrega": "08/09/2026",
-    "ent_dehon": "31/08/2026"
+    "ent_dehon": "31/08/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57756338262",
@@ -8192,7 +8196,8 @@
     "telefone": "75988229007",
     "status": "Em andamento",
     "prev_entrega": "11/09/2026",
-    "ent_dehon": "31/08/2026"
+    "ent_dehon": "31/08/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57756334482",
@@ -8205,7 +8210,8 @@
     "telefone": "49988260176",
     "status": "Em andamento",
     "prev_entrega": "04/09/2026",
-    "ent_dehon": "01/09/2026"
+    "ent_dehon": "01/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57756333126",
@@ -8218,7 +8224,8 @@
     "telefone": "11947635306",
     "status": "Em andamento",
     "prev_entrega": "04/09/2026",
-    "ent_dehon": "01/09/2026"
+    "ent_dehon": "01/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57756331052",
@@ -8231,7 +8238,8 @@
     "telefone": "91981375242",
     "status": "Em andamento",
     "prev_entrega": "08/09/2026",
-    "ent_dehon": "01/09/2026"
+    "ent_dehon": "01/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57756323735",
@@ -8313,7 +8321,8 @@
     "cpf": "27863075890",
     "telefone": "11965982964",
     "status": "Em andamento",
-    "prev_entrega": "08/09/2026"
+    "prev_entrega": "08/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57770128376",
@@ -8325,7 +8334,8 @@
     "cpf": "00049632370",
     "telefone": "85987662037",
     "status": "Em andamento",
-    "prev_entrega": "04/09/2026"
+    "prev_entrega": "04/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57770123001",
@@ -8337,7 +8347,8 @@
     "cpf": "06547721850",
     "telefone": "11971761023",
     "status": "Em andamento",
-    "prev_entrega": "09/09/2026"
+    "prev_entrega": "09/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   },
   {
     "awb": "57770120282",
@@ -8349,6 +8360,7 @@
     "cpf": "36594490168",
     "telefone": "67999812014",
     "status": "Em andamento",
-    "prev_entrega": "09/09/2026"
+    "prev_entrega": "09/09/2026",
+    "ultima_atualizacao": "03/09/2026"
   }
 ]
