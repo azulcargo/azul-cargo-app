@@ -8301,5 +8301,49 @@
     "data_entrega": "",
     "valor_produto": "",
     "origem": "Jura Express"
+  },
+  {
+    "awb": "57770133335",
+    "destinatario": "CINIRA GONCALVES DA GAMA",
+    "destino": "Sao Paulo/SP",
+    "emissao": "02/09/2026",
+    "frete": "60.77",
+    "valor_produto": "2317.00",
+    "cpf": "27863075890",
+    "telefone": "11965982964",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57770128376",
+    "destinatario": "MARIELLE PEREIRA REGADAS",
+    "destino": "Fortaleza/CE",
+    "emissao": "02/09/2026",
+    "frete": "28.52",
+    "valor_produto": "231.00",
+    "cpf": "00049632370",
+    "telefone": "85987662037",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57770123001",
+    "destinatario": "ELIZABETH IZABEL LEMOS DA SILVA",
+    "destino": "Ribeirao Pires/SP",
+    "emissao": "02/09/2026",
+    "frete": "42.10",
+    "valor_produto": "500.50",
+    "cpf": "06547721850",
+    "telefone": "11971761023",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57770120282",
+    "destinatario": "VERA ABADIA MARTINS TERRA HILDEBRAND",
+    "destino": "Campo Grande/MS",
+    "emissao": "02/09/2026",
+    "frete": "40.51",
+    "valor_produto": "259.20",
+    "cpf": "36594490168",
+    "telefone": "67999812014",
+    "status": "Em andamento"
   }
 ]
