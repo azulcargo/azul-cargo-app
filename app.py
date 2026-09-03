@@ -107,6 +107,17 @@ def require_auth(f):
         return f(*args, **kwargs)
     return decorated
 
+@app.route('/')
+def painel():
+    """Serve o painel pelo proprio Flask.
+    Assim o GitHub Pages deixa de ser necessario e o repositorio pode ser privado."""
+    try:
+        with open('index.html', 'r', encoding='utf-8') as f:
+            return f.read(), 200, {'Content-Type': 'text/html; charset=utf-8'}
+    except FileNotFoundError:
+        return 'index.html nao encontrado', 404
+
+
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.get_json() or {}
@@ -168,19 +179,78 @@ def push_to_github(envios):
         return False
 
 # ─── Utilitários ──────────────────────────────────────────────────────────────
+# ─── Camada de dados ──────────────────────────────────────────────────────────
+# Se DATABASE_URL existir, usa Postgres. Caso contrario mantem o envios.json.
+# Isso permite implantar este codigo ANTES de criar o banco, sem quebrar nada.
+DATABASE_URL = os.environ.get('DATABASE_URL', '')
+USANDO_PG = bool(DATABASE_URL)
+
+if USANDO_PG:
+    try:
+        import psycopg
+        from psycopg.types.json import Jsonb
+    except ImportError:
+        print("[DB] psycopg nao instalado — voltando para JSON.")
+        USANDO_PG = False
+
+
+def _conn():
+    url = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
+    return psycopg.connect(url, connect_timeout=10)
+
+
+def init_db():
+    """Cria a tabela na primeira execucao. Idempotente."""
+    if not USANDO_PG:
+        return
+    with _conn() as c, c.cursor() as cur:
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS envios (
+                awb   TEXT PRIMARY KEY,
+                dados JSONB NOT NULL,
+                atualizado_em TIMESTAMPTZ DEFAULT now()
+            )
+        """)
+        c.commit()
+    print("[DB] Postgres pronto.")
+
+
 def carregar_envios():
+    if USANDO_PG:
+        try:
+            with _conn() as c, c.cursor() as cur:
+                cur.execute("SELECT dados FROM envios")
+                return [r[0] for r in cur.fetchall()]
+        except Exception as e:
+            print(f"[DB] Erro ao ler: {e}")
+            raise
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, 'r', encoding='utf-8') as f:
             return json.load(f)
     return []
 
 def salvar_envios(envios):
+    if USANDO_PG:
+        with _conn() as c, c.cursor() as cur:
+            for e in envios:
+                cur.execute(
+                    """INSERT INTO envios (awb, dados, atualizado_em)
+                       VALUES (%s, %s, now())
+                       ON CONFLICT (awb) DO UPDATE
+                         SET dados = EXCLUDED.dados, atualizado_em = now()""",
+                    (str(e.get('awb')), Jsonb(e))
+                )
+            c.commit()
+        return
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
         json.dump(envios, f, ensure_ascii=False, indent=2)
 
 def salvar_e_persistir(envios):
     salvar_envios(envios)
-    push_to_github(envios)
+    # Com Postgres o banco e a fonte de verdade; nao publicamos dados
+    # pessoais (CPF, telefone, endereco) no repositorio.
+    if not USANDO_PG:
+        push_to_github(envios)
 
 def extrair_awb_da_chave(chave):
     chave = re.sub(r'[^0-9]', '', chave)
@@ -412,6 +482,12 @@ def update_data():
 @app.route('/api/status', methods=['GET'])
 def status():
     return jsonify({'status': 'online', 'timestamp': datetime.now().isoformat()})
+
+# Cria a tabela no arranque (nao faz nada sem DATABASE_URL)
+try:
+    init_db()
+except Exception as _e:
+    print(f'[DB] init_db falhou: {_e}')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
