@@ -8362,5 +8362,101 @@
     "status": "Em andamento",
     "prev_entrega": "09/09/2026",
     "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57791166530",
+    "cpf": "77185625220",
+    "destinatario": "GISELE SANTANA MUNIZ FARIAS",
+    "destino": "Fortaleza/CE",
+    "emissao": "03/09/2026",
+    "frete": "22.88",
+    "telefone": "85984123002",
+    "valor_produto": "70.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57791147814",
+    "cpf": "05845377358",
+    "destinatario": "NEUZA CARLA LIMA DOS SANTOS",
+    "destino": "Fortaleza/CE",
+    "emissao": "03/09/2026",
+    "frete": "27.89",
+    "telefone": "91981262963",
+    "valor_produto": "675.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57791111193",
+    "cpf": "60101375867",
+    "destinatario": "YASMIN KWIEK",
+    "destino": "Hortolandia/SP",
+    "emissao": "03/09/2026",
+    "frete": "41.77",
+    "telefone": "19981011669",
+    "valor_produto": "450.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57791040644",
+    "cpf": "27745399866",
+    "destinatario": "CRISTINE HARALAMBOS BASSOUKO",
+    "destino": "Sao Paulo/SP",
+    "emissao": "03/09/2026",
+    "frete": "46.73",
+    "telefone": "99999999999",
+    "valor_produto": "721.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57789649486",
+    "cpf": "60101375867",
+    "destinatario": "YASMIN KWIEK",
+    "destino": "Hortolandia/SP",
+    "emissao": "03/09/2026",
+    "frete": "41.77",
+    "telefone": "19981011669",
+    "valor_produto": "450.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57702150060",
+    "cpf": "27745399866",
+    "destinatario": "CRISTINE HARALAMBOS BASSOUKO",
+    "destino": "Sao Paulo/SP",
+    "emissao": "03/09/2026",
+    "frete": "46.73",
+    "telefone": "99999999999",
+    "valor_produto": "721.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57784457365",
+    "cpf": "49264710353",
+    "destinatario": "MICHELLINY VASCONCELOS GOMES DE MENEZES",
+    "destino": "Fortaleza/CE",
+    "emissao": "03/09/2026",
+    "frete": "48.11",
+    "telefone": "85996948888",
+    "valor_produto": "427.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
+  },
+  {
+    "awb": "57701874657",
+    "cpf": "67065490378",
+    "destinatario": "JACILENE SILVA DE LIMA",
+    "destino": "Fortaleza/CE",
+    "emissao": "03/09/2026",
+    "frete": "41.54",
+    "telefone": "85988845826",
+    "valor_produto": "160.00",
+    "status": "Em andamento",
+    "ultima_atualizacao": "03/09/2026"
   }
 ]
