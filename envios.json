@@ -8415,7 +8415,8 @@
     "valor_produto": "261.00",
     "cpf": "32161329863",
     "telefone": "11970554773",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "10/09/2026"
   },
   {
     "awb": "57727194856",
@@ -8426,7 +8427,8 @@
     "valor_produto": "1560.00",
     "cpf": "43359609808",
     "telefone": "11989867322",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "10/09/2026"
   },
   {
     "awb": "57791166530",
