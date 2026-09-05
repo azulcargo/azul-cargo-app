@@ -8494,5 +8494,16 @@
     "cpf": "49264710353",
     "telefone": "85996948888",
     "status": "Em andamento"
+  },
+  {
+    "awb": "57701874657",
+    "destinatario": "JACILENE SILVA DE LIMA",
+    "destino": "Fortaleza/CE",
+    "emissao": "03/09/2026",
+    "frete": "41.54",
+    "valor_produto": "160.00",
+    "cpf": "67065490378",
+    "telefone": "85988845826",
+    "status": "Em andamento"
   }
 ]
