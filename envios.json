@@ -8514,7 +8514,7 @@
     "emissao": "08/09/2026",
     "frete": "226.91",
     "valor_produto": "145.00",
-    "cpf": "",
+    "cpf": "27963806000131",
     "telefone": "9133484241",
     "status": "Entregue",
     "prev_entrega": "09/09/2026",
@@ -8671,5 +8671,18 @@
     "status": "Entregue",
     "prev_entrega": "08/09/2026",
     "data_entrega": "04/09/2026"
+  },
+  {
+    "awb": "57701874657",
+    "cpf": "67065490378",
+    "data_entrega": "04/09/2026",
+    "destinatario": "JACILENE SILVA DE LIMA",
+    "destino": "Fortaleza/CE",
+    "emissao": "03/09/2026",
+    "frete": 41.54,
+    "prev_entrega": "04/09/2026",
+    "status": "Entregue",
+    "telefone": "85988845826",
+    "valor_produto": 160
   }
 ]
