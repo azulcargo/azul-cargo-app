@@ -8516,7 +8516,9 @@
     "valor_produto": "145.00",
     "cpf": "",
     "telefone": "9133484241",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "09/09/2026",
+    "data_entrega": "09/09/2026"
   },
   {
     "awb": "57727463833",
@@ -8527,7 +8529,9 @@
     "valor_produto": "145.00",
     "cpf": "02586107357",
     "telefone": "8591904123",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "09/09/2026",
+    "data_entrega": "05/09/2026"
   },
   {
     "awb": "57727436220",
@@ -8538,7 +8542,8 @@
     "valor_produto": "145.00",
     "cpf": "02586107357",
     "telefone": "8591904123",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "09/09/2026"
   },
   {
     "awb": "57727293840",
@@ -8549,7 +8554,9 @@
     "valor_produto": "545.00",
     "cpf": "88685292204",
     "telefone": "96991159453",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "11/09/2026",
+    "data_entrega": "08/09/2026"
   },
   {
     "awb": "57727245993",
@@ -8560,7 +8567,9 @@
     "valor_produto": "261.00",
     "cpf": "32161329863",
     "telefone": "11970554773",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "10/09/2026",
+    "data_entrega": "08/09/2026"
   },
   {
     "awb": "57727194856",
@@ -8571,7 +8580,9 @@
     "valor_produto": "1560.00",
     "cpf": "43359609808",
     "telefone": "11989867322",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "10/09/2026",
+    "data_entrega": "09/09/2026"
   },
   {
     "awb": "57791166530",
@@ -8582,7 +8593,9 @@
     "valor_produto": "70.00",
     "cpf": "77185625220",
     "telefone": "85984123002",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "08/09/2026",
+    "data_entrega": "04/09/2026"
   },
   {
     "awb": "57791147814",
@@ -8593,7 +8606,9 @@
     "valor_produto": "675.00",
     "cpf": "05845377358",
     "telefone": "91981262963",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "08/09/2026",
+    "data_entrega": "04/09/2026"
   },
   {
     "awb": "57791111193",
@@ -8604,7 +8619,8 @@
     "valor_produto": "450.00",
     "cpf": "60101375867",
     "telefone": "19981011669",
-    "status": "Em andamento"
+    "status": "Saiu para Entrega",
+    "prev_entrega": "10/09/2026"
   },
   {
     "awb": "57791040644",
@@ -8615,7 +8631,9 @@
     "valor_produto": "721.00",
     "cpf": "27745399866",
     "telefone": "99999999999",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "09/09/2026",
+    "data_entrega": "05/09/2026"
   },
   {
     "awb": "57789649486",
@@ -8626,7 +8644,8 @@
     "valor_produto": "450.00",
     "cpf": "60101375867",
     "telefone": "19981011669",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "10/09/2026"
   },
   {
     "awb": "57702150060",
@@ -8637,7 +8656,8 @@
     "valor_produto": "721.00",
     "cpf": "27745399866",
     "telefone": "99999999999",
-    "status": "Em andamento"
+    "status": "Em andamento",
+    "prev_entrega": "09/09/2026"
   },
   {
     "awb": "57784457365",
@@ -8648,6 +8668,8 @@
     "valor_produto": "427.00",
     "cpf": "49264710353",
     "telefone": "85996948888",
-    "status": "Em andamento"
+    "status": "Entregue",
+    "prev_entrega": "08/09/2026",
+    "data_entrega": "04/09/2026"
   }
 ]
