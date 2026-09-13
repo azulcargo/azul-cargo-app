@@ -8819,5 +8819,38 @@
     "status": "Em andamento",
     "telefone": "85996133131",
     "valor_produto": 100
+  },
+  {
+    "awb": "57752372552",
+    "destinatario": "ROSEMERY POZZEBON STAHNKE",
+    "destino": "Campos Novos/SC",
+    "emissao": "12/09/2026",
+    "frete": 89.26,
+    "valor_produto": 1057,
+    "cpf": "64764281953",
+    "telefone": "",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57752372073",
+    "destinatario": "AFONSO BASSO",
+    "destino": "Campo Grande/MS",
+    "emissao": "12/09/2026",
+    "frete": 39.96,
+    "valor_produto": 176,
+    "cpf": "02489146181",
+    "telefone": "",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57752371605",
+    "destinatario": "ALEXANDRE PAULINO",
+    "destino": "Suzano/SP",
+    "emissao": "12/09/2026",
+    "frete": 84.64,
+    "valor_produto": 890,
+    "cpf": "30217783805",
+    "telefone": "",
+    "status": "Em andamento"
   }
 ]
