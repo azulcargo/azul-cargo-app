@@ -8380,12 +8380,12 @@
     "destinatario": "MANOELA BRASIL CAVALCANTE",
     "destino": "Fortaleza/CE",
     "emissao": "10/09/2026",
-    "frete": "37.12",
+    "frete": 37.12,
     "prev_entrega": "14/09/2026",
     "status": "Em andamento",
     "telefone": "85987733715",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "223.10"
+    "valor_produto": 223.1
   },
   {
     "awb": "57751876086",
@@ -8393,12 +8393,12 @@
     "destinatario": "VITORIA MARIA BATISTA FREIRE",
     "destino": "Belo Horizonte/MG",
     "emissao": "10/09/2026",
-    "frete": "51.52",
+    "frete": 51.52,
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "85999182000",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "2018.00"
+    "valor_produto": 2018
   },
   {
     "awb": "57751875504",
@@ -8406,12 +8406,12 @@
     "destinatario": "EKATERINA BELINSKAYA",
     "destino": "Sao Paulo/SP",
     "emissao": "10/09/2026",
-    "frete": "40.64",
+    "frete": 40.64,
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "11942173185",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "278.21"
+    "valor_produto": 278.21
   },
   {
     "awb": "57751875320",
@@ -8419,12 +8419,12 @@
     "destinatario": "KARINA ROSENDO DA SILVA",
     "destino": "Francisco Morato/SP",
     "emissao": "10/09/2026",
-    "frete": "70.52",
+    "frete": 70.52,
     "prev_entrega": "17/09/2026",
     "status": "Em andamento",
     "telefone": "11963612289",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "553.89"
+    "valor_produto": 553.89
   },
   {
     "awb": "57751874491",
@@ -8432,12 +8432,12 @@
     "destinatario": "ALISSON NUERNBERG",
     "destino": "Tubarao/SC",
     "emissao": "10/09/2026",
-    "frete": "47.13",
+    "frete": 47.13,
     "prev_entrega": "21/09/2026",
     "status": "Em andamento",
     "telefone": "91981297475",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "689.50"
+    "valor_produto": 689.5
   },
   {
     "awb": "57751874222",
@@ -8445,12 +8445,12 @@
     "destinatario": "NATALIA APARECIDA LOPES CORREA",
     "destino": "Sao Paulo/SP",
     "emissao": "10/09/2026",
-    "frete": "41.57",
+    "frete": 41.57,
     "prev_entrega": "16/09/2026",
     "status": "Em andamento",
     "telefone": "11988236260",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "420.00"
+    "valor_produto": 420
   },
   {
     "awb": "57751872365",
@@ -8458,12 +8458,12 @@
     "destinatario": "DANILO BARCELLOS DANIEL",
     "destino": "Jundiai/SP",
     "emissao": "10/09/2026",
-    "frete": "46.06",
+    "frete": 46.06,
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "11964868157",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "1100.00"
+    "valor_produto": 1100
   },
   {
     "awb": "57729021145",
@@ -8471,12 +8471,12 @@
     "destinatario": "ANGELA SIQUEIRA FURTADO MARTIN",
     "destino": "Fortaleza/CE",
     "emissao": "10/09/2026",
-    "frete": "48.40",
+    "frete": 48.4,
     "prev_entrega": "11/09/2026",
     "status": "Em andamento",
     "telefone": "85999921188",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "168.00"
+    "valor_produto": 168
   },
   {
     "awb": "57758058055",
@@ -8484,12 +8484,12 @@
     "destinatario": "ROSEMEIRE FELIX DOS SANTOS",
     "destino": "Guarulhos/SP",
     "emissao": "09/09/2026",
-    "frete": "42.00",
+    "frete": 42,
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "11970758139",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "485.00"
+    "valor_produto": 485
   },
   {
     "awb": "57758056106",
@@ -8497,12 +8497,13 @@
     "destinatario": "MARIA DAS GRACAS SILVA DA COSTA",
     "destino": "Mossoro/RN",
     "emissao": "09/09/2026",
-    "frete": "32.61",
+    "frete": 32.61,
     "prev_entrega": "18/09/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "telefone": "84999782125",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "285.00"
+    "valor_produto": 285,
+    "data_entrega": "11/09/2026"
   },
   {
     "awb": "57757789826",
@@ -8510,12 +8511,12 @@
     "destinatario": "CLARISSA RODRIGUES ALVES",
     "destino": "Sao Paulo/SP",
     "emissao": "09/09/2026",
-    "frete": "40.66",
+    "frete": 40.66,
     "prev_entrega": "14/09/2026",
     "status": "Em andamento",
     "telefone": "11995057733",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "282.51"
+    "valor_produto": 282.51
   },
   {
     "awb": "57757759844",
@@ -8523,12 +8524,12 @@
     "destinatario": "VANICE CECILIA ZANONI",
     "destino": "Sao Paulo/SP",
     "emissao": "09/09/2026",
-    "frete": "42.13",
+    "frete": 42.13,
     "prev_entrega": "14/09/2026",
     "status": "Em andamento",
     "telefone": "11981250107",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "504.00"
+    "valor_produto": 504
   },
   {
     "awb": "57713292576",
@@ -8536,12 +8537,13 @@
     "destinatario": "DANIELA MARIA DE SANTANA",
     "destino": "Santana de Parnaiba/SP",
     "emissao": "08/09/2026",
-    "frete": "61.99",
+    "frete": 61.99,
     "prev_entrega": "11/09/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "telefone": "11992884523",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "194.89"
+    "valor_produto": 194.89,
+    "data_entrega": "11/09/2026"
   },
   {
     "awb": "57713289441",
@@ -8549,12 +8551,13 @@
     "destinatario": "VANESSA ARAUJO CORDIOLLI",
     "destino": "Sao Paulo/SP",
     "emissao": "08/09/2026",
-    "frete": "39.83",
+    "frete": 39.83,
     "prev_entrega": "11/09/2026",
-    "status": "Saiu para Entrega",
+    "status": "Entregue",
     "telefone": "1181099978",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "156.00"
+    "valor_produto": 156,
+    "data_entrega": "11/09/2026"
   },
   {
     "awb": "57713287610",
@@ -8562,12 +8565,13 @@
     "destinatario": "FERNANDA LOPES BERGANTINI",
     "destino": "Sao Paulo/SP",
     "emissao": "08/09/2026",
-    "frete": "39.75",
+    "frete": 39.75,
     "prev_entrega": "11/09/2026",
-    "status": "Em andamento",
+    "status": "Entregue",
     "telefone": "11984080797",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "144.00"
+    "valor_produto": 144,
+    "data_entrega": "11/09/2026"
   },
   {
     "awb": "57713283896",
@@ -8575,12 +8579,12 @@
     "destinatario": "GRAZIELE CRISTINE PEREIRA SEUACIUC DE POLI",
     "destino": "Cotia/SP",
     "emissao": "08/09/2026",
-    "frete": "54.42",
+    "frete": 54.42,
     "prev_entrega": "11/09/2026",
-    "status": "Em andamento",
+    "status": "Saiu para Entrega",
     "telefone": "11961387611",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "1354.50"
+    "valor_produto": 1354.5
   },
   {
     "awb": "57713270342",
@@ -8589,12 +8593,12 @@
     "destinatario": "ANTONIA MARTINS VITAL",
     "destino": "Itupeva/SP",
     "emissao": "08/09/2026",
-    "frete": "43.36",
+    "frete": 43.36,
     "prev_entrega": "14/09/2026",
     "status": "Entregue",
     "telefone": "11986063563",
     "ultima_atualizacao": "10/09/2026",
-    "valor_produto": "210.00"
+    "valor_produto": 210
   },
   {
     "awb": "57713264392",
@@ -8603,11 +8607,11 @@
     "destinatario": "CAMILA COSTA FEITOSA",
     "destino": "Fortaleza/CE",
     "emissao": "08/09/2026",
-    "frete": "39.83",
+    "frete": 39.83,
     "prev_entrega": "10/09/2026",
     "status": "Entregue",
     "telefone": "85989758354",
-    "valor_produto": "144.00"
+    "valor_produto": 144
   },
   {
     "awb": "57704806815",
@@ -8616,11 +8620,11 @@
     "destinatario": "PARA FARMA FARMACIA DE MANIPULACAO LTDA",
     "destino": "Belem/PA",
     "emissao": "08/09/2026",
-    "frete": "226.91",
+    "frete": 226.91,
     "prev_entrega": "09/09/2026",
     "status": "Entregue",
     "telefone": "9133484241",
-    "valor_produto": "145.00"
+    "valor_produto": 145
   },
   {
     "awb": "57727463833",
@@ -8791,5 +8795,29 @@
     "status": "Entregue",
     "telefone": "85988845826",
     "valor_produto": 160
+  },
+  {
+    "awb": "57752149834",
+    "cpf": "05327933822",
+    "destinatario": "EDILEUSA PANTALEAO DE ARAUJO",
+    "destino": "Osasco/SP",
+    "emissao": "11/09/2026",
+    "frete": 45.37,
+    "prev_entrega": "17/09/2026",
+    "status": "Em andamento",
+    "telefone": "11964111911",
+    "valor_produto": 238
+  },
+  {
+    "awb": "57752143840",
+    "cpf": "81232349372",
+    "destinatario": "ANDREA MONTEIRO DE CARVALHO FACUNDO",
+    "destino": "Fortaleza/CE",
+    "emissao": "11/09/2026",
+    "frete": 47.93,
+    "prev_entrega": "15/09/2026",
+    "status": "Em andamento",
+    "telefone": "85996133131",
+    "valor_produto": 100
   }
 ]
