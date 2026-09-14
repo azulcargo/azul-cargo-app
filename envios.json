@@ -8384,8 +8384,8 @@
     "prev_entrega": "17/09/2026",
     "status": "Em andamento",
     "telefone": "11964111911",
-    "valor_produto": 238,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 238
   },
   {
     "awb": "57752143840",
@@ -8397,12 +8397,13 @@
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "85996133131",
-    "valor_produto": 100,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 100
   },
   {
     "awb": "57751877140",
     "cpf": "24707465315",
+    "data_entrega": "11/09/2026",
     "destinatario": "MANOELA BRASIL CAVALCANTE",
     "destino": "Fortaleza/CE",
     "emissao": "10/09/2026",
@@ -8410,9 +8411,8 @@
     "prev_entrega": "14/09/2026",
     "status": "Entregue",
     "telefone": "85987733715",
-    "valor_produto": 223.1,
-    "data_entrega": "11/09/2026",
-    "ultima_atualizacao": "12/09/2026"
+    "ultima_atualizacao": "12/09/2026",
+    "valor_produto": 223.1
   },
   {
     "awb": "57751876086",
@@ -8424,12 +8424,13 @@
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "85999182000",
-    "valor_produto": 2018,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 2018
   },
   {
     "awb": "57751875504",
     "cpf": "23361753805",
+    "data_entrega": "12/09/2026",
     "destinatario": "EKATERINA BELINSKAYA",
     "destino": "Sao Paulo/SP",
     "emissao": "10/09/2026",
@@ -8437,9 +8438,8 @@
     "prev_entrega": "15/09/2026",
     "status": "Entregue",
     "telefone": "11942173185",
-    "valor_produto": 278.21,
-    "data_entrega": "12/09/2026",
-    "ultima_atualizacao": "12/09/2026"
+    "ultima_atualizacao": "12/09/2026",
+    "valor_produto": 278.21
   },
   {
     "awb": "57751875320",
@@ -8451,8 +8451,8 @@
     "prev_entrega": "17/09/2026",
     "status": "Em andamento",
     "telefone": "11963612289",
-    "valor_produto": 553.89,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 553.89
   },
   {
     "awb": "57751874491",
@@ -8464,8 +8464,8 @@
     "prev_entrega": "21/09/2026",
     "status": "Em andamento",
     "telefone": "91981297475",
-    "valor_produto": 689.5,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 689.5
   },
   {
     "awb": "57751874222",
@@ -8477,8 +8477,8 @@
     "prev_entrega": "16/09/2026",
     "status": "Em andamento",
     "telefone": "11988236260",
-    "valor_produto": 420,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 420
   },
   {
     "awb": "57751872365",
@@ -8490,12 +8490,13 @@
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "11964868157",
-    "valor_produto": 1100,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 1100
   },
   {
     "awb": "57729021145",
     "cpf": "74256505334",
+    "data_entrega": "11/09/2026",
     "destinatario": "ANGELA SIQUEIRA FURTADO MARTIN",
     "destino": "Fortaleza/CE",
     "emissao": "10/09/2026",
@@ -8503,9 +8504,8 @@
     "prev_entrega": "11/09/2026",
     "status": "Entregue",
     "telefone": "85999921188",
-    "valor_produto": 168,
-    "data_entrega": "11/09/2026",
-    "ultima_atualizacao": "12/09/2026"
+    "ultima_atualizacao": "12/09/2026",
+    "valor_produto": 168
   },
   {
     "awb": "57758058055",
@@ -8517,8 +8517,8 @@
     "prev_entrega": "15/09/2026",
     "status": "Em andamento",
     "telefone": "11970758139",
-    "valor_produto": 485,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 485
   },
   {
     "awb": "57758056106",
@@ -8531,8 +8531,8 @@
     "prev_entrega": "18/09/2026",
     "status": "Entregue",
     "telefone": "84999782125",
-    "valor_produto": 285,
-    "ultima_atualizacao": "10/09/2026"
+    "ultima_atualizacao": "10/09/2026",
+    "valor_produto": 285
   },
   {
     "awb": "57757789826",
@@ -8544,8 +8544,8 @@
     "prev_entrega": "14/09/2026",
     "status": "Saiu para Entrega",
     "telefone": "11995057733",
-    "valor_produto": 282.51,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 282.51
   },
   {
     "awb": "57757759844",
@@ -8557,8 +8557,8 @@
     "prev_entrega": "14/09/2026",
     "status": "Saiu para Entrega",
     "telefone": "11981250107",
-    "valor_produto": 504,
-    "ultima_atualizacao": "13/09/2026"
+    "ultima_atualizacao": "13/09/2026",
+    "valor_produto": 504
   },
   {
     "awb": "57713292576",
@@ -8571,8 +8571,8 @@
     "prev_entrega": "11/09/2026",
     "status": "Entregue",
     "telefone": "11992884523",
-    "valor_produto": 194.89,
-    "ultima_atualizacao": "10/09/2026"
+    "ultima_atualizacao": "10/09/2026",
+    "valor_produto": 194.89
   },
   {
     "awb": "57713289441",
@@ -8585,8 +8585,8 @@
     "prev_entrega": "11/09/2026",
     "status": "Entregue",
     "telefone": "1181099978",
-    "valor_produto": 156,
-    "ultima_atualizacao": "10/09/2026"
+    "ultima_atualizacao": "10/09/2026",
+    "valor_produto": 156
   },
   {
     "awb": "57713287610",
@@ -8599,12 +8599,13 @@
     "prev_entrega": "11/09/2026",
     "status": "Entregue",
     "telefone": "11984080797",
-    "valor_produto": 144,
-    "ultima_atualizacao": "10/09/2026"
+    "ultima_atualizacao": "10/09/2026",
+    "valor_produto": 144
   },
   {
     "awb": "57713283896",
     "cpf": "34833893851",
+    "data_entrega": "12/09/2026",
     "destinatario": "GRAZIELE CRISTINE PEREIRA SEUACIUC DE POLI",
     "destino": "Cotia/SP",
     "emissao": "08/09/2026",
@@ -8612,9 +8613,8 @@
     "prev_entrega": "11/09/2026",
     "status": "Entregue",
     "telefone": "11961387611",
-    "valor_produto": 1354.5,
-    "data_entrega": "12/09/2026",
-    "ultima_atualizacao": "12/09/2026"
+    "ultima_atualizacao": "12/09/2026",
+    "valor_produto": 1354.5
   },
   {
     "awb": "57713270342",
@@ -8627,8 +8627,8 @@
     "prev_entrega": "14/09/2026",
     "status": "Entregue",
     "telefone": "11986063563",
-    "valor_produto": 210,
-    "ultima_atualizacao": "10/09/2026"
+    "ultima_atualizacao": "10/09/2026",
+    "valor_produto": 210
   },
   {
     "awb": "57713264392",
