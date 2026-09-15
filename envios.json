@@ -8377,6 +8377,7 @@
   {
     "awb": "57752149834",
     "cpf": "05327933822",
+    "data_entrega": "14/09/2026",
     "destinatario": "EDILEUSA PANTALEAO DE ARAUJO",
     "destino": "Osasco/SP",
     "emissao": "11/09/2026",
@@ -8385,12 +8386,12 @@
     "status": "Entregue",
     "telefone": "11964111911",
     "ultima_atualizacao": "14/09/2026",
-    "valor_produto": 238,
-    "data_entrega": "14/09/2026"
+    "valor_produto": 238
   },
   {
     "awb": "57752143840",
     "cpf": "81232349372",
+    "data_entrega": "14/09/2026",
     "destinatario": "ANDREA MONTEIRO DE CARVALHO FACUNDO",
     "destino": "Fortaleza/CE",
     "emissao": "11/09/2026",
@@ -8399,8 +8400,7 @@
     "status": "Entregue",
     "telefone": "85996133131",
     "ultima_atualizacao": "14/09/2026",
-    "valor_produto": 100,
-    "data_entrega": "14/09/2026"
+    "valor_produto": 100
   },
   {
     "awb": "57751877140",
@@ -8539,6 +8539,7 @@
   {
     "awb": "57757789826",
     "cpf": "18756260857",
+    "data_entrega": "14/09/2026",
     "destinatario": "CLARISSA RODRIGUES ALVES",
     "destino": "Sao Paulo/SP",
     "emissao": "09/09/2026",
@@ -8547,12 +8548,12 @@
     "status": "Entregue",
     "telefone": "11995057733",
     "ultima_atualizacao": "14/09/2026",
-    "valor_produto": 282.51,
-    "data_entrega": "14/09/2026"
+    "valor_produto": 282.51
   },
   {
     "awb": "57757759844",
     "cpf": "37689959091",
+    "data_entrega": "14/09/2026",
     "destinatario": "VANICE CECILIA ZANONI",
     "destino": "Sao Paulo/SP",
     "emissao": "09/09/2026",
@@ -8561,8 +8562,7 @@
     "status": "Entregue",
     "telefone": "11981250107",
     "ultima_atualizacao": "14/09/2026",
-    "valor_produto": 504,
-    "data_entrega": "14/09/2026"
+    "valor_produto": 504
   },
   {
     "awb": "57713292576",
@@ -8871,67 +8871,67 @@
   },
   {
     "awb": "57753522906",
+    "cpf": "63636760297",
     "destinatario": "ADINAIR FIGUEIREDO DE ALMEIDA",
     "destino": "Sao Paulo/SP",
     "emissao": "14/09/2026",
     "frete": "46.44",
-    "valor_produto": "1157.80",
-    "cpf": "63636760297",
-    "telefone": "1141950410",
-    "status": "Em andamento",
     "prev_entrega": "17/09/2026",
-    "ultima_atualizacao": "14/09/2026"
+    "status": "Em andamento",
+    "telefone": "1141950410",
+    "ultima_atualizacao": "14/09/2026",
+    "valor_produto": "1157.80"
   },
   {
     "awb": "57753509385",
+    "cpf": "01272299651",
     "destinatario": "RONI DE SOUZA",
     "destino": "Jundiai/SP",
     "emissao": "14/09/2026",
     "frete": "41.01",
-    "valor_produto": "334.89",
-    "cpf": "01272299651",
-    "telefone": "11941335551",
-    "status": "Em andamento",
     "prev_entrega": "17/09/2026",
-    "ultima_atualizacao": "14/09/2026"
+    "status": "Em andamento",
+    "telefone": "11941335551",
+    "ultima_atualizacao": "14/09/2026",
+    "valor_produto": "334.89"
   },
   {
     "awb": "57753488013",
+    "cpf": "36730691875",
     "destinatario": "BRUNO COSTI GONCALVES",
     "destino": "Sao Paulo/SP",
     "emissao": "14/09/2026",
     "frete": "39.59",
-    "valor_produto": "120.00",
-    "cpf": "36730691875",
-    "telefone": "11910001589",
-    "status": "Em andamento",
     "prev_entrega": "17/09/2026",
-    "ultima_atualizacao": "14/09/2026"
+    "status": "Em andamento",
+    "telefone": "11910001589",
+    "ultima_atualizacao": "14/09/2026",
+    "valor_produto": "120.00"
   },
   {
     "awb": "57753441942",
+    "cpf": "81232012300",
     "destinatario": "ALINE RIBEIRO MAMEDE",
     "destino": "Fortaleza/CE",
     "emissao": "14/09/2026",
     "frete": "34.84",
-    "valor_produto": "90.00",
-    "cpf": "81232012300",
-    "telefone": "85999732270",
-    "status": "Em andamento",
     "prev_entrega": "16/09/2026",
-    "ultima_atualizacao": "14/09/2026"
+    "status": "Em andamento",
+    "telefone": "85999732270",
+    "ultima_atualizacao": "14/09/2026",
+    "valor_produto": "90.00"
   },
   {
     "awb": "57753411691",
+    "cpf": "00710560842",
     "destinatario": "LUIZ CARLOS DOS SANTOS",
     "destino": "Ribeirao Pires/SP",
     "emissao": "14/09/2026",
     "frete": "45.62",
-    "valor_produto": "553.00",
-    "cpf": "00710560842",
-    "telefone": "11971114484",
-    "status": "Em andamento",
     "prev_entrega": "18/09/2026",
-    "ultima_atualizacao": "14/09/2026"
+    "status": "Em andamento",
+    "telefone": "11971114484",
+    "ultima_atualizacao": "14/09/2026",
+    "valor_produto": "553.00"
   }
 ]
