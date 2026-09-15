@@ -8864,5 +8864,60 @@
     "telefone": "",
     "ultima_atualizacao": "13/09/2026",
     "valor_produto": 890
+  },
+  {
+    "awb": "57753522906",
+    "destinatario": "ADINAIR FIGUEIREDO DE ALMEIDA",
+    "destino": "Sao Paulo/SP",
+    "emissao": "14/09/2026",
+    "frete": "46.44",
+    "valor_produto": "1157.80",
+    "cpf": "63636760297",
+    "telefone": "1141950410",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57753509385",
+    "destinatario": "RONI DE SOUZA",
+    "destino": "Jundiai/SP",
+    "emissao": "14/09/2026",
+    "frete": "41.01",
+    "valor_produto": "334.89",
+    "cpf": "01272299651",
+    "telefone": "11941335551",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57753488013",
+    "destinatario": "BRUNO COSTI GONCALVES",
+    "destino": "Sao Paulo/SP",
+    "emissao": "14/09/2026",
+    "frete": "39.59",
+    "valor_produto": "120.00",
+    "cpf": "36730691875",
+    "telefone": "11910001589",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57753441942",
+    "destinatario": "ALINE RIBEIRO MAMEDE",
+    "destino": "Fortaleza/CE",
+    "emissao": "14/09/2026",
+    "frete": "34.84",
+    "valor_produto": "90.00",
+    "cpf": "81232012300",
+    "telefone": "85999732270",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57753411691",
+    "destinatario": "LUIZ CARLOS DOS SANTOS",
+    "destino": "Ribeirao Pires/SP",
+    "emissao": "14/09/2026",
+    "frete": "45.62",
+    "valor_produto": "553.00",
+    "cpf": "00710560842",
+    "telefone": "11971114484",
+    "status": "Em andamento"
   }
 ]
