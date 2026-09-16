@@ -8933,5 +8933,38 @@
     "telefone": "11971114484",
     "ultima_atualizacao": "14/09/2026",
     "valor_produto": "553.00"
+  },
+  {
+    "awb": "57754905561",
+    "destinatario": "VIVIANE CLOTILDE MOREIRA CHAVES ROMERO",
+    "destino": "Fortaleza/CE",
+    "emissao": "15/09/2026",
+    "frete": "68.70",
+    "valor_produto": "240.00",
+    "cpf": "67868061391",
+    "telefone": "859999118357",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57754904920",
+    "destinatario": "ELIANA ANTONIA DE SOUZA",
+    "destino": "Cajamar/SP",
+    "emissao": "15/09/2026",
+    "frete": "40.44",
+    "valor_produto": "248.00",
+    "cpf": "12077234873",
+    "telefone": "11943248882",
+    "status": "Em andamento"
+  },
+  {
+    "awb": "57754901346",
+    "destinatario": "KELLY CHRISTINA ALMADA TAVARES VIEIRA",
+    "destino": "Sao Paulo/SP",
+    "emissao": "15/09/2026",
+    "frete": "40.08",
+    "valor_produto": "194.51",
+    "cpf": "27581406830",
+    "telefone": "11994459982",
+    "status": "Em andamento"
   }
 ]
