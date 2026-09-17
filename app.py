@@ -16,15 +16,10 @@ import urllib.request
 import urllib.error
 from functools import wraps
 from datetime import datetime
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
+# Selenium e Google API sao importados SOB DEMANDA, dentro das funcoes que os
+# usam (rota /api/atualizar). Importa-los no topo fazia o servidor inteiro
+# deixar de subir quando uma dessas bibliotecas nao instalava — e o painel e a
+# API de dados nao dependem delas.
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -185,16 +180,23 @@ def push_to_github(envios):
 DATABASE_URL = os.environ.get('DATABASE_URL', '')
 USANDO_PG = bool(DATABASE_URL)
 
+# IMPORTANTE: falhar ALTO, nunca em silencio.
+# A versao anterior caia de volta para o envios.json quando o psycopg nao
+# importava, e ninguem ficava sabendo. Como o disco do plano gratuito do Render
+# e EFEMERO, o envios.json volta ao estado do ultimo deploy a cada restart ou
+# spin-down — apagando tudo que foi gravado depois. Preferimos que o deploy
+# quebre na cara do que perder dados caladamente.
 if USANDO_PG:
-    try:
-        import psycopg
-        from psycopg.types.json import Jsonb
-    except ImportError:
-        print("[DB] psycopg nao instalado — voltando para JSON.")
-        USANDO_PG = False
+    import psycopg
+    from psycopg.types.json import Jsonb
+    print("[DB] Postgres ATIVO — dados persistentes.")
+else:
+    print("[DB] ATENCAO: DATABASE_URL nao definida. Usando envios.json em disco "
+          "EFEMERO — os dados serao perdidos a cada restart do servidor.")
 
 
 def _conn():
+    # Render fornece a URL as vezes com o esquema antigo postgres://
     url = DATABASE_URL.replace('postgres://', 'postgresql://', 1)
     return psycopg.connect(url, connect_timeout=10)
 
@@ -231,15 +233,17 @@ def carregar_envios():
 
 def salvar_envios(envios):
     if USANDO_PG:
+        # executemany em vez de um execute por registro: com 600+ envios e um
+        # banco remoto, uma ida e volta por linha levava dezenas de segundos.
+        linhas = [(str(e.get('awb')), Jsonb(e)) for e in envios]
         with _conn() as c, c.cursor() as cur:
-            for e in envios:
-                cur.execute(
-                    """INSERT INTO envios (awb, dados, atualizado_em)
-                       VALUES (%s, %s, now())
-                       ON CONFLICT (awb) DO UPDATE
-                         SET dados = EXCLUDED.dados, atualizado_em = now()""",
-                    (str(e.get('awb')), Jsonb(e))
-                )
+            cur.executemany(
+                """INSERT INTO envios (awb, dados, atualizado_em)
+                   VALUES (%s, %s, now())
+                   ON CONFLICT (awb) DO UPDATE
+                     SET dados = EXCLUDED.dados, atualizado_em = now()""",
+                linhas
+            )
             c.commit()
         return
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
@@ -259,6 +263,8 @@ def extrair_awb_da_chave(chave):
     return None
 
 def get_chrome_driver():
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
     opts = Options()
     opts.add_argument('--headless')
     opts.add_argument('--no-sandbox')
@@ -269,6 +275,10 @@ def get_chrome_driver():
 
 # ─── Gmail ────────────────────────────────────────────────────────────────────
 def get_gmail_service():
+    from google.auth.transport.requests import Request
+    from google.oauth2.credentials import Credentials
+    from google_auth_oauthlib.flow import InstalledAppFlow
+    from googleapiclient.discovery import build
     creds = None
     if os.path.exists(TOKEN_FILE):
         creds = Credentials.from_authorized_user_file(TOKEN_FILE, GMAIL_SCOPES)
@@ -310,6 +320,9 @@ def buscar_ctes_novos(envios_existentes):
 
 # ─── Azul Logística ───────────────────────────────────────────────────────────
 def rastrear_awbs(awbs):
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
     resultados = {}
     if not awbs:
         return resultados
@@ -481,7 +494,21 @@ def update_data():
 
 @app.route('/api/status', methods=['GET'])
 def status():
-    return jsonify({'status': 'online', 'timestamp': datetime.now().isoformat()})
+    """Diagnostico rapido, sem autenticacao.
+    Serve para conferir, logo depois de um deploy, SE a persistencia esta de pe.
+    `persistente: false` significa que os dados vao sumir no proximo restart."""
+    info = {
+        'status': 'online',
+        'timestamp': datetime.now().isoformat(),
+        'armazenamento': 'postgres' if USANDO_PG else 'json-efemero',
+        'persistente': bool(USANDO_PG),
+    }
+    try:
+        info['total_envios'] = len(carregar_envios())
+    except Exception as e:
+        info['total_envios'] = None
+        info['erro'] = str(e)
+    return jsonify(info)
 
 # Cria a tabela no arranque (nao faz nada sem DATABASE_URL)
 try:
