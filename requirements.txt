@@ -1,7 +1,17 @@
 flask==3.0.3
 flask-cors==4.0.1
-selenium==4.21.0
-google-auth==2.29.0
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-google-api-python-client==2.130.0
+
+# psycopg 3.2.3 NAO tem wheel para Python 3.14 (so ate cp313) — era por isso
+# que o deploy com Postgres nao subia. A 3.3.5 tem wheel para 3.13 e 3.14.
+psycopg[binary]==3.3.5
+
+# --- Opcionais: so a rota /api/atualizar usa (Selenium + Gmail) ---
+# Ficam desligados de proposito. O plano gratuito do Render nao tem Chrome
+# instalado, entao essa rota ja nao funcionava, e essas bibliotecas pesadas so
+# deixavam o build lento e sujeito a quebrar. O codigo importa tudo sob demanda:
+# basta descomentar as linhas abaixo para a rota voltar a funcionar.
+# selenium==4.21.0
+# google-auth==2.29.0
+# google-auth-oauthlib==1.2.0
+# google-auth-httplib2==0.2.0
+# google-api-python-client==2.130.0
