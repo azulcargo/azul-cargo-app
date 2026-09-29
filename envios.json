@@ -9624,5 +9624,53 @@
   "dias_uteis": "",
   "ultima_atualizacao": "",
   "status": "Entregue"
+ },
+ {
+  "awb": "57753253745",
+  "destinatario": "DANIELA SAMPAIO",
+  "destino": "Sao Paulo/SP",
+  "emissao": "28/09/2026",
+  "frete": 41.81,
+  "valor_produto": 456.4,
+  "cpf": "18463647871",
+  "telefone": "1192717288",
+  "prev_entrega": "01/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57753258881",
+  "destinatario": "EDSON FONSECA RODRIGUES",
+  "destino": "Fortaleza/CE",
+  "emissao": "28/09/2026",
+  "frete": 49.13,
+  "valor_produto": 1955,
+  "cpf": "01769971300",
+  "telefone": "85999193785",
+  "prev_entrega": "30/09/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57753266102",
+  "destinatario": "CLICIANE MENDES BEZERRA BARROS",
+  "destino": "Fortaleza/CE",
+  "emissao": "28/09/2026",
+  "frete": 40.19,
+  "valor_produto": 600,
+  "cpf": "65175883372",
+  "telefone": "85999038068",
+  "prev_entrega": "30/09/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
  }
 ]
