@@ -8400,7 +8400,9 @@
   "status": "Entregue",
   "telefone": "85996133131",
   "ultima_atualizacao": "14/09/2026",
-  "valor_produto": 100
+  "valor_produto": 100,
+  "ent_dehon": "11/09/2026",
+  "dias_uteis": "17/09/2026"
  },
  {
   "awb": "57751877140",
@@ -8414,7 +8416,9 @@
   "status": "Entregue",
   "telefone": "85987733715",
   "ultima_atualizacao": "12/09/2026",
-  "valor_produto": 223.1
+  "valor_produto": 223.1,
+  "ent_dehon": "10/09/2026",
+  "dias_uteis": "16/09/2026"
  },
  {
   "awb": "57751876086",
@@ -8428,7 +8432,9 @@
   "status": "Entregue",
   "telefone": "85999182000",
   "ultima_atualizacao": "15/09/2026",
-  "valor_produto": 2018
+  "valor_produto": 2018,
+  "ent_dehon": "10/09/2026",
+  "dias_uteis": "16/09/2026"
  },
  {
   "awb": "57751875504",
@@ -8456,7 +8462,9 @@
   "telefone": "11963612289",
   "ultima_atualizacao": "24/09/2026",
   "valor_produto": 553.89,
-  "data_entrega": "17/09/2026"
+  "data_entrega": "17/09/2026",
+  "ent_dehon": "10/09/2026",
+  "dias_uteis": "16/09/2026"
  },
  {
   "awb": "57751874491",
@@ -8862,7 +8870,9 @@
   "status": "Entregue",
   "telefone": "",
   "ultima_atualizacao": "15/09/2026",
-  "valor_produto": 176
+  "valor_produto": 176,
+  "ent_dehon": "11/09/2026",
+  "dias_uteis": "17/09/2026"
  },
  {
   "awb": "57752371605",
@@ -8904,7 +8914,9 @@
   "status": "Entregue",
   "telefone": "11941335551",
   "ultima_atualizacao": "16/09/2026",
-  "valor_produto": "334.89"
+  "valor_produto": "334.89",
+  "ent_dehon": "12/09/2026",
+  "dias_uteis": "18/09/2026"
  },
  {
   "awb": "57753488013",
@@ -8918,7 +8930,9 @@
   "telefone": "11910001589",
   "ultima_atualizacao": "24/09/2026",
   "valor_produto": "120.00",
-  "data_entrega": "17/09/2026"
+  "data_entrega": "17/09/2026",
+  "ent_dehon": "12/09/2026",
+  "dias_uteis": "18/09/2026"
  },
  {
   "awb": "57753441942",
@@ -8932,7 +8946,9 @@
   "status": "Entregue",
   "telefone": "85999732270",
   "ultima_atualizacao": "15/09/2026",
-  "valor_produto": "90.00"
+  "valor_produto": "90.00",
+  "ent_dehon": "11/09/2026",
+  "dias_uteis": "17/09/2026"
  },
  {
   "awb": "57753411691",
@@ -8946,7 +8962,9 @@
   "telefone": "11971114484",
   "ultima_atualizacao": "24/09/2026",
   "valor_produto": "553.00",
-  "data_entrega": "17/09/2026"
+  "data_entrega": "17/09/2026",
+  "ent_dehon": "11/09/2026",
+  "dias_uteis": "17/09/2026"
  },
  {
   "awb": "57754905561",
@@ -8960,7 +8978,9 @@
   "status": "Entregue",
   "telefone": "859999118357",
   "ultima_atualizacao": "16/09/2026",
-  "valor_produto": "240.00"
+  "valor_produto": "240.00",
+  "ent_dehon": "12/09/2026",
+  "dias_uteis": "18/09/2026"
  },
  {
   "awb": "57754904920",
@@ -8974,7 +8994,9 @@
   "telefone": "11943248882",
   "ultima_atualizacao": "24/09/2026",
   "valor_produto": "248.00",
-  "data_entrega": "19/09/2026"
+  "data_entrega": "19/09/2026",
+  "ent_dehon": "15/09/2026",
+  "dias_uteis": "21/09/2026"
  },
  {
   "awb": "57754901346",
@@ -9028,13 +9050,14 @@
   "destinatario": "NEIDE NUNES MARTINS",
   "destino": "Varzea Paulista/SP",
   "emissao": "16/09/2026",
-  "ent_dehon": "",
+  "ent_dehon": "11/09/2026",
   "frete": 46.41,
   "prev_entrega": "22/09/2026",
   "status": "Entregue",
   "telefone": "11971187138",
   "ultima_atualizacao": "24/09/2026",
-  "valor_produto": 672
+  "valor_produto": 672,
+  "dias_uteis": "17/09/2026"
  },
  {
   "awb": "57757434204",
@@ -9058,13 +9081,14 @@
   "destinatario": "RAQUEL FERNANDES PAIVA DOS SANTOS",
   "destino": "Sao Paulo/SP",
   "emissao": "16/09/2026",
-  "ent_dehon": "",
+  "ent_dehon": "15/09/2026",
   "frete": 44.98,
   "prev_entrega": "21/09/2026",
   "status": "Entregue",
   "telefone": "11991955221",
   "ultima_atualizacao": "24/09/2026",
-  "valor_produto": 936
+  "valor_produto": 936,
+  "dias_uteis": "21/09/2026"
  },
  {
   "awb": "57723166916",
