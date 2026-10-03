@@ -9753,11 +9753,11 @@
   "cpf": "63636760297",
   "telefone": "1141950410",
   "prev_entrega": "02/10/2026",
-  "data_entrega": "",
+  "data_entrega": "02/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "01/10/2026",
-  "status": "Saiu para Entrega"
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
  },
  {
   "awb": "57754647331",
@@ -9769,11 +9769,11 @@
   "cpf": "27863075890",
   "telefone": "11965982964",
   "prev_entrega": "02/10/2026",
-  "data_entrega": "",
+  "data_entrega": "02/10/2026",
   "ent_dehon": "28/09/2026",
   "dias_uteis": "03/10/2026",
-  "ultima_atualizacao": "01/10/2026",
-  "status": "Saiu para Entrega"
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
  },
  {
   "awb": "57755964425",
@@ -9785,11 +9785,11 @@
   "cpf": "17055640890",
   "telefone": "11999563366",
   "prev_entrega": "05/10/2026",
-  "data_entrega": "",
+  "data_entrega": "02/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "02/10/2026",
-  "status": "Saiu para Entrega"
+  "status": "Entregue"
  },
  {
   "awb": "57755967181",
@@ -9801,11 +9801,11 @@
   "cpf": "27581406830",
   "telefone": "11994459982",
   "prev_entrega": "05/10/2026",
-  "data_entrega": "",
+  "data_entrega": "02/10/2026",
   "ent_dehon": "30/09/2026",
   "dias_uteis": "06/10/2026",
-  "ultima_atualizacao": "01/10/2026",
-  "status": "Em andamento"
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
  },
  {
   "awb": "57755976476",
@@ -9817,11 +9817,11 @@
   "cpf": "04031986319",
   "telefone": "85997797870",
   "prev_entrega": "02/10/2026",
-  "data_entrega": "",
+  "data_entrega": "01/10/2026",
   "ent_dehon": "30/09/2026",
   "dias_uteis": "06/10/2026",
-  "ultima_atualizacao": "01/10/2026",
-  "status": "Em andamento"
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
  },
  {
   "awb": "57757229303",
@@ -9865,11 +9865,11 @@
   "cpf": "49231391372",
   "telefone": "85986700038",
   "prev_entrega": "05/10/2026",
-  "data_entrega": "",
+  "data_entrega": "02/10/2026",
   "ent_dehon": "01/10/2026",
   "dias_uteis": "07/10/2026",
-  "ultima_atualizacao": "01/10/2026",
-  "status": "Em andamento"
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
  },
  {
   "awb": "57757237935",
@@ -9881,11 +9881,11 @@
   "cpf": "02325128334",
   "telefone": "85997031225",
   "prev_entrega": "05/10/2026",
-  "data_entrega": "",
+  "data_entrega": "02/10/2026",
   "ent_dehon": "01/10/2026",
   "dias_uteis": "07/10/2026",
-  "ultima_atualizacao": "01/10/2026",
-  "status": "Em andamento"
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
  },
  {
   "awb": "57757246453",
@@ -9897,10 +9897,74 @@
   "cpf": "84732830234",
   "telefone": "91981262963",
   "prev_entrega": "05/10/2026",
+  "data_entrega": "02/10/2026",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Entregue"
+ },
+ {
+  "awb": "57758278695",
+  "destinatario": "LUIS FELIPE MENDONCA DA SILVA",
+  "destino": "Rio de Janeiro/RJ",
+  "emissao": "02/10/2026",
+  "frete": 40.07,
+  "valor_produto": 192.93,
+  "cpf": "01602190275",
+  "telefone": "91991493387",
+  "prev_entrega": "08/10/2026",
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "01/10/2026",
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57758275991",
+  "destinatario": "BRUNA BICUDO RIBEIRO",
+  "destino": "Vinhedo/SP",
+  "emissao": "02/10/2026",
+  "frete": 39.72,
+  "valor_produto": 140,
+  "cpf": "42236963866",
+  "telefone": "11940406145",
+  "prev_entrega": "07/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57758270225",
+  "destinatario": "CLAUDIA CARNEIRO VASCONCELOS",
+  "destino": "Itapaje/CE",
+  "emissao": "02/10/2026",
+  "frete": 38.34,
+  "valor_produto": 1484,
+  "cpf": "73915572349",
+  "telefone": "8591810408",
+  "prev_entrega": "06/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "02/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57758266865",
+  "destinatario": "VALECIA PINHEIRO DE QUEIROZ",
+  "destino": "Fortaleza/CE",
+  "emissao": "02/10/2026",
+  "frete": 38.18,
+  "valor_produto": 595,
+  "cpf": "81113250372",
+  "telefone": "00000000000000",
+  "prev_entrega": "06/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "02/10/2026",
   "status": "Em andamento"
  }
 ]
