@@ -11384,11 +11384,11 @@
   "cpf": "32161329863",
   "telefone": "11970554773",
   "prev_entrega": "15/10/2026",
-  "data_entrega": "",
+  "data_entrega": "12/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "12/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57798257224",
@@ -11480,10 +11480,10 @@
   "cpf": "18463647871",
   "telefone": "1192717288",
   "prev_entrega": "15/10/2026",
-  "data_entrega": "",
+  "data_entrega": "12/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "12/10/2026",
-  "status": "Saiu para Entrega"
+  "status": "Entregue"
  }
 ]
