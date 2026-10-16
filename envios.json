@@ -11448,11 +11448,11 @@
   "cpf": "32418973387",
   "telefone": "88994316405",
   "prev_entrega": "22/10/2026",
-  "data_entrega": "",
+  "data_entrega": "15/10/2026",
   "ent_dehon": "08/10/2026",
   "dias_uteis": "14/10/2026",
   "ultima_atualizacao": "15/10/2026",
-  "status": "Saiu para Entrega"
+  "status": "Entregue"
  },
  {
   "awb": "57726165171",
@@ -11496,11 +11496,11 @@
   "cpf": "40636639819",
   "telefone": "11979542436",
   "prev_entrega": "16/10/2026",
-  "data_entrega": "",
+  "data_entrega": "15/10/2026",
   "ent_dehon": "09/10/2026",
   "dias_uteis": "15/10/2026",
   "ultima_atualizacao": "15/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57750919153",
@@ -11512,11 +11512,11 @@
   "cpf": "15754562810",
   "telefone": "11941617311",
   "prev_entrega": "19/10/2026",
-  "data_entrega": "",
+  "data_entrega": "15/10/2026",
   "ent_dehon": "10/10/2026",
   "dias_uteis": "16/10/2026",
   "ultima_atualizacao": "15/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57750911556",
@@ -11560,11 +11560,11 @@
   "cpf": "43841309372",
   "telefone": "85999872467",
   "prev_entrega": "16/10/2026",
-  "data_entrega": "",
+  "data_entrega": "15/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "15/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57753229923",
@@ -11576,11 +11576,11 @@
   "cpf": "82800880325",
   "telefone": "85999784361",
   "prev_entrega": "16/10/2026",
-  "data_entrega": "",
+  "data_entrega": "15/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "15/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57753224872",
@@ -11612,6 +11612,86 @@
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "15/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57755267111",
+  "destinatario": "FABIO FELISMINO PEREIRA",
+  "destino": "Sao Paulo/SP",
+  "emissao": "15/10/2026",
+  "frete": 47.3,
+  "valor_produto": 79,
+  "cpf": "32161329863",
+  "telefone": "11970554773",
+  "prev_entrega": "20/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57703128388",
+  "destinatario": "LUANA DO NASCIMENTO BRAZUNA",
+  "destino": "Maranguape/CE",
+  "emissao": "15/10/2026",
+  "frete": 37.88,
+  "valor_produto": 550,
+  "cpf": "06546665395",
+  "telefone": "85988280720",
+  "prev_entrega": "19/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57755227616",
+  "destinatario": "ROSEMEIRE DA SILVA CAPOBIANCO",
+  "destino": "Jundiai/SP",
+  "emissao": "15/10/2026",
+  "frete": 46.29,
+  "valor_produto": 655.2,
+  "cpf": "10815734816",
+  "telefone": "11998535725",
+  "prev_entrega": "20/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57755216663",
+  "destinatario": "HELENA VIEIRA DE MENDONCA MORAES",
+  "destino": "Cotia/SP",
+  "emissao": "15/10/2026",
+  "frete": 47.61,
+  "valor_produto": 854,
+  "cpf": "14349252851",
+  "telefone": "1159902395",
+  "prev_entrega": "20/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57755208963",
+  "destinatario": "FABRICIA MARIA ARAUJO DA SILVA",
+  "destino": "Macapa/AP",
+  "emissao": "15/10/2026",
+  "frete": 31.67,
+  "valor_produto": 904.68,
+  "cpf": "74448110249",
+  "telefone": "96991127177",
+  "prev_entrega": "20/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "",
   "status": "Em andamento"
  }
 ]
