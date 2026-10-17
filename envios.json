@@ -11612,7 +11612,7 @@
   "ent_dehon": "15/10/2026",
   "dias_uteis": "21/10/2026",
   "ultima_atualizacao": "16/10/2026",
-  "status": "Em andamento"
+  "status": "Saiu para Entrega"
  },
  {
   "awb": "57755267111",
@@ -11640,11 +11640,11 @@
   "cpf": "06546665395",
   "telefone": "85988280720",
   "prev_entrega": "19/10/2026",
-  "data_entrega": "",
+  "data_entrega": "16/10/2026",
   "ent_dehon": "15/10/2026",
   "dias_uteis": "21/10/2026",
   "ultima_atualizacao": "16/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57755227616",
@@ -11691,6 +11691,54 @@
   "data_entrega": "",
   "ent_dehon": "15/10/2026",
   "dias_uteis": "21/10/2026",
+  "ultima_atualizacao": "16/10/2026",
+  "status": "Saiu para Entrega"
+ },
+ {
+  "awb": "57757931974",
+  "destinatario": "SYLVANA MARIA MEDEIROS DE SOUZA",
+  "destino": "Fortaleza/CE",
+  "emissao": "16/10/2026",
+  "frete": 37.21,
+  "valor_produto": 448,
+  "cpf": "28456483320",
+  "telefone": "85999695001",
+  "prev_entrega": "20/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "16/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57703260270",
+  "destinatario": "MARINA TEIXEIRA LEAL",
+  "destino": "Rio de Janeiro/RJ",
+  "emissao": "16/10/2026",
+  "frete": 42.31,
+  "valor_produto": 532,
+  "cpf": "17374509766",
+  "telefone": "21987443699",
+  "prev_entrega": "22/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "16/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57703260215",
+  "destinatario": "RAFAEL BRITO DIAS",
+  "destino": "Parauapebas/PA",
+  "emissao": "16/10/2026",
+  "frete": 22.7,
+  "valor_produto": 321.6,
+  "cpf": "88996107204",
+  "telefone": "94991640203",
+  "prev_entrega": "22/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "16/10/2026",
   "status": "Em andamento"
  }
