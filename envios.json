@@ -11356,7 +11356,7 @@
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "19/10/2026",
-  "status": "Em andamento"
+  "status": "Saiu para Entrega"
  },
  {
   "awb": "57798764385",
@@ -11656,11 +11656,11 @@
   "cpf": "10815734816",
   "telefone": "11998535725",
   "prev_entrega": "20/10/2026",
-  "data_entrega": "",
+  "data_entrega": "19/10/2026",
   "ent_dehon": "14/10/2026",
   "dias_uteis": "20/10/2026",
   "ultima_atualizacao": "19/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57755216663",
@@ -11672,11 +11672,11 @@
   "cpf": "14349252851",
   "telefone": "1159902395",
   "prev_entrega": "20/10/2026",
-  "data_entrega": "",
+  "data_entrega": "19/10/2026",
   "ent_dehon": "13/10/2026",
   "dias_uteis": "19/10/2026",
   "ultima_atualizacao": "19/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57755208963",
@@ -11688,11 +11688,11 @@
   "cpf": "74448110249",
   "telefone": "96991127177",
   "prev_entrega": "20/10/2026",
-  "data_entrega": "",
+  "data_entrega": "19/10/2026",
   "ent_dehon": "15/10/2026",
   "dias_uteis": "21/10/2026",
   "ultima_atualizacao": "19/10/2026",
-  "status": "Saiu para Entrega"
+  "status": "Entregue"
  },
  {
   "awb": "57757931974",
@@ -11720,11 +11720,11 @@
   "cpf": "17374509766",
   "telefone": "21987443699",
   "prev_entrega": "22/10/2026",
-  "data_entrega": "",
+  "data_entrega": "19/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "19/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57703260215",
@@ -11735,6 +11735,86 @@
   "valor_produto": 321.6,
   "cpf": "88996107204",
   "telefone": "94991640203",
+  "prev_entrega": "22/10/2026",
+  "data_entrega": "19/10/2026",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "19/10/2026",
+  "status": "Entregue"
+ },
+ {
+  "awb": "57770590063",
+  "destinatario": "JAMILLE BARBOSA DA ROCHA SILVA",
+  "destino": "Fortaleza/CE",
+  "emissao": "19/10/2026",
+  "frete": 40.73,
+  "valor_produto": 682.5,
+  "cpf": "79113028391",
+  "telefone": "85996169993",
+  "prev_entrega": "21/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "19/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57770575912",
+  "destinatario": "FRANCISCO EDMILSON DA SILVA",
+  "destino": "Aracati/CE",
+  "emissao": "19/10/2026",
+  "frete": 72.36,
+  "valor_produto": 397,
+  "cpf": "45644276104",
+  "telefone": "88999409820",
+  "prev_entrega": "28/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "19/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57770551821",
+  "destinatario": "RENATA MARTINS DAMASCENO",
+  "destino": "Fortaleza/CE",
+  "emissao": "19/10/2026",
+  "frete": 55.99,
+  "valor_produto": 1621,
+  "cpf": "91233283391",
+  "telefone": "85999764766",
+  "prev_entrega": "21/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "19/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57770534715",
+  "destinatario": "FHILLIPE THIAGO DA SILVA GUIMARAES",
+  "destino": "Altamira/PA",
+  "emissao": "19/10/2026",
+  "frete": 24.94,
+  "valor_produto": 1134,
+  "cpf": "00710250304",
+  "telefone": "85997352949",
+  "prev_entrega": "23/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "19/10/2026",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57770530644",
+  "destinatario": "ADRILLES REIS JORGE",
+  "destino": "Sao Paulo/SP",
+  "emissao": "19/10/2026",
+  "frete": 34.39,
+  "valor_produto": 90,
+  "cpf": "02994253631",
+  "telefone": "31985581584",
   "prev_entrega": "22/10/2026",
   "data_entrega": "",
   "ent_dehon": "",
