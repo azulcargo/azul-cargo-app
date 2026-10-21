@@ -11708,7 +11708,7 @@
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
-  "status": "Em andamento"
+  "status": "Saiu para Entrega"
  },
  {
   "awb": "57703260270",
@@ -11752,11 +11752,11 @@
   "cpf": "79113028391",
   "telefone": "85996169993",
   "prev_entrega": "21/10/2026",
-  "data_entrega": "",
+  "data_entrega": "20/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57770575912",
@@ -11784,11 +11784,11 @@
   "cpf": "91233283391",
   "telefone": "85999764766",
   "prev_entrega": "21/10/2026",
-  "data_entrega": "",
+  "data_entrega": "20/10/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57770534715",
@@ -11820,7 +11820,7 @@
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
-  "status": "Em andamento"
+  "status": "Saiu para Entrega"
  },
  {
   "awb": "57775808622",
@@ -11852,6 +11852,24 @@
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
-  "status": "Em andamento"
+  "status": "Saiu para Entrega"
+ }
+,
+ {
+  "awb": "57003000669",
+  "destinatario": "",
+  "destino": "",
+  "emissao": "21/10/2026",
+  "frete": "",
+  "valor_produto": "",
+  "cpf": "",
+  "telefone": "",
+  "prev_entrega": "",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "21/10/2026 11:44",
+  "status": "Em andamento",
+  "prod_dehon": ""
  }
 ]
