@@ -11592,11 +11592,11 @@
   "cpf": "06726034890",
   "telefone": "11981026655",
   "prev_entrega": "20/10/2026",
-  "data_entrega": "",
+  "data_entrega": "20/10/2026",
   "ent_dehon": "14/10/2026",
   "dias_uteis": "20/10/2026",
-  "ultima_atualizacao": "21/10/2026",
-  "status": "Saiu para Entrega"
+  "ultima_atualizacao": "22/10/2026 22:04",
+  "status": "Entregue"
  },
  {
   "awb": "57753216704",
@@ -11707,7 +11707,7 @@
   "data_entrega": "",
   "ent_dehon": "15/10/2026",
   "prod_dehon": "15/10/2026",
-        "dias_uteis": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
   "status": "Saiu para Entrega"
  },
@@ -11756,7 +11756,7 @@
   "data_entrega": "20/10/2026",
   "ent_dehon": "16/10/2026",
   "prod_dehon": "16/10/2026",
-        "dias_uteis": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
   "status": "Entregue"
  },
@@ -11789,7 +11789,7 @@
   "data_entrega": "20/10/2026",
   "ent_dehon": "17/10/2026",
   "prod_dehon": "16/10/2026",
-        "dias_uteis": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
   "status": "Entregue"
  },
@@ -11822,7 +11822,7 @@
   "data_entrega": "",
   "ent_dehon": "17/10/2026",
   "prod_dehon": "17/10/2026",
-        "dias_uteis": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
   "status": "Saiu para Entrega"
  },
@@ -11839,7 +11839,7 @@
   "data_entrega": "",
   "ent_dehon": "20/10/2026",
   "prod_dehon": "20/10/2026",
-        "dias_uteis": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "21/10/2026",
   "status": "Em andamento"
  },
@@ -11853,14 +11853,13 @@
   "cpf": "64741591387",
   "telefone": "00000000000000",
   "prev_entrega": "22/10/2026",
-  "data_entrega": "",
+  "data_entrega": "21/10/2026",
   "ent_dehon": "17/10/2026",
   "prod_dehon": "17/10/2026",
-        "dias_uteis": "",
-  "ultima_atualizacao": "21/10/2026",
-  "status": "Saiu para Entrega"
- }
-,
+  "dias_uteis": "",
+  "ultima_atualizacao": "22/10/2026 22:04",
+  "status": "Entregue"
+ },
  {
   "awb": "57003000669",
   "destinatario": "",
