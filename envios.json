@@ -11967,11 +11967,11 @@
   "cpf": "51061198200",
   "telefone": "94991491747",
   "prev_entrega": "28/10/2026",
-  "data_entrega": "",
+  "data_entrega": "26/10/2026",
   "ent_dehon": "23/10/2026",
   "dias_uteis": "29/10/2026",
-  "ultima_atualizacao": "26/10/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "26/10/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57751637121",
@@ -12002,8 +12002,8 @@
   "data_entrega": "",
   "ent_dehon": "23/10/2026",
   "dias_uteis": "29/10/2026",
-  "ultima_atualizacao": "26/10/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "26/10/2026 22:06",
+  "status": "Saiu para Entrega"
  },
  {
   "awb": "57751629270",
@@ -12015,11 +12015,11 @@
   "cpf": "63069792200",
   "telefone": "93991275942",
   "prev_entrega": "29/10/2026",
-  "data_entrega": "",
+  "data_entrega": "26/10/2026",
   "ent_dehon": "23/10/2026",
   "dias_uteis": "29/10/2026",
-  "ultima_atualizacao": "26/10/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "26/10/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57751618792",
@@ -12031,11 +12031,11 @@
   "cpf": "73155756268",
   "telefone": "9281146520",
   "prev_entrega": "28/10/2026",
-  "data_entrega": "",
+  "data_entrega": "26/10/2026",
   "ent_dehon": "23/10/2026",
   "dias_uteis": "29/10/2026",
-  "ultima_atualizacao": "26/10/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "26/10/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57751614861",
