@@ -6700,7 +6700,7 @@
   "data_entrega": "",
   "ent_dehon": "07/08/2026",
   "dias_uteis": 6,
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -7132,7 +7132,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": 9,
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -7164,7 +7164,7 @@
   "data_entrega": "",
   "ent_dehon": "10/08/2026",
   "dias_uteis": 2,
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -7324,7 +7324,7 @@
   "data_entrega": "",
   "ent_dehon": "11/08/2026",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -8460,7 +8460,7 @@
   "data_entrega": "",
   "ent_dehon": "17/08/2026",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -8892,7 +8892,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -8908,7 +8908,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -9148,7 +9148,7 @@
   "data_entrega": "",
   "ent_dehon": "27/08/2026",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -9813,7 +9813,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -9941,7 +9941,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -9957,7 +9957,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -11243,7 +11243,7 @@
   "data_entrega": "",
   "ent_dehon": "06/10/2026",
   "dias_uteis": "12/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -11339,7 +11339,7 @@
   "data_entrega": "",
   "ent_dehon": "07/10/2026",
   "dias_uteis": "13/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -11608,11 +11608,11 @@
   "cpf": "05580179324",
   "telefone": "85997735387",
   "prev_entrega": "23/10/2026",
-  "data_entrega": "",
+  "data_entrega": "28/10/2026",
   "ent_dehon": "15/10/2026",
   "dias_uteis": "21/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
-  "status": "Saiu para Entrega"
+  "ultima_atualizacao": "28/10/2026 22:16",
+  "status": "Entregue"
  },
  {
   "awb": "57755267111",
@@ -11708,7 +11708,7 @@
   "ent_dehon": "15/10/2026",
   "prod_dehon": "15/10/2026",
   "dias_uteis": "21/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -11773,7 +11773,7 @@
   "data_entrega": "",
   "ent_dehon": "17/10/2026",
   "dias_uteis": "23/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Saiu para Entrega"
  },
  {
@@ -11836,12 +11836,12 @@
   "cpf": "66782333368",
   "telefone": "88992989841",
   "prev_entrega": "29/10/2026",
-  "data_entrega": "",
+  "data_entrega": "28/10/2026",
   "ent_dehon": "20/10/2026",
   "prod_dehon": "20/10/2026",
   "dias_uteis": "26/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
-  "status": "Saiu para Entrega"
+  "ultima_atualizacao": "28/10/2026 22:16",
+  "status": "Entregue"
  },
  {
   "awb": "57775700822",
@@ -11983,11 +11983,11 @@
   "cpf": "98437054168",
   "telefone": "67991640430",
   "prev_entrega": "29/10/2026",
-  "data_entrega": "",
+  "data_entrega": "28/10/2026",
   "ent_dehon": "22/10/2026",
   "dias_uteis": "28/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
-  "status": "Saiu para Entrega"
+  "ultima_atualizacao": "28/10/2026 22:16",
+  "status": "Entregue"
  },
  {
   "awb": "57751633735",
@@ -12050,7 +12050,7 @@
   "data_entrega": "",
   "ent_dehon": "23/10/2026",
   "dias_uteis": "29/10/2026",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -12082,7 +12082,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -12096,9 +12096,9 @@
   "telefone": "11991878597",
   "prev_entrega": "30/10/2026",
   "data_entrega": "",
-  "ent_dehon": "",
-  "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ent_dehon": "24/10/2026",
+  "dias_uteis": "30/10/2026",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -12114,7 +12114,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -12128,9 +12128,9 @@
   "telefone": "11998173367",
   "prev_entrega": "30/10/2026",
   "data_entrega": "",
-  "ent_dehon": "",
-  "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ent_dehon": "27/10/2026",
+  "dias_uteis": "02/11/2026",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  },
  {
@@ -12143,10 +12143,42 @@
   "cpf": "70436764105",
   "telefone": "85981416300",
   "prev_entrega": "29/10/2026",
+  "data_entrega": "28/10/2026",
+  "ent_dehon": "27/10/2026",
+  "dias_uteis": "02/11/2026",
+  "ultima_atualizacao": "28/10/2026 22:16",
+  "status": "Entregue"
+ },
+ {
+  "awb": "57752608430",
+  "destinatario": "FABIO FELISMINO PEREIRA",
+  "destino": "Sao Paulo/SP",
+  "emissao": "28/10/2026",
+  "frete": 41.53,
+  "valor_produto": 413,
+  "cpf": "32161329863",
+  "telefone": "11970554773",
+  "prev_entrega": "03/11/2026",
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "28/10/2026 07:36",
+  "ultima_atualizacao": "28/10/2026 22:16",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57742757396",
+  "destinatario": "ADAILTON FORTUNA FIGUEIREDO JUNIOR",
+  "destino": "Maracanau/CE",
+  "emissao": "28/10/2026",
+  "frete": 46.92,
+  "valor_produto": 1163,
+  "cpf": "94936340359",
+  "telefone": "85998024511",
+  "prev_entrega": "30/10/2026",
+  "data_entrega": "",
+  "ent_dehon": "27/10/2026",
+  "dias_uteis": "02/11/2026",
+  "ultima_atualizacao": "28/10/2026 22:16",
   "status": "Em andamento"
  }
 ]
