@@ -12767,11 +12767,11 @@
   "cpf": "57575304304",
   "telefone": "85999958795",
   "prev_entrega": "16/11/2026",
-  "data_entrega": "",
+  "data_entrega": "13/11/2026",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "13/11/2026 22:08",
-  "status": "Em andamento"
+  "ultima_atualizacao": "14/11/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57756752592",
@@ -12799,11 +12799,11 @@
   "cpf": "05137413305",
   "telefone": "85996180459",
   "prev_entrega": "13/11/2026",
-  "data_entrega": "",
+  "data_entrega": "13/11/2026",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "13/11/2026 22:08",
-  "status": "Em andamento"
+  "ultima_atualizacao": "14/11/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57756333141",
@@ -12831,11 +12831,11 @@
   "cpf": "74198262349",
   "telefone": "85988848000",
   "prev_entrega": "13/11/2026",
-  "data_entrega": "",
+  "data_entrega": "13/11/2026",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "13/11/2026 22:08",
-  "status": "Em andamento"
+  "ultima_atualizacao": "14/11/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57756332706",
@@ -12847,11 +12847,11 @@
   "cpf": "61632058391",
   "telefone": "85988874010",
   "prev_entrega": "13/11/2026",
-  "data_entrega": "",
+  "data_entrega": "13/11/2026",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "13/11/2026 22:08",
-  "status": "Em andamento"
+  "ultima_atualizacao": "14/11/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57757296422",
@@ -12863,11 +12863,11 @@
   "cpf": "00214392309",
   "telefone": "85999966346",
   "prev_entrega": "17/11/2026",
-  "data_entrega": "",
+  "data_entrega": "14/11/2026",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "13/11/2026 22:08",
-  "status": "Em andamento"
+  "ultima_atualizacao": "14/11/2026 22:06",
+  "status": "Entregue"
  },
  {
   "awb": "57737300373",
@@ -12883,6 +12883,38 @@
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "13/11/2026 22:08",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57757401120",
+  "destinatario": "YHANNA SHIRLEY DE FREITAS",
+  "destino": "Quixeramobim/CE",
+  "emissao": "14/11/2026",
+  "frete": 66.76,
+  "valor_produto": 553,
+  "cpf": "01468933361",
+  "telefone": "88997466877",
+  "prev_entrega": "23/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "14/11/2026 22:06",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57757396931",
+  "destinatario": "LARA SOBREIRA DE QUEIROZ SUASSUNA",
+  "destino": "Eusebio/CE",
+  "emissao": "14/11/2026",
+  "frete": 33.89,
+  "valor_produto": 664.3,
+  "cpf": "87987600334",
+  "telefone": "85981801901",
+  "prev_entrega": "17/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "14/11/2026 22:06",
   "status": "Em andamento"
  }
 ]
