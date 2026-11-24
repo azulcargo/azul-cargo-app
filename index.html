@@ -184,7 +184,7 @@
         <option value="Cancelado">Cancelado</option>
         <option value="Atrasado">Atrasado</option>
       </select>
-      <input id="fBusca" placeholder="Buscar AWB, destinatário, cidade…" oninput="applyFilters()">
+      <input id="fBusca" placeholder="Buscar AWB, requisição, destinatário, cidade…" oninput="applyFilters()">
       <span class="filter-label">De:</span>
       <input type="date" id="fDataDe" onchange="applyFilters()" title="Data de emissão inicial">
       <span class="filter-label">Até:</span>
@@ -198,6 +198,7 @@
     <table>
       <thead><tr>
         <th style="width:120px">AWB</th>
+        <th style="width:95px">Requisição</th>
         <th style="width:180px">Destinatário</th>
         <th style="width:130px">Destino</th>
         <th style="width:110px">Emissão_Cte</th>
@@ -352,6 +353,7 @@ function renderTable() {
   document.getElementById('tbody').innerHTML = filtered.slice(start, end).map(r => `
     <tr>
       <td class="awb-cell">${r.awb}</td>
+      <td class="awb-cell">${r.requisicao || '—'}</td>
       <td>${r.destinatario || '—'}</td>
       <td>${r.destino || '—'}</td>
       <td>${r.emissao || '—'}</td>
@@ -391,6 +393,7 @@ function applyFilters() {
     if (status && statusEfetivo(r) !== status) return false;
     if (busca && !(
       (r.awb||'').includes(busca) ||
+      String(r.requisicao||'').includes(busca) ||
       (r.destinatario||'').toLowerCase().includes(busca) ||
       (r.destino||'').toLowerCase().includes(busca)
     )) return false;
@@ -408,6 +411,7 @@ function exportExcel() {
   if (!filtered.length) { showToast('Sem dados para exportar.', 'error'); return; }
   const rows = filtered.map(r => ({
     'AWB':                r.awb,
+    'Requisição':         r.requisicao,
     'Destinatário':       r.destinatario,
     'Destino':            r.destino,
     'Emissão_Cte':        r.emissao,
