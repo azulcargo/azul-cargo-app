@@ -288,6 +288,13 @@ function diasUteis(emissao, dataEntrega) {
   return `<span style="font-weight:600;color:${cor}">${count}d</span>`;
 }
 
+// Ent-Azul: quando o envio ja foi entregue mostra a data REAL de entrega;
+// enquanto esta em transito mostra a previsao da Azul.
+function entAzul(r) {
+  if (r.status === 'Entregue' && r.data_entrega) return r.data_entrega;
+  return r.prev_entrega || '';
+}
+
 // Atrasado = ainda nao entregue/cancelado e com Prev.Entrega ja vencida.
 // Usada TANTO no card quanto no filtro, para os dois nunca divergirem.
 function estaAtrasado(r) {
@@ -357,7 +364,7 @@ function renderTable() {
       <td>${r.destinatario || '—'}</td>
       <td>${r.destino || '—'}</td>
       <td>${r.emissao || '—'}</td>
-      <td>${r.prev_entrega || '—'}</td>
+      <td>${entAzul(r) || '—'}</td>
       <td>${r.ent_dehon || '—'}</td>
       <td style="text-align:center">${prazoDehon(r.ent_dehon)}</td>
       <td>${r.frete > 0 ? 'R$ ' + Number(r.frete).toFixed(2) : '—'}</td>
@@ -415,7 +422,7 @@ function exportExcel() {
     'Destinatário':       r.destinatario,
     'Destino':            r.destino,
     'Emissão_Cte':        r.emissao,
-    'Ent_Azul':       r.prev_entrega,
+    'Ent_Azul':       entAzul(r),
     'Prod_Dehon':          r.ent_dehon,
     'Ent_Dehon':         prazoDehon(r.ent_dehon).replace(/<[^>]+>/g, ''),
     'Data Entrega':       r.data_entrega,

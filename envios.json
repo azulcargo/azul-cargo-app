@@ -14023,15 +14023,15 @@
   "cpf": "06865389948",
   "telefone": "11998111108",
   "prev_entrega": "26/11/2026",
-  "data_entrega": "",
+  "data_entrega": "24/11/2026",
   "ent_dehon": "",
   "dias_uteis": "",
   "ultima_atualizacao": "24/11/2026 07:38",
-  "status": "Saiu para Entrega"
+  "status": "Entregue"
  },
  {
   "awb": "57759132301",
-  "requisicao": "",
+  "requisicao": "258068",
   "destinatario": "TANIA REGIS GUIMARAES",
   "destino": "Brasilia/DF",
   "emissao": "19/11/2026",
@@ -14065,7 +14065,7 @@
  },
  {
   "awb": "57759129420",
-  "requisicao": "",
+  "requisicao": "257853",
   "destinatario": "ANDREA MENDES MARTINEZ DE FREITAS",
   "destino": "Itupeva/SP",
   "emissao": "19/11/2026",
@@ -14074,15 +14074,15 @@
   "cpf": "16607811833",
   "telefone": "11981031603",
   "prev_entrega": "27/11/2026",
-  "data_entrega": "",
+  "data_entrega": "24/11/2026",
   "ent_dehon": "17/11/2026",
   "dias_uteis": "23/11/2026",
   "ultima_atualizacao": "24/11/2026 07:38",
-  "status": "Em andamento"
+  "status": "Entregue"
  },
  {
   "awb": "57759122136",
-  "requisicao": "",
+  "requisicao": "258210",
   "destinatario": "GISELE LEITE TEIXEIRA GREGORIO",
   "destino": "Fortaleza/CE",
   "emissao": "19/11/2026",
@@ -14099,7 +14099,7 @@
  },
  {
   "awb": "57758853826",
-  "requisicao": "",
+  "requisicao": "248216",
   "destinatario": "CRISTIANE JOSE DE OLIVEIRA",
   "destino": "Itaberai/GO",
   "emissao": "19/11/2026",
@@ -14109,8 +14109,8 @@
   "telefone": "62985631489",
   "prev_entrega": "03/12/2026",
   "data_entrega": "23/11/2026",
-  "ent_dehon": "",
-  "dias_uteis": "",
+  "ent_dehon": "02/10/2026",
+  "dias_uteis": "08/10/2026",
   "ultima_atualizacao": "23/11/2026 22:10",
   "status": "Entregue"
  },
