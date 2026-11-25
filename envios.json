@@ -8989,7 +8989,7 @@
   "data_entrega": "",
   "ent_dehon": "17/08/2026",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -9448,7 +9448,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -9465,7 +9465,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -9720,7 +9720,7 @@
   "data_entrega": "",
   "ent_dehon": "27/08/2026",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -10426,7 +10426,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -10562,7 +10562,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -10579,7 +10579,7 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -11945,7 +11945,7 @@
   "data_entrega": "",
   "ent_dehon": "06/10/2026",
   "dias_uteis": "12/10/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -12047,7 +12047,7 @@
   "data_entrega": "",
   "ent_dehon": "07/10/2026",
   "dias_uteis": "13/10/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -12802,7 +12802,7 @@
   "data_entrega": "",
   "ent_dehon": "23/10/2026",
   "dias_uteis": "29/10/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -13176,7 +13176,7 @@
   "data_entrega": "",
   "ent_dehon": "30/10/2026",
   "dias_uteis": "05/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -13244,7 +13244,7 @@
   "data_entrega": "",
   "ent_dehon": "03/11/2026",
   "dias_uteis": "09/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -13618,7 +13618,7 @@
   "data_entrega": "",
   "ent_dehon": "11/11/2026",
   "dias_uteis": "17/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:52",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Saiu para Entrega"
  },
  {
@@ -13768,11 +13768,11 @@
   "cpf": "60905126300",
   "telefone": "85988037534",
   "prev_entrega": "19/11/2026",
-  "data_entrega": "",
+  "data_entrega": "24/11/2026",
   "ent_dehon": "17/11/2026",
   "dias_uteis": "23/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Entregue"
  },
  {
   "awb": "57758407090",
@@ -13802,11 +13802,11 @@
   "cpf": "02827135060",
   "telefone": "19992405067",
   "prev_entrega": "24/11/2026",
-  "data_entrega": "",
+  "data_entrega": "24/11/2026",
   "ent_dehon": "17/11/2026",
   "dias_uteis": "23/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Entregue"
  },
  {
   "awb": "57758404231",
@@ -13873,7 +13873,7 @@
   "data_entrega": "",
   "ent_dehon": "14/11/2026",
   "dias_uteis": "20/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -13921,11 +13921,11 @@
   "cpf": "41604970391",
   "telefone": "49163772269",
   "prev_entrega": "18/11/2026",
-  "data_entrega": "",
+  "data_entrega": "24/11/2026",
   "ent_dehon": "12/11/2026",
   "dias_uteis": "18/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:52",
-  "status": "Em andamento"
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Entregue"
  },
  {
   "awb": "57758709501",
@@ -13975,8 +13975,8 @@
   "data_entrega": "",
   "ent_dehon": "18/11/2026",
   "dias_uteis": "24/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
-  "status": "Em andamento"
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Saiu para Entrega"
  },
  {
   "awb": "57758700386",
@@ -14009,7 +14009,7 @@
   "data_entrega": "",
   "ent_dehon": "17/11/2026",
   "dias_uteis": "23/11/2026",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  },
  {
@@ -14128,7 +14128,228 @@
   "data_entrega": "",
   "ent_dehon": "",
   "dias_uteis": "",
-  "ultima_atualizacao": "24/11/2026 07:38",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57757160633",
+  "requisicao": "",
+  "destinatario": "MAURICIO COUTINHO SERAFIM DA SILVA",
+  "destino": "Sao Paulo/SP",
+  "emissao": "24/11/2026",
+  "frete": 36.6,
+  "valor_produto": 424.91,
+  "cpf": "26991487848",
+  "telefone": "1998940222",
+  "prev_entrega": "30/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57757116485",
+  "requisicao": "",
+  "destinatario": "ANGELA CRISTINA RODRIGUES GHILARDI",
+  "destino": "Sao Paulo/SP",
+  "emissao": "24/11/2026",
+  "frete": 37.76,
+  "valor_produto": 120,
+  "cpf": "84962925849",
+  "telefone": "11973179644",
+  "prev_entrega": "30/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57757007591",
+  "requisicao": "",
+  "destinatario": "FERNANDA PEREIRA RODRIGUES",
+  "destino": "Ribeirao Pires/SP",
+  "emissao": "24/11/2026",
+  "frete": 45.79,
+  "valor_produto": 1336.49,
+  "cpf": "32286389870",
+  "telefone": "11998811909",
+  "prev_entrega": "01/12/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57756934463",
+  "requisicao": "",
+  "destinatario": "SILVIA HELENA FERREIRA DA SILVA",
+  "destino": "Fortaleza/CE",
+  "emissao": "24/11/2026",
+  "frete": 42.45,
+  "valor_produto": 800,
+  "cpf": "31480586315",
+  "telefone": "85985997037",
+  "prev_entrega": "26/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57754050964",
+  "requisicao": "",
+  "destinatario": "ALDA MOTA XAVIER",
+  "destino": "Itupeva/SP",
+  "emissao": "24/11/2026",
+  "frete": 39.33,
+  "valor_produto": 357,
+  "cpf": "00509923500",
+  "telefone": "11942898885",
+  "prev_entrega": "30/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752603832",
+  "requisicao": "",
+  "destinatario": "SONIA REGINA SANTOS DA SILVA",
+  "destino": "Cajamar/SP",
+  "emissao": "24/11/2026",
+  "frete": 46.65,
+  "valor_produto": 1190,
+  "cpf": "14366234807",
+  "telefone": "11998389811",
+  "prev_entrega": "01/12/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752621236",
+  "requisicao": "",
+  "destinatario": "BRUNA DOS ANJOS BATISTA SANTAELA",
+  "destino": "Maua/SP",
+  "emissao": "24/11/2026",
+  "frete": 42.44,
+  "valor_produto": 552,
+  "cpf": "40696918803",
+  "telefone": "11983555055",
+  "prev_entrega": "27/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752585525",
+  "requisicao": "",
+  "destinatario": "SANDRA CRISTINA SANTOS DE OLIVEIRA",
+  "destino": "Jundiai/SP",
+  "emissao": "24/11/2026",
+  "frete": 44.65,
+  "valor_produto": 406,
+  "cpf": "17116628878",
+  "telefone": "11930748335",
+  "prev_entrega": "27/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57702303378",
+  "requisicao": "",
+  "destinatario": "SONIA REGINA SANTOS DA SILVA",
+  "destino": "Cajamar/SP",
+  "emissao": "24/11/2026",
+  "frete": 46.65,
+  "valor_produto": 1190,
+  "cpf": "14366234807",
+  "telefone": "11998389811",
+  "prev_entrega": "01/12/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752564050",
+  "requisicao": "",
+  "destinatario": "CRISTINA SILVA DE OLIVEIRA",
+  "destino": "Sao Paulo/SP",
+  "emissao": "24/11/2026",
+  "frete": 48.9,
+  "valor_produto": 1050,
+  "cpf": "15090325847",
+  "telefone": "11994436145",
+  "prev_entrega": "30/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752516354",
+  "requisicao": "",
+  "destinatario": "LUIS FELIPE MENDONCA DA SILVA",
+  "destino": "Rio de Janeiro/RJ",
+  "emissao": "24/11/2026",
+  "frete": 43.66,
+  "valor_produto": 255.33,
+  "cpf": "01602190275",
+  "telefone": "91991493387",
+  "prev_entrega": "30/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752456633",
+  "requisicao": "",
+  "destinatario": "PATRICIA SOARES ALVES",
+  "destino": "Fortaleza/CE",
+  "emissao": "24/11/2026",
+  "frete": 54.27,
+  "valor_produto": 3000,
+  "cpf": "71295216191",
+  "telefone": "85999105600",
+  "prev_entrega": "25/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
+  "status": "Em andamento"
+ },
+ {
+  "awb": "57752424470",
+  "requisicao": "",
+  "destinatario": "JEYSEANE DE SOUSA PEREIRA",
+  "destino": "Fortaleza/CE",
+  "emissao": "24/11/2026",
+  "frete": 38.83,
+  "valor_produto": 650,
+  "cpf": "02198470373",
+  "telefone": "85981991989",
+  "prev_entrega": "25/11/2026",
+  "data_entrega": "",
+  "ent_dehon": "",
+  "dias_uteis": "",
+  "ultima_atualizacao": "24/11/2026 22:09",
   "status": "Em andamento"
  }
 ]
