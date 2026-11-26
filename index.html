@@ -47,8 +47,26 @@
   .card-value.yellow { color:var(--yellow); }
   .card-value.blue   { color:var(--blue); }
   .card-value.red    { color:var(--red); }
-  .charts { display:grid; grid-template-columns:1fr 2fr; gap:16px; margin-bottom:20px; }
-  @media(max-width:700px){.charts{grid-template-columns:1fr;}}
+  .charts { display:grid; grid-template-columns:minmax(0,11fr) minmax(0,10fr); gap:16px; margin-bottom:20px; }
+  @media(max-width:900px){.charts{grid-template-columns:1fr;}}
+  .chart-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+  .chart-head .chart-title { margin-bottom:0; }
+  .chart-head select { padding:5px 8px; border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--bg); color:var(--text); font-size:12px; outline:none; }
+  .prazo-body { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .prazo-donut { position:relative; width:170px; height:170px; flex-shrink:0; margin:0 auto; }
+  .prazo-centro { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; pointer-events:none; text-align:center; }
+  .prazo-centro b { font-size:24px; line-height:1; color:var(--green); }
+  .prazo-centro span { font-size:11px; color:var(--text2); margin-top:4px; line-height:1.25; }
+  .prazo-tab { flex:1; min-width:250px; font-size:13px; }
+  .pz-row { display:grid; grid-template-columns:minmax(0,1fr) 52px 62px; align-items:center; padding:6px 4px; border-bottom:1px solid var(--border); }
+  .pz-row > div:nth-child(n+2) { text-align:right; font-variant-numeric:tabular-nums; }
+  .pz-row.head { font-size:11px; font-weight:600; color:var(--text2); text-transform:uppercase; letter-spacing:.4px; }
+  .pz-row.zero { color:var(--text3); }
+  .pz-row.tot { font-weight:700; border-bottom:none; }
+  .pz-nome { font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .pz-dot { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:8px; vertical-align:middle; }
+  .prazo-ind { display:flex; gap:22px; flex-wrap:wrap; margin-top:12px; padding-top:10px; border-top:1px solid var(--border); font-size:12px; color:var(--text2); }
+  .prazo-ind b { display:block; color:var(--text); font-size:15px; margin-top:2px; }
   .chart-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
   .chart-title { font-size:13px; font-weight:600; color:var(--text2); margin-bottom:12px; }
   .legend { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:10px; font-size:12px; color:var(--text2); }
@@ -165,13 +183,19 @@
 
   <div class="charts">
     <div class="chart-card">
-      <div class="chart-title">Status dos envios</div>
-      <div class="legend" id="legendStatus"></div>
-      <div style="position:relative;height:200px"><canvas id="chartStatus"></canvas></div>
+      <div class="chart-head">
+        <div class="chart-title">Situação do prazo de entrega (Azul)</div>
+        <select id="fPrazoMes" onchange="renderPrazo()" title="Período considerado neste quadro"></select>
+      </div>
+      <div class="prazo-body">
+        <div class="prazo-donut"><canvas id="chartStatus"></canvas><div class="prazo-centro" id="prazoCentro"></div></div>
+        <div class="prazo-tab" id="prazoTabela"></div>
+      </div>
+      <div class="prazo-ind" id="prazoInd"></div>
     </div>
     <div class="chart-card">
-      <div class="chart-title">Envios por mês</div>
-      <div style="position:relative;height:230px"><canvas id="chartMes"></canvas></div>
+      <div class="chart-title">Envios por mês — situação do prazo</div>
+      <div style="position:relative;height:290px"><canvas id="chartMes"></canvas></div>
     </div>
   </div>
 
@@ -682,48 +706,93 @@ document.addEventListener('click', e => {
 });
 
 
-function renderCharts() {
-  const entregue = DATA.filter(r => statusEfetivo(r) === 'Entregue').length;
-  const saiu     = DATA.filter(r => statusEfetivo(r) === 'Saiu para Entrega').length;
-  const atrasadoC= DATA.filter(r => statusEfetivo(r) === 'Atrasado').length;
-  const andamento= DATA.filter(r => !['Entregue','Saiu para Entrega','Atrasado'].includes(statusEfetivo(r))).length;
+// Cores dos graficos por situacao de prazo (mesmas categorias do Excel exportado)
+const PZ_COR = {
+  'Entregue no prazo': '#1a7a44', 'Entregue fora do prazo': '#c0392b',
+  'Em trânsito — no prazo': '#185FA5', 'Atrasado (não entregue)': '#e08a1e',
+  'Cancelado': '#9da3b4', 'Sem previsão': '#cfd3dc',
+};
+const PZ_MESES = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+function pzMesChave(r) { if (!r.emissao) return ''; const [, m, y] = r.emissao.split('/'); return (m && y) ? `${y}-${m.padStart(2,'0')}` : ''; }
+function pzRotulo(k) { const [y, m] = k.split('-'); return PZ_MESES[+m - 1] + '/' + y.slice(2); }
+function pzPct(n, d) { return d ? (n / d * 100).toFixed(1).replace('.', ',') + '%' : '—'; }
+
+// Quadro "Situacao do prazo": rosca + tabela escrita + indicadores. O seletor de mes vale so para este quadro.
+function renderPrazo() {
+  const sel = document.getElementById('fPrazoMes');
+  const atual = sel.value;
+  const chaves = [...new Set(DATA.map(pzMesChave).filter(Boolean))].sort().reverse();
+  sel.innerHTML = '<option value="">Todo o período</option>' + chaves.map(k => `<option value="${k}">${pzRotulo(k)}</option>`).join('');
+  if (chaves.includes(atual)) sel.value = atual;
+  const base = sel.value ? DATA.filter(r => pzMesChave(r) === sel.value) : DATA;
+
+  const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+  const cont = {}; XL_ORDEM.forEach(k => cont[k] = 0);
+  const atrasos = [];
+  base.forEach(r => { const s = situacaoPrazo(r, hoje); cont[s.sit]++; if (s.sit === 'Entregue fora do prazo') atrasos.push(s.dias); });
+  const total = base.length, np = cont['Entregue no prazo'], fp = cont['Entregue fora do prazo'];
+
+  document.getElementById('prazoTabela').innerHTML =
+    '<div class="pz-row head"><div>Situação</div><div>Qtde</div><div>% total</div></div>' +
+    XL_ORDEM.map(k => `<div class="pz-row${cont[k] ? '' : ' zero'}"><div class="pz-nome" title="${k}"><span class="pz-dot" style="background:${PZ_COR[k]}"></span>${k}</div><div>${cont[k]}</div><div>${pzPct(cont[k], total)}</div></div>`).join('') +
+    `<div class="pz-row tot"><div>Total</div><div>${total}</div><div>${total ? '100,0%' : '—'}</div></div>`;
+
+  document.getElementById('prazoCentro').innerHTML = `<b>${pzPct(np, np + fp)}</b><span>das entregas<br>no prazo</span>`;
+  const media = atrasos.length ? (atrasos.reduce((a, b) => a + b, 0) / atrasos.length).toFixed(1).replace('.', ',') + ' dias' : '—';
+  const maior = atrasos.length ? Math.max(...atrasos) + ' dias' : '—';
+  document.getElementById('prazoInd').innerHTML =
+    `<div>Entregas realizadas<b>${np + fp}</b></div>` +
+    `<div>Atraso médio (fora do prazo)<b>${media}</b></div>` +
+    `<div>Maior atraso<b>${maior}</b></div>` +
+    `<div>Aguardando entrega<b>${cont['Em trânsito — no prazo'] + cont['Atrasado (não entregue)']}</b></div>`;
+
   const ctxS = document.getElementById('chartStatus');
   if (ctxS) {
     if (chartStatus) chartStatus.destroy();
     chartStatus = new Chart(ctxS, {
       type: 'doughnut',
-      data: {
-        labels: ['Entregue','Saiu p/ Entrega','Em andamento','Atrasado'],
-        datasets: [{ data: [entregue, saiu, andamento, atrasadoC],
-          backgroundColor: ['#1a7a44','#c47900','#185FA5','#a32d2d'], borderWidth: 0 }]
-      },
-      options: { plugins: { legend: { display: false } }, cutout: '70%' }
+      data: { labels: XL_ORDEM, datasets: [{ data: XL_ORDEM.map(k => cont[k]), backgroundColor: XL_ORDEM.map(k => PZ_COR[k]), borderWidth: 2, borderColor: '#fff' }] },
+      options: { maintainAspectRatio: false, cutout: '68%', plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${c.label}: ${c.parsed} (${pzPct(c.parsed, total)})` } } } }
     });
   }
+}
+
+function renderCharts() {
+  renderPrazo();
+
+  // Envios por mes, empilhados por situacao de prazo (ultimos 6 meses)
+  const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
   const porMes = {};
   DATA.forEach(r => {
-    if (!r.emissao) return;
-    const [, m, y] = r.emissao.split('/');
-    if (!m || !y) return;
-    const k = `${y}-${m}`;
-    porMes[k] = (porMes[k] || 0) + 1;
+    const k = pzMesChave(r); if (!k) return;
+    if (!porMes[k]) { porMes[k] = {}; XL_ORDEM.forEach(s => porMes[k][s] = 0); }
+    porMes[k][situacaoPrazo(r, hoje).sit]++;
   });
-  const meses  = Object.keys(porMes).sort().slice(-6);
-  const labels = meses.map(k => {
-    const [y, m] = k.split('-');
-    return ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'][+m-1] + '/' + y.slice(2);
-  });
+  const meses = Object.keys(porMes).sort().slice(-6);
   const ctxM = document.getElementById('chartMes');
   if (ctxM) {
     if (chartMes) chartMes.destroy();
     chartMes = new Chart(ctxM, {
       type: 'bar',
       data: {
-        labels,
-        datasets: [{ label: 'Envios', data: meses.map(k => porMes[k]),
-          backgroundColor: '#185FA5', borderRadius: 4 }]
+        labels: meses.map(pzRotulo),
+        datasets: XL_ORDEM.map(s => ({ label: s, data: meses.map(k => porMes[k][s]), backgroundColor: PZ_COR[s], borderRadius: 2, maxBarThickness: 56 }))
       },
-      options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { precision: 0 } } } }
+      options: {
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 10, boxHeight: 10, font: { size: 11 }, padding: 10,
+            filter: (item, data) => data.datasets[item.datasetIndex].data.some(v => v > 0) } },
+          tooltip: { mode: 'index', filter: i => i.parsed.y > 0,
+            callbacks: { footer: itens => {
+              const k = meses[itens[0].dataIndex], m = porMes[k];
+              const tot = XL_ORDEM.reduce((a, s) => a + m[s], 0), np = m['Entregue no prazo'], fp = m['Entregue fora do prazo'];
+              return `Total: ${tot}  ·  No prazo: ${pzPct(np, np + fp)} das entregas`;
+            } } }
+        },
+        scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } }
+      }
     });
   }
 }
