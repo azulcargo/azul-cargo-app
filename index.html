@@ -6,6 +6,7 @@
 <title>Azul Cargo — Acompanhamento de Envios</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -414,30 +415,244 @@ function applyFilters() {
   renderTable();
 }
 
-function exportExcel() {
-  if (!filtered.length) { showToast('Sem dados para exportar.', 'error'); return; }
-  const rows = filtered.map(r => ({
-    'AWB':                r.awb,
-    'Requisição':         r.requisicao,
-    'Destinatário':       r.destinatario,
-    'Destino':            r.destino,
-    'Emissão_Cte':        r.emissao,
-    'Ent_Azul':       entAzul(r),
-    'Prod_Dehon':          r.ent_dehon,
-    'Ent_Dehon':         prazoDehon(r.ent_dehon).replace(/<[^>]+>/g, ''),
-    'Data Entrega':       r.data_entrega,
-    'Frete (R$)':         r.frete,
-    'Valor Produto (R$)': r.valor_produto,
-    'Status':             r.status,
-    'Última Atualiz.':    r.ultima_atualizacao,
-  }));
-  const ws = XLSX.utils.json_to_sheet(rows);
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Envios');
-  const hoje = new Date().toISOString().slice(0,10);
-  XLSX.writeFile(wb, `azul-cargo-${hoje}.xlsx`);
-  showToast('Excel exportado!');
+// ===================== EXPORTACAO EXCEL (com cores e situacao de prazo) =====================
+// Usa ExcelJS (suporta cores, filtros e formulas). Se a biblioteca nao carregar,
+// cai no export simples antigo (SheetJS), para o botao nunca ficar sem funcionar.
+const XL_CORES = {
+  'Entregue no prazo':       { fill: 'FFD9F2E3', font: 'FF146C43' },
+  'Entregue fora do prazo':  { fill: 'FFF9D6D5', font: 'FFB02A37' },
+  'Em trânsito — no prazo':  { fill: 'FFDCE9FB', font: 'FF1B4F9C' },
+  'Atrasado (não entregue)': { fill: 'FFFFE2C2', font: 'FF9A4A00' },
+  'Cancelado':               { fill: 'FFE9ECEF', font: 'FF5C636A' },
+  'Sem previsão':            { fill: 'FFF4F4F4', font: 'FF6C757D' },
+};
+const XL_ORDEM = Object.keys(XL_CORES);
+
+// Situacao em relacao ao prazo da AZUL (previsao "Entrega ate").
+// dias: entregue  -> entrega real - previsao (negativo = adiantado, positivo = atraso)
+//       em aberto -> hoje - previsao        (negativo = dias que faltam, positivo = dias de atraso)
+function situacaoPrazo(r, hoje) {
+  const prev = parseBR(r.prev_entrega), ent = parseBR(r.data_entrega);
+  if (r.status === 'Cancelado') return { sit: 'Cancelado', dias: null };
+  if (r.status === 'Entregue') {
+    if (!prev || !ent) return { sit: 'Sem previsão', dias: null };
+    const dias = Math.round((ent - prev) / 86400000);
+    return { sit: dias <= 0 ? 'Entregue no prazo' : 'Entregue fora do prazo', dias };
+  }
+  if (!prev) return { sit: 'Sem previsão', dias: null };
+  const dias = Math.round((hoje - prev) / 86400000);
+  return { sit: dias > 0 ? 'Atrasado (não entregue)' : 'Em trânsito — no prazo', dias };
 }
+
+// Prazo Dehon = Prod_Dehon + 5 dias uteis (sabado conta, domingo nao) - mesma regra do painel.
+function limiteDehon(entDehon) {
+  const base = parseBR(entDehon);
+  if (!base) return null;
+  const cur = new Date(base);
+  let restantes = 5;
+  while (restantes > 0) { cur.setDate(cur.getDate() + 1); if (cur.getDay() !== 0) restantes--; }
+  return cur;
+}
+function situacaoDehon(r, hoje) {
+  const lim = limiteDehon(r.ent_dehon);
+  if (!lim || r.status === 'Cancelado') return '';
+  const ent = parseBR(r.data_entrega);
+  if (r.status === 'Entregue' && ent) return ent <= lim ? 'No prazo' : 'Fora do prazo';
+  return lim < hoje ? 'Vencido' : 'Em aberto';
+}
+
+function montarWorkbook(ExcelJS, lista, info) {
+  const hoje = new Date(); hoje.setHours(0, 0, 0, 0);
+  // datas como data de verdade do Excel (permite filtrar/ordenar por data)
+  const xd = v => { const d = (v instanceof Date) ? v : parseBR(v); return d ? new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate())) : null; };
+  const num = v => { const n = parseFloat(v); return isFinite(n) && n > 0 ? n : null; };
+  const borda = { style: 'thin', color: { argb: 'FFD9DEE7' } };
+  const bordas = { top: borda, left: borda, bottom: borda, right: borda };
+  const fill = argb => ({ type: 'pattern', pattern: 'solid', fgColor: { argb } });
+
+  const linhas = lista.map(r => {
+    const s = situacaoPrazo(r, hoje);
+    return { r, sit: s.sit, dias: s.dias, uf: ((r.destino || '').split('/')[1] || '').trim().toUpperCase(),
+             limDehon: limiteDehon(r.ent_dehon), sitDehon: situacaoDehon(r, hoje) };
+  });
+
+  const wb = new ExcelJS.Workbook();
+  wb.creator = 'Painel Azul Cargo — Farmácia Dehon';
+  wb.created = new Date();
+
+  // ------------------------------- ABA RESUMO -------------------------------
+  const rs = wb.addWorksheet('Resumo', { views: [{ showGridLines: false }] });
+  rs.columns = [{ width: 46 }, { width: 13 }, { width: 13 }, { width: 15 }, { width: 13 }, { width: 14 }];
+  rs.pageSetup = { orientation: 'portrait', fitToPage: true, fitToWidth: 1, fitToHeight: 0, paperSize: 9 };
+  rs.mergeCells('A1:F1');
+  rs.getCell('A1').value = 'Azul Cargo — Relatório de Envios';
+  rs.getCell('A1').font = { bold: true, size: 16, color: { argb: 'FFFFFFFF' } };
+  rs.getCell('A1').fill = fill('FF1B4F9C');
+  rs.getCell('A1').alignment = { vertical: 'middle', indent: 1 };
+  rs.getRow(1).height = 30;
+  rs.mergeCells('A2:F2'); rs.getCell('A2').value = 'Gerado em ' + info.geradoEm + '  ·  ' + lista.length + ' envios';
+  rs.mergeCells('A3:F3'); rs.getCell('A3').value = 'Filtros: ' + info.filtros;
+  ['A2', 'A3'].forEach(c => { rs.getCell(c).font = { color: { argb: 'FF5C636A' }, size: 10 }; rs.getCell(c).alignment = { indent: 1 }; });
+
+  const cab = (linha, textos) => textos.forEach((t, i) => {
+    const c = rs.getCell(linha, i + 1); c.value = t;
+    c.font = { bold: true, color: { argb: 'FF1B2A41' } }; c.fill = fill('FFE8EEF7'); c.border = bordas;
+    c.alignment = { horizontal: i === 0 ? 'left' : 'center', vertical: 'middle', wrapText: true };
+  });
+
+  // Situacao do prazo (formulas apontam para a aba Envios: se editar la, atualiza aqui)
+  cab(5, ['Situação do prazo (Azul)', 'Qtde', '% do total']);
+  const cont = {}; XL_ORDEM.forEach(k => cont[k] = 0); linhas.forEach(l => cont[l.sit]++);
+  const total = linhas.length;
+  XL_ORDEM.forEach((k, i) => {
+    const row = 6 + i, cor = XL_CORES[k];
+    const a = rs.getCell(row, 1), b = rs.getCell(row, 2), c = rs.getCell(row, 3);
+    a.value = k; a.fill = fill(cor.fill); a.font = { bold: true, color: { argb: cor.font } };
+    b.value = { formula: `COUNTIF(Envios!$I:$I,A${row})`, result: cont[k] };
+    c.value = { formula: `IF($B$12=0,0,B${row}/$B$12)`, result: total ? cont[k] / total : 0 }; c.numFmt = '0.0%';
+    [a, b, c].forEach(x => x.border = bordas); b.alignment = c.alignment = { horizontal: 'center' };
+  });
+  const rt = 12;
+  rs.getCell(rt, 1).value = 'Total'; rs.getCell(rt, 2).value = { formula: 'SUM(B6:B11)', result: total };
+  rs.getCell(rt, 3).value = { formula: `IF($B$12=0,0,SUM(C6:C11))`, result: total ? 1 : 0 }; rs.getCell(rt, 3).numFmt = '0.0%';
+  [1, 2, 3].forEach(i => { const c = rs.getCell(rt, i); c.font = { bold: true }; c.border = bordas; c.fill = fill('FFF1F4F9'); if (i > 1) c.alignment = { horizontal: 'center' }; });
+
+  // Indicadores
+  const noPrazo = cont['Entregue no prazo'], fora = cont['Entregue fora do prazo'];
+  const atrasosEnt = linhas.filter(l => l.sit === 'Entregue fora do prazo').map(l => l.dias);
+  const freteTot = lista.reduce((s, r) => s + (num(r.frete) || 0), 0);
+  const notaTot = lista.reduce((s, r) => s + (num(r.valor_produto) || 0), 0);
+  const dNo = linhas.filter(l => l.sitDehon === 'No prazo').length, dFora = linhas.filter(l => l.sitDehon === 'Fora do prazo').length;
+  cab(14, ['Indicadores', 'Valor']);
+  const ind = [
+    ['Entregas no prazo da Azul (sobre o total entregue)', { formula: 'IF(B6+B7=0,0,B6/(B6+B7))', result: (noPrazo + fora) ? noPrazo / (noPrazo + fora) : 0 }, '0.0%'],
+    ['Atraso médio das entregas fora do prazo (dias)', { formula: 'IFERROR(AVERAGEIF(Envios!$I:$I,A7,Envios!$J:$J),0)', result: atrasosEnt.length ? atrasosEnt.reduce((a, b) => a + b, 0) / atrasosEnt.length : 0 }, '0.0'],
+    ['Maior atraso em uma entrega (dias)', atrasosEnt.length ? Math.max(...atrasosEnt) : 0, '0'],
+    ['Entregas dentro do prazo Dehon (Ent_Dehon)', { formula: 'COUNTIF(Envios!$M:$M,"No prazo")', result: dNo }, '0'],
+    ['Entregas fora do prazo Dehon (Ent_Dehon)', { formula: 'COUNTIF(Envios!$M:$M,"Fora do prazo")', result: dFora }, '0'],
+    ['Frete total (R$)', { formula: 'SUM(Envios!$N:$N)', result: freteTot }, '#,##0.00'],
+    ['Valor total das notas (R$)', { formula: 'SUM(Envios!$O:$O)', result: notaTot }, '#,##0.00'],
+  ];
+  ind.forEach((x, i) => {
+    const a = rs.getCell(15 + i, 1), b = rs.getCell(15 + i, 2);
+    a.value = x[0]; b.value = x[1]; b.numFmt = x[2]; b.font = { bold: true }; b.alignment = { horizontal: 'center' };
+    a.border = b.border = bordas; a.alignment = { wrapText: true, vertical: 'middle' };
+  });
+
+  // Por UF
+  const ufs = {}; linhas.forEach(l => { const u = l.uf || '(sem UF)'; (ufs[u] = ufs[u] || { t: 0, n: 0, f: 0, a: 0 }); ufs[u].t++; if (l.sit === 'Entregue no prazo') ufs[u].n++; if (l.sit === 'Entregue fora do prazo') ufs[u].f++; if (l.sit === 'Atrasado (não entregue)') ufs[u].a++; });
+  const l0 = 15 + ind.length + 1;
+  cab(l0, ['Por estado (UF)', 'Total', 'No prazo', 'Fora do prazo', 'Atrasados', '% no prazo']);
+  Object.keys(ufs).sort((a, b) => ufs[b].t - ufs[a].t || a.localeCompare(b)).forEach((u, i) => {
+    const row = l0 + 1 + i, v = ufs[u], ehUf = u !== '(sem UF)';
+    const f = (crit, res) => ehUf ? { formula: `COUNTIFS(Envios!$E:$E,$A${row},Envios!$I:$I,"${crit}")`, result: res } : res;
+    rs.getCell(row, 1).value = u;
+    rs.getCell(row, 2).value = ehUf ? { formula: `COUNTIF(Envios!$E:$E,$A${row})`, result: v.t } : v.t;
+    rs.getCell(row, 3).value = f('Entregue no prazo', v.n);
+    rs.getCell(row, 4).value = f('Entregue fora do prazo', v.f);
+    rs.getCell(row, 5).value = f('Atrasado (não entregue)', v.a);
+    rs.getCell(row, 6).value = { formula: `IF(C${row}+D${row}=0,"—",C${row}/(C${row}+D${row}))`, result: (v.n + v.f) ? v.n / (v.n + v.f) : '—' };
+    rs.getCell(row, 6).numFmt = '0.0%';
+    for (let c = 1; c <= 6; c++) { const cel = rs.getCell(row, c); cel.border = bordas; if (c > 1) cel.alignment = { horizontal: 'center' }; }
+    if (v.f) rs.getCell(row, 4).font = { bold: true, color: { argb: XL_CORES['Entregue fora do prazo'].font } };
+    if (v.a) rs.getCell(row, 5).font = { bold: true, color: { argb: XL_CORES['Atrasado (não entregue)'].font } };
+  });
+  const ln = l0 + 2 + Object.keys(ufs).length;
+  rs.mergeCells(ln, 1, ln, 6);
+  rs.getCell(ln, 1).value = 'Prazo da Azul = data "Entrega até" informada no rastreio.  Dias vs. previsão: negativo = antes do prazo, positivo = dias de atraso.  Prazo Dehon (Ent_Dehon) = Prod_Dehon + 5 dias úteis (sábado conta).';
+  rs.getCell(ln, 1).font = { italic: true, size: 9, color: { argb: 'FF6C757D' } };
+  rs.getCell(ln, 1).alignment = { wrapText: true, vertical: 'top' }; rs.getRow(ln).height = 40;
+
+  // ------------------------------- ABA ENVIOS -------------------------------
+  const ws = wb.addWorksheet('Envios', { views: [{ state: 'frozen', xSplit: 1, ySplit: 1 }] });
+  const cols = [
+    ['AWB', 15], ['Requisição', 12], ['Destinatário', 36], ['Destino', 24], ['UF', 6],
+    ['Emissão CTE', 13], ['Previsão Azul', 13], ['Entrega real', 13], ['Situação do prazo (Azul)', 26], ['Dias vs. previsão', 11],
+    ['Prod_Dehon', 13], ['Ent_Dehon (prazo)', 13], ['Situação Ent_Dehon', 15],
+    ['Frete (R$)', 12], ['Valor Nota (R$)', 14], ['Status', 18],
+  ];
+  ws.columns = cols.map(c => ({ width: c[1] }));
+  const h = ws.getRow(1); h.height = 32;
+  cols.forEach((c, i) => {
+    const cel = h.getCell(i + 1); cel.value = c[0];
+    cel.font = { bold: true, color: { argb: 'FFFFFFFF' } }; cel.fill = fill('FF1B4F9C'); cel.border = bordas;
+    cel.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true };
+  });
+  linhas.forEach((l, i) => {
+    const r = l.r, row = ws.getRow(i + 2), cor = XL_CORES[l.sit];
+    row.values = [
+      String(r.awb || ''), r.requisicao ? String(r.requisicao) : '', r.destinatario || '', r.destino || '', l.uf,
+      xd(r.emissao), xd(r.prev_entrega), xd(r.data_entrega), l.sit, l.dias,
+      xd(r.ent_dehon), xd(l.limDehon), l.sitDehon,
+      num(r.frete), num(r.valor_produto), r.status || '',
+    ];
+    for (let c = 1; c <= cols.length; c++) {
+      const cel = row.getCell(c); cel.border = bordas; cel.alignment = { vertical: 'middle' };
+      if ([1, 2, 5, 6, 7, 8, 10, 11, 12, 13, 16].includes(c)) cel.alignment = { vertical: 'middle', horizontal: 'center' };
+      if ([6, 7, 8, 11, 12].includes(c)) cel.numFmt = 'dd/mm/yyyy';
+      if (c === 14 || c === 15) cel.numFmt = '#,##0.00';
+    }
+    const cs = row.getCell(9); cs.fill = fill(cor.fill); cs.font = { bold: true, color: { argb: cor.font } }; cs.alignment = { vertical: 'middle', horizontal: 'center' };
+    if (l.dias !== null) {
+      const ruim = l.sit === 'Entregue fora do prazo' || l.sit === 'Atrasado (não entregue)';
+      const cd = row.getCell(10); cd.numFmt = '+0;-0;0';
+      cd.font = { bold: ruim, color: { argb: ruim ? 'FFB02A37' : 'FF146C43' } };
+      if (l.sit === 'Entregue fora do prazo') row.getCell(8).font = { bold: true, color: { argb: 'FFB02A37' } };
+      if (l.sit === 'Atrasado (não entregue)') row.getCell(7).font = { bold: true, color: { argb: 'FF9A4A00' } };
+    }
+    const cdh = row.getCell(13);
+    if (l.sitDehon === 'No prazo') cdh.font = { color: { argb: 'FF146C43' } };
+    if (l.sitDehon === 'Fora do prazo' || l.sitDehon === 'Vencido') cdh.font = { bold: true, color: { argb: 'FFB02A37' } };
+    if (l.sitDehon === 'Em aberto') cdh.font = { color: { argb: 'FF1B4F9C' } };
+  });
+  ws.autoFilter = { from: { row: 1, column: 1 }, to: { row: 1, column: cols.length } };
+  ws.pageSetup = { orientation: 'landscape', fitToPage: true, fitToWidth: 1, fitToHeight: 0, paperSize: 9 };
+  ws.pageSetup.printTitlesRow = '1:1';
+  return wb;
+}
+
+async function exportExcel() {
+  if (!filtered.length) { showToast('Sem dados para exportar.', 'error'); return; }
+  const agora = new Date(), p2 = n => String(n).padStart(2, '0');
+  const dia = `${agora.getFullYear()}-${p2(agora.getMonth() + 1)}-${p2(agora.getDate())}`;
+  const nome = `azul-cargo-${dia}.xlsx`;
+
+  if (typeof ExcelJS === 'undefined') {            // plano B: export simples, sem cores
+    const rows = filtered.map(r => ({
+      'AWB': r.awb, 'Requisição': r.requisicao, 'Destinatário': r.destinatario, 'Destino': r.destino,
+      'Emissão_Cte': r.emissao, 'Previsão Azul': r.prev_entrega, 'Entrega real': r.data_entrega,
+      'Situação do prazo': situacaoPrazo(r, new Date(agora.getFullYear(), agora.getMonth(), agora.getDate())).sit,
+      'Prod_Dehon': r.ent_dehon, 'Frete (R$)': r.frete, 'Valor Nota (R$)': r.valor_produto, 'Status': r.status,
+    }));
+    const ws = XLSX.utils.json_to_sheet(rows), wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Envios'); XLSX.writeFile(wb, nome);
+    showToast('Excel exportado (versão simples — biblioteca de cores não carregou).');
+    return;
+  }
+
+  const br = v => v ? v.split('-').reverse().join('/') : '';
+  const fs = document.getElementById('fStatus').value, fb = document.getElementById('fBusca').value.trim();
+  const de = document.getElementById('fDataDe').value, ate = document.getElementById('fDataAte').value;
+  const partes = [];
+  if (fs) partes.push('status = ' + fs);
+  if (fb) partes.push('busca = "' + fb + '"');
+  if (de || ate) partes.push('emissão ' + (de ? 'de ' + br(de) : '') + (ate ? ' até ' + br(ate) : ''));
+  try {
+    const wb = montarWorkbook(ExcelJS, filtered, {
+      geradoEm: `${p2(agora.getDate())}/${p2(agora.getMonth() + 1)}/${agora.getFullYear()} ${p2(agora.getHours())}:${p2(agora.getMinutes())}`,
+      filtros: partes.length ? partes.join('  ·  ') : 'nenhum (todos os envios)',
+    });
+    const buf = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    showToast('Excel exportado!');
+  } catch (e) {
+    console.error(e); showToast('Erro ao gerar o Excel: ' + e.message, 'error');
+  }
+}
+// ===================== FIM EXPORTACAO EXCEL =====================
 
 async function carregarDados() {
   document.getElementById('statusBar').textContent = 'Carregando...';
