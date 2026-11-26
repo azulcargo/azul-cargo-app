@@ -11758,7 +11758,7 @@
  },
  {
   "awb": "57758275991",
-  "requisicao": "",
+  "requisicao": "244935",
   "destinatario": "BRUNA BICUDO RIBEIRO",
   "destino": "Vinhedo/SP",
   "emissao": "02/10/2026",
@@ -12256,7 +12256,7 @@
  },
  {
   "awb": "57750899192",
-  "requisicao": "",
+  "requisicao": "247886",
   "destinatario": "DGECILA OLIVEIRA DA SILVA THOME",
   "destino": "Fortaleza/CE",
   "emissao": "13/10/2026",
@@ -12273,7 +12273,7 @@
  },
  {
   "awb": "57753234506",
-  "requisicao": "",
+  "requisicao": "244184",
   "destinatario": "MARIA MERCEDES XAVIER",
   "destino": "Fortaleza/CE",
   "emissao": "14/10/2026",
@@ -13402,7 +13402,7 @@
  },
  {
   "awb": "57719092312",
-  "requisicao": "243244",
+  "requisicao": "",
   "destinatario": "FABIO FELISMINO PEREIRA",
   "destino": "Sao Paulo/SP",
   "emissao": "11/11/2026",
@@ -14099,7 +14099,7 @@
  },
  {
   "awb": "57758853826",
-  "requisicao": "248216",
+  "requisicao": "",
   "destinatario": "CRISTIANE JOSE DE OLIVEIRA",
   "destino": "Itaberai/GO",
   "emissao": "19/11/2026",
@@ -14109,8 +14109,8 @@
   "telefone": "62985631489",
   "prev_entrega": "03/12/2026",
   "data_entrega": "23/11/2026",
-  "ent_dehon": "02/10/2026",
-  "dias_uteis": "08/10/2026",
+  "ent_dehon": "",
+  "dias_uteis": "",
   "ultima_atualizacao": "23/11/2026 22:10",
   "status": "Entregue"
  },
